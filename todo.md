@@ -1,9 +1,7 @@
 # Portfolio Redesign Checklist
 
-- [x] Replace the editorial multi-surface layout with a portfolio-first information hierarchy.
-- [x] Build a dedicated **Minimal** portfolio route with one background, one text, and one accent colour.
-- [x] Build a dedicated **Dark Modern** portfolio route with one background, one text, and one accent colour.
-- [x] Use YAPARI, Boreck, or Armany display typography only for Avinash’s name and carefully selected emphasis.
-- [x] Make all portfolio sections consistent, concise, responsive, and content-ready.
-- [x] Verify both directions visually on desktop and mobile.
-- [ ] Save a final checkpoint and share both directions with the user.
+- [x] Inspect the linked reference for its layout rhythm, typography, colour use, and interaction patterns.
+- [x] Replace the current dual-route presentation with a single reference-aligned portfolio experience.
+- [x] Preserve Avinash K’s own content while adapting the reference’s composition and visual pacing.
+- [x] Verify the revised experience against the reference on desktop and mobile.
+- [ ] Save and deliver the reference-aligned revision.
