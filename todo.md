@@ -1,7 +1,7 @@
-# Minimal-Classic Portfolio Checklist
+# Quiet Scholar Content Transfer Checklist
 
-- [x] Remove the large display treatment, experimental ledger styling, and decorative proof panels.
-- [x] Establish one timeless theme with a soft paper background, near-black text, and one understated accent color.
-- [x] Rebuild the requested portfolio flow with clean, conventional sections and clear personal hierarchy.
-- [x] Limit display typography to the name only and use classic body/headline pairings elsewhere.
-- [x] Validate desktop and mobile layout, then save and deliver the redesign.
+- [x] Extract all project, education, skills, contact, and activity content from the linked portfolio.
+- [x] Map the linked site’s full structure into the existing Quiet Scholar navigation and sections.
+- [x] Preserve the current Ivory Paper, Ink, Sienna, and classic type treatment without introducing the old site’s visual style.
+- [x] Validate the completed content-led portfolio on desktop and mobile.
+- [ ] Save and deliver the revision.

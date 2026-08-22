@@ -1,6 +1,7 @@
 /* Quiet Scholar: minimal-classic portfolio using one Ivory Paper background, Ink text, and Sienna accent. */
 @import "tailwindcss";
 @import "tw-animate-css";
+@import "./content-edition.css";
 @import "./quiet-scholar-refinements.css";
 
 @custom-variant dark (&:is(.dark *));

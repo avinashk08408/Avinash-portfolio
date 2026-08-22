@@ -36,3 +36,7 @@ The writing is direct and modest. It describes learning with confidence but with
 - Section titles are document-sized and use spacing, rules, and content order for hierarchy rather than editorial drama.
 - The AK mark functions as a small personal seal in the header and profile note, never as a technology-product logo.
 - Contact closes as a calm professional correspondence section, with a readable note form and no visual placeholder links.
+
+## Required Content Specification
+
+The user has designated `https://avinashk08408.github.io/aviportfolio.github.io/` as the required source for the **exact portfolio structure and content**. Its biography, project titles and descriptions, education records, public contact details, opportunity statement, and the “Coming Soon” project item must remain intact. The Quiet Scholar revision may change only presentation, spacing, typography, and theme; it must not rewrite the source content into a different professional voice, remove the fourth project, or expand the source’s compact navigation into additional sections.
