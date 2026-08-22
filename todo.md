@@ -1,7 +1,8 @@
-# Portfolio Redesign Checklist
+# Original Portfolio Revision Checklist
 
-- [x] Inspect the linked reference for its layout rhythm, typography, colour use, and interaction patterns.
-- [x] Replace the current dual-route presentation with a single reference-aligned portfolio experience.
-- [x] Preserve Avinash K’s own content while adapting the reference’s composition and visual pacing.
-- [x] Verify the revised experience against the reference on desktop and mobile.
-- [ ] Save and deliver the reference-aligned revision.
+- [x] Review the first reference for typography scale, sizing, and professional rhythm only.
+- [x] Inspect the second reference for section order and layout flow only.
+- [x] Define an original three-colour theme adjacent to the reference’s warmth without duplicating its palette.
+- [x] Implement the requested structure: Hero, About, Skills, Projects, Education & Journey, Certification, Resume, Activity, Contact, and Footer.
+- [x] Validate the original redesign on desktop and mobile.
+- [ ] Save and deliver the revised portfolio.

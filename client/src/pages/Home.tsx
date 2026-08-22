@@ -1,123 +1,89 @@
 /**
- * Reference-informed personal portfolio for Avinash K.
- * The layout follows the reference's approachable student-profile flow while preserving Avinash's own content and AK identity.
+ * Practice Ledger — original portfolio for Avinash K.
+ * Uses a single Limestone background, Graphite information layer, and Burnished Terracotta accent.
+ * Manrope is functional; Yapari appears only in the name and final contact emphasis.
  */
 import { useState } from "react";
-import { ArrowRight, Github, Linkedin, Mail, MapPin, Menu, Send, X } from "lucide-react";
+import { ArrowDownRight, ArrowUpRight, FileText, Github, Linkedin, Mail, Menu, Send, Terminal, X } from "lucide-react";
 
-const nav = [
-  ["Home", "home"], ["About", "about"], ["Skills", "skills"], ["Interests", "interests"], ["Projects", "projects"], ["Learning", "learning"], ["Goals", "goals"], ["Contact", "contact"],
+const navItems = [["About", "about"], ["Skills", "skills"], ["Projects", "projects"], ["Journey", "journey"], ["Contact", "contact"]];
+const skillBlocks: Array<[string, string, string[]]> = [
+  ["01", "Secure web", ["Security foundations", "Secure-by-design thinking", "Web safety awareness"]],
+  ["02", "Development", ["Responsive interfaces", "Front-end practice", "Problem solving"]],
+  ["03", "Systems", ["Networks", "Operating systems", "Databases"]],
+  ["04", "Tooling", ["Git & GitHub", "Security tools", "Technical research"]],
 ];
+const activity = [[Github, "GitHub", "Project repositories & practice"], [Linkedin, "LinkedIn", "Professional learning record"], [Terminal, "LeetCode", "Problem-solving practice"]] as const;
 
-const skillGroups: Array<[string, string[]]> = [
-  ["Web fundamentals", ["HTML", "CSS", "JavaScript"]],
-  ["Cybersecurity", ["Security basics", "Secure web practices", "Security tools"]],
-  ["Development workflow", ["Git & GitHub", "Responsive design", "Problem solving"]],
-  ["Systems", ["Operating systems", "Networks", "Databases"]],
-];
-
-const interests = [
-  ["01", "Cybersecurity", "Learning how systems and data are protected through practical security principles."],
-  ["02", "Secure web development", "Exploring how thoughtful interface work and safer engineering can work together."],
-  ["03", "Security tools", "Building familiarity with the tools, workflows, and methods used in security practice."],
-  ["04", "Programming", "Strengthening logic, structure, and problem-solving through regular coding practice."],
-  ["05", "Computer networks", "Understanding how systems communicate and where security controls matter."],
-  ["06", "Digital forensics", "Developing curiosity about evidence, investigation, and secure digital systems."],
-];
-
-const learning = [
-  ["01", "Cybersecurity foundations", "Active study"], ["02", "Secure web development", "Active study"], ["03", "Security tools & lab exercises", "Active study"], ["04", "Systems & networking", "Active study"],
-];
-
-function MiniLabel({ children }: { children: string }) {
-  return <p className="mini-label"><span /> {children}</p>;
+function LedgerLabel({ index, label }: { index: string; label: string }) {
+  return <div className="ledger-label"><span>{index}</span><p>{label}</p></div>;
 }
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [sent, setSent] = useState(false);
-
-  const closeMenu = () => setMenuOpen(false);
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => { event.preventDefault(); setSent(true); };
+  const [formSent, setFormSent] = useState(false);
+  const onSubmit = (event: React.FormEvent<HTMLFormElement>) => { event.preventDefault(); setFormSent(true); };
 
   return (
-    <div className="profile-page" id="home">
-      <header className="profile-nav">
-        <a href="#home" className="profile-brand" aria-label="Avinash K portfolio home"><span className="ak-avatar-icon" aria-hidden="true"><i /><b /></span> AVINASH K.</a>
-        <nav className="profile-nav-links" aria-label="Primary navigation">{nav.map(([label, id]) => <a key={id} href={`#${id}`}>{label}</a>)}</nav>
-        <button className="profile-menu" type="button" onClick={() => setMenuOpen(!menuOpen)} aria-expanded={menuOpen} aria-label="Toggle menu">{menuOpen ? <X size={20} /> : <Menu size={21} />}</button>
+    <div className="ledger-page" id="home">
+      <header className="ledger-nav">
+        <a href="#home" className="ledger-brand" aria-label="Avinash K home"><img src="/manus-storage/avinash-ak-field-seal_300c0181.png" alt="AK field seal" /><span>AVINASH K <i>/</i> PORTFOLIO</span></a>
+        <nav className="ledger-desktop-nav" aria-label="Primary navigation">{navItems.map(([label, id]) => <a href={`#${id}`} key={id}>{label}</a>)}</nav>
+        <button className="ledger-menu" onClick={() => setMenuOpen(!menuOpen)} type="button" aria-label="Toggle navigation" aria-expanded={menuOpen}>{menuOpen ? <X size={21} /> : <Menu size={22} />}</button>
       </header>
-      {menuOpen && <nav className="profile-mobile-nav" aria-label="Mobile navigation">{nav.map(([label, id]) => <a key={id} href={`#${id}`} onClick={closeMenu}>{label}<ArrowRight size={16} /></a>)}</nav>}
+      {menuOpen && <nav className="ledger-mobile-nav" aria-label="Mobile navigation">{navItems.map(([label, id]) => <a href={`#${id}`} key={id} onClick={() => setMenuOpen(false)}>{label}<ArrowUpRight size={17} /></a>)}</nav>}
 
       <main>
-        <section className="profile-hero section-shell">
-          <div className="hero-intro">
-            <MiniLabel>PORTFOLIO</MiniLabel>
-            <div className="hero-name-row">
-              <div className="hero-avatar" aria-label="Avinash K monogram"><img src="/manus-storage/avinash-ak-field-seal_300c0181.png" alt="AK field seal" /></div>
-              <div><h1>Avinash <strong>K.</strong></h1><p className="role-line">CYBERSECURITY STUDENT</p></div>
-            </div>
-            <p className="hero-copy">I am a Cybersecurity student at SRM Valliammai Engineering College with a strong interest in cybersecurity, secure web development, and the tools that help build safer digital systems.</p>
-            <div className="hero-actions"><a href="#projects" className="filled-button">View my projects <ArrowRight size={16} /></a><a href="#contact" className="outlined-button">Contact me</a></div>
-            <div className="hero-socials"><a href="#contact" aria-label="LinkedIn profile"><Linkedin size={18} /></a><a href="#contact" aria-label="GitHub profile"><Github size={18} /></a></div>
+        <section className="ledger-hero ledger-shell">
+          <div className="hero-registration"><span>AVINASH K / 2026</span><span>CYBERSECURITY × WEB DEVELOPMENT</span></div>
+          <div className="hero-ledger-grid">
+            <div className="hero-main-copy"><p className="eyebrow">HELLO, I’M</p><h1>Avinash<br /><strong>K.</strong></h1><p className="hero-statement">A cybersecurity student building the habit of <b>clear thinking, secure making,</b> and practical technical work. I’m most interested in the moment a concept becomes something I can test and understand.</p><div className="hero-links"><a href="#projects" className="primary-link">Explore selected work <ArrowDownRight size={17} /></a><a href="#contact" className="secondary-link">Start a conversation <ArrowUpRight size={16} /></a></div></div>
+            <aside className="hero-ledger-card"><div className="ledger-card-top"><span>FIELD NOTE / 01</span><i /></div><div className="ledger-card-mark"><img src="/manus-storage/avinash-ak-field-seal_300c0181.png" alt="" /></div><div className="ledger-card-data"><p><span>STUDY</span><b>Cybersecurity</b></p><p><span>INSTITUTION</span><b>SRM Valliammai Engineering College</b></p><p><span>FOCUS</span><b>Security tools & web development</b></p><p><span>LOCATION</span><b>Tamil Nadu, India</b></p></div><p className="ledger-card-status"><i /> CURRENTLY LEARNING IN PUBLIC</p></aside>
           </div>
-          <aside className="profile-summary">
-            <p className="summary-title">PROFILE SUMMARY <i /></p>
-            <div className="summary-line"><span>ROLE</span><strong>Cybersecurity student</strong></div>
-            <div className="summary-line"><span>COLLEGE</span><strong>SRM Valliammai</strong></div>
-            <div className="summary-line"><span>FOCUS</span><strong>Cybersecurity & web</strong></div>
-            <div className="summary-line"><span>LOCATION</span><strong>Tamil Nadu, India</strong></div>
-            <p className="summary-footer">Open to internships & learning opportunities</p>
-          </aside>
+          <div className="hero-footnote"><span>SCROLL FOR THE PRACTICE LEDGER</span><span>OPEN TO LEARNING OPPORTUNITIES</span></div>
         </section>
 
-        <section id="about" className="section-shell profile-section about-section">
-          <div className="section-rail"><MiniLabel>ABOUT</MiniLabel></div>
-          <div className="section-main about-main"><div><h2>A student building toward <strong>cybersecurity.</strong></h2><p>I am pursuing Cybersecurity at SRM Valliammai Engineering College. My aim is to build practical knowledge across security fundamentals, secure software development, and the systems that support reliable digital experiences.</p><p>I am continuously improving through academic learning, independent study, hands-on practice, and the projects I document along the way.</p></div><div className="fact-grid"><div><span>ROLE</span><strong>Cybersecurity student</strong></div><div><span>LEVEL</span><strong>Learning & building</strong></div><div><span>FOCUS</span><strong>Security, web, tools</strong></div><div><span>AVAILABILITY</span><strong>Open to opportunities</strong></div></div></div>
+        <section id="about" className="ledger-section ledger-shell about-ledger">
+          <LedgerLabel index="01" label="ABOUT ME" />
+          <div className="ledger-content about-ledger-content"><div><h2>Curious about what makes a system <em>hold.</em></h2><p>I’m pursuing Cybersecurity at SRM Valliammai Engineering College. My interests sit between cybersecurity, web development, and the thoughtful technical choices that make digital systems more reliable.</p><p>I’m building my foundation through academic study, small technical experiments, and consistent practice with the tools and concepts behind modern security work.</p><div className="about-context"><span>WHY THIS PATH</span><p>I enjoy the process of taking a large technical idea, breaking it into a smaller test, and understanding what it teaches me about a real system.</p></div></div><div className="principle-block"><p>MY CURRENT PRACTICE</p><strong>Learn the system.<br />Test the edges.<br /><span>Document the work.</span></strong></div></div>
         </section>
 
-        <section className="section-shell profile-section education-section">
-          <div className="section-rail"><MiniLabel>EDUCATION</MiniLabel></div>
-          <div className="section-main"><h2>Academic <strong>background.</strong></h2><div className="education-card"><div><span>PROGRAM</span><strong>Engineering / Cybersecurity</strong></div><div><span>INSTITUTION</span><strong>SRM Valliammai Engineering College</strong></div><div><span>CURRENT FOCUS</span><strong>Cybersecurity & secure web development</strong></div><div><span>LOCATION</span><strong>Tamil Nadu, India</strong></div></div></div>
+        <section id="skills" className="ledger-section ledger-shell skills-ledger">
+          <LedgerLabel index="02" label="SKILLS" />
+          <div className="ledger-content"><div className="section-heading-row"><h2>A practical toolkit,<br /><em>still growing.</em></h2><p>Not a finished list of claims — a focused set of areas I am actively developing through study and hands-on practice.</p></div><div className="skill-ledger-grid">{skillBlocks.map(([number, title, items]) => <article key={number}><span>{number}</span><h3>{title}</h3><ul>{items.map((item) => <li key={item}>{item}</li>)}</ul></article>)}</div><div className="practice-proof-strip"><div><span>CURRENT MATERIAL</span><b>Security concepts & systems</b></div><div><span>PRACTICE MODE</span><b>Small builds & technical notes</b></div><div><span>WORKING HABIT</span><b>Research, test, reflect</b></div></div></div>
         </section>
 
-        <section id="skills" className="section-shell profile-section skills-section">
-          <div className="section-rail"><MiniLabel>SKILLS</MiniLabel></div>
-          <div className="section-main"><h2>Technical <strong>skills.</strong></h2><p className="section-intro">Skills and areas of practice being built through coursework, hands-on learning, and project work.</p><div className="skill-groups">{skillGroups.map(([title, items]) => <article key={title}><h3>{title}</h3><div>{(items as string[]).map((item) => <span key={item}>{item}</span>)}</div></article>)}</div></div>
+        <section id="projects" className="ledger-section ledger-shell projects-ledger">
+          <LedgerLabel index="03" label="PROJECTS" />
+          <div className="ledger-content"><div className="project-heading"><h2>Work that earns<br /><em>its place.</em></h2><p>Each project entry will be shaped as evidence: a real problem, an applied method, and a clear lesson.</p></div><article className="project-ledger-card"><div className="project-sequence">01</div><div className="project-summary"><p>ACTIVE BUILD</p><h3>Cybersecurity portfolio</h3><p>This portfolio is the first public record of my evolving technical practice, bringing together cybersecurity interests, web development, and a structured way to document future work.</p><div><span>Web development</span><span>Portfolio system</span><span>Active</span></div></div><a href="#contact" className="case-link">View project note <ArrowUpRight size={17} /></a></article><div className="project-next"><span>02</span><p>The next security tool, research note, or web case study enters here.</p></div></div>
         </section>
 
-        <section id="interests" className="section-shell profile-section interests-section">
-          <div className="section-rail"><MiniLabel>INTERESTS</MiniLabel></div>
-          <div className="section-main"><h2>Areas of <strong>interest.</strong></h2><p className="section-intro">Fields I’m actively exploring and where I want to build deeper technical ability.</p><div className="interest-grid">{interests.map(([number, title, copy]) => <article key={number}><span>{number}</span><h3>{title}</h3><p>{copy}</p></article>)}</div></div>
+        <section id="journey" className="ledger-section ledger-shell journey-ledger">
+          <LedgerLabel index="04" label="EDUCATION & JOURNEY" />
+          <div className="ledger-content"><h2>Learning turned into<br /><em>direction.</em></h2><div className="journey-line"><article><span>PRESENT</span><div><h3>Cybersecurity student</h3><p>SRM Valliammai Engineering College</p></div></article><article><span>NOW</span><div><h3>Building technical foundations</h3><p>Cybersecurity tools, secure web practices, systems, and problem-solving.</p></div></article><article><span>NEXT</span><div><h3>Documented applied work</h3><p>Case studies, credentials, and a more complete record of practical learning.</p></div></article></div><div className="journey-proof"><span>ACADEMIC GROUNDING</span><p>Every new topic is being connected to a practical question: what does it protect, how does it work, and where might it fail?</p></div></div>
         </section>
 
-        <section id="projects" className="section-shell profile-section projects-section">
-          <div className="section-rail"><MiniLabel>PROJECTS</MiniLabel></div>
-          <div className="section-main"><h2>Featured <strong>work.</strong></h2><article className="feature-project"><div className="project-mark"><span>AK</span><i /></div><div className="project-info"><p>PERSONAL PORTFOLIO</p><h3>Cybersecurity portfolio website</h3><p className="project-copy">A personal portfolio designed to document my cybersecurity learning journey, web development interests, and future technical work in a clear, professional format.</p><div className="project-tags"><span>Web development</span><span>Portfolio</span><span>Active project</span></div></div><a href="#contact" className="project-link">Project notes <ArrowRight size={16} /></a></article></div>
+        <section id="certification" className="ledger-section ledger-shell certification-ledger">
+          <LedgerLabel index="05" label="CERTIFICATION" />
+          <div className="ledger-content certification-content"><div><h2>Every credential needs<br /><em>context.</em></h2><p>Course completions and certifications will be captured here with the institution, date, and learning outcome — as evidence of continued progress.</p></div><div className="credential-card"><FileText size={28} /><div><span>RECORD / 01</span><h3>Learning credential archive</h3><p>Current status: building through active coursework and future certifications.</p></div><i>IN PROGRESS</i></div></div>
         </section>
 
-        <section id="learning" className="section-shell profile-section learning-section">
-          <div className="section-rail"><MiniLabel>LEARNING</MiniLabel></div>
-          <div className="section-main"><h2>Courses & continuous <strong>learning.</strong></h2><p className="section-intro">A current record of areas I am studying to strengthen technical understanding.</p><div className="learning-list">{learning.map(([number, title, state]) => <article key={number}><span>{number}</span><h3>{title}</h3><small>{state}</small></article>)}</div></div>
+        <section id="resume" className="ledger-section ledger-shell resume-ledger">
+          <LedgerLabel index="06" label="RÉSUMÉ" />
+          <div className="ledger-content resume-content"><div><p className="eyebrow">ONE-PAGE SUMMARY</p><h2>A focused record<br />of the <em>work.</em></h2></div><div><p>A concise résumé will consolidate education, selected projects, skills, and verified learning into one professional view.</p><span className="resume-status">RÉSUMÉ / IN PREPARATION</span></div></div>
         </section>
 
-        <section className="section-shell profile-section beyond-section">
-          <div className="section-rail"><MiniLabel>BEYOND ACADEMICS</MiniLabel></div>
-          <div className="section-main"><h2>Always <strong>exploring.</strong></h2><div className="beyond-list"><span>Reading technical documentation</span><span>Improving programming skills</span><span>Exploring cybersecurity topics</span><span>Building clearer web interfaces</span></div></div>
+        <section id="activity" className="ledger-section ledger-shell activity-ledger">
+          <LedgerLabel index="07" label="ACTIVITY" />
+          <div className="ledger-content"><div className="section-heading-row"><h2>Signals from the<br /><em>practice.</em></h2><p>Professional channels that will make the process visible: code, learning, and regular problem-solving.</p></div><div className="activity-ledger-grid">{activity.map(([Icon, label, copy]) => <a href="#contact" key={label}><Icon size={22} /><div><span>{label}</span><p>{copy}</p></div><ArrowUpRight size={17} /></a>)}</div></div>
         </section>
 
-        <section id="goals" className="section-shell profile-section goals-section">
-          <div className="section-rail"><MiniLabel>GOALS</MiniLabel></div>
-          <div className="section-main goals-main"><div><h2>Building a practical <strong>roadmap.</strong></h2><h3>Short-term goals</h3><ul><li>Strengthen cybersecurity and programming fundamentals.</li><li>Build practical projects and document the learning behind them.</li><li>Develop familiarity with cybersecurity tools and secure web workflows.</li><li>Gain hands-on technical experience through consistent practice.</li></ul></div><div className="long-goal"><span>LONG-TERM DIRECTION</span><p>My long-term goal is to become a skilled cybersecurity professional, capable of contributing to safer digital systems through strong fundamentals, practical problem-solving, and thoughtful technical work.</p></div></div>
-        </section>
-
-        <section id="contact" className="contact-section section-shell">
-          <div className="contact-copy"><MiniLabel>CONTACT</MiniLabel><h2>Let’s <strong>connect.</strong></h2><p>Open to internships, collaborations, and conversations around cybersecurity and web development.</p><div className="contact-details"><p><Mail size={16} /><span>EMAIL</span><strong>Email address to be added</strong></p><p><MapPin size={16} /><span>LOCATION</span><strong>Tamil Nadu, India</strong></p><p><Linkedin size={16} /><span>LINKEDIN</span><strong>Profile link to be added</strong></p><p><Github size={16} /><span>GITHUB</span><strong>Profile link to be added</strong></p></div></div>
-          <form className="contact-form" onSubmit={handleSubmit}><label>NAME<input name="name" placeholder="Your name" required /></label><label>EMAIL<input type="email" name="email" placeholder="you@example.com" required /></label><label>MESSAGE<textarea name="message" placeholder="Write your message..." required /></label><button type="submit">{sent ? "Message prepared" : <><Send size={15} /> Prepare message</>}</button>{sent && <p className="form-note">Thank you. Add your preferred email address before publishing to receive messages directly.</p>}</form>
+        <section id="contact" className="ledger-contact ledger-shell">
+          <div className="contact-ledger-copy"><p className="eyebrow">CONTACT</p><h2>Let’s make the next<br />step <em>useful.</em></h2><p>I’m open to learning opportunities, cybersecurity conversations, collaborative work, and thoughtful web projects.</p><div className="contact-intent"><Mail size={18} /><div><span>OPEN CHANNEL</span><b>Opportunities, student collaborations, and technical conversations are welcome.</b></div></div></div>
+          <form className="ledger-contact-form" onSubmit={onSubmit}><p className="form-kicker">CONVERSATION NOTE</p><label>NAME<input required placeholder="Your name" /></label><label>EMAIL<input required type="email" placeholder="you@example.com" /></label><label>MESSAGE<textarea required placeholder="Tell me about the opportunity..." /></label><button type="submit">{formSent ? "Note prepared" : <><Send size={15} /> Prepare note</>}</button>{formSent && <p>Thank you. This portfolio conversation note is ready for the contact route selected at publication.</p>}</form>
         </section>
       </main>
-
-      <footer className="profile-footer"><span>© 2026 AVINASH K. ALL RIGHTS RESERVED.</span><div><a href="#contact" aria-label="LinkedIn"><Linkedin size={16} /></a><a href="#contact" aria-label="GitHub"><Github size={16} /></a></div></footer>
+      <footer className="ledger-footer"><span>© 2026 AVINASH K. / PRACTICE LEDGER</span><span>CYBERSECURITY × WEB DEVELOPMENT</span><a href="#home">BACK TO TOP ↑</a></footer>
     </div>
   );
 }

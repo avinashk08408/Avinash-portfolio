@@ -19,3 +19,26 @@ The visual treatment will remain original: a more refined field-seal avatar, a s
 ## Portfolio Voice
 
 The site should sound like a serious student portfolio: direct, modest, and learning-oriented. It should say what Avinash studies, what he is exploring, and the kind of work he is building, without marketing language or generic placeholder prompts.
+
+## Reference Use Boundaries
+
+The first reference, `rk-rithik.github.io`, informs **typography sizing and density only**: a readable sans-serif body, decisive but not oversized headings, compact uppercase labels, generous line height, and calm information panels. The second reference, `avinashk08408.github.io/aviportfolio.github.io`, informs **flow only**: a recognisable hero, narrative About block, grouped skills, project work, an academic journey, and an affirmative contact ending. Neither site’s composition, copy, project visuals, or palette will be reproduced.
+
+## Original Theme Recommendation: Terra Graphite
+
+This site will be original and warmer than the references without inheriting their exact colors. Its single-background system uses **Limestone `#F2EFE8`** as the 60% foundation: grounded, paper-like, and quietly professional. **Graphite `#232522`** serves as the 30% type, rule, and form color, providing depth without black-on-white harshness. **Burnished Terracotta `#C8663B`** forms the 10% signature accent for highlighted words, active elements, and identity marks. It gives the page a distinct, mature character without cyberpunk, blue, or neon.
+
+## Original Layout Direction: The Practice Ledger
+
+The portfolio will follow the user’s exact structure in a long-form single-page ledger. A contained landing hero introduces Avinash and a small fact strip. The central sections alternate between broad content panels and compact proof blocks, but all remain on one continuous Limestone background. Skills are displayed as a practical toolkit, projects as case-study entries, education as a vertical journey, certifications and resume as evidence blocks, and activity as linked professional signals. The footer resolves the sequence simply and clearly.
+
+## Typography System
+
+Manrope will control all informative text, navigation, and body copy. Yapari will appear only in **“Avinash K”** in the hero and one selected key word in the final contact line. This preserves its role as a signature rather than making the site feel like a stylised template. Heading sizes follow the first reference’s professional rhythm: concise hero display, medium section headings, and readable support copy.
+
+## Style Decisions
+
+- Heading sizes should lead the reader into each ledger entry, never overpower the personal introduction or concrete proof.
+- The hero balances the readable Avinash K name, an expanded personal statement, and the field-note summary card instead of treating the name as a graphic wall.
+- Every major content area carries a compact proof block, study context, or practical learning signal.
+- Contact is framed as an open, intentional channel; unavailable personal links are omitted rather than shown as incomplete placeholders.
