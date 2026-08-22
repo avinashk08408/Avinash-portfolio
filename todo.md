@@ -1,8 +1,7 @@
-# Original Portfolio Revision Checklist
+# Minimal-Classic Portfolio Checklist
 
-- [x] Review the first reference for typography scale, sizing, and professional rhythm only.
-- [x] Inspect the second reference for section order and layout flow only.
-- [x] Define an original three-colour theme adjacent to the reference’s warmth without duplicating its palette.
-- [x] Implement the requested structure: Hero, About, Skills, Projects, Education & Journey, Certification, Resume, Activity, Contact, and Footer.
-- [x] Validate the original redesign on desktop and mobile.
-- [ ] Save and deliver the revised portfolio.
+- [x] Remove the large display treatment, experimental ledger styling, and decorative proof panels.
+- [x] Establish one timeless theme with a soft paper background, near-black text, and one understated accent color.
+- [x] Rebuild the requested portfolio flow with clean, conventional sections and clear personal hierarchy.
+- [x] Limit display typography to the name only and use classic body/headline pairings elsewhere.
+- [x] Validate desktop and mobile layout, then save and deliver the redesign.
