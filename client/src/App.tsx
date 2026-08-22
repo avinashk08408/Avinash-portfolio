@@ -1,34 +1,17 @@
-/** Monograph / 01 application shell — light parchment theme for the public portfolio. */
+/** Portfolio route shell: / is Minimal and /dark-modern is the separate Dark Modern direction. */
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import NotFound from "@/pages/NotFound";
 import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
+import DarkModern from "./pages/DarkModern";
 import Home from "./pages/Home";
+import NotFound from "./pages/NotFound";
 
 function Router() {
-  return (
-    <Switch>
-      <Route path="/" component={Home} />
-      <Route path="/404" component={NotFound} />
-      <Route component={NotFound} />
-    </Switch>
-  );
+  return <Switch><Route path="/" component={Home} /><Route path="/dark-modern" component={DarkModern} /><Route path="/404" component={NotFound} /><Route component={NotFound} /></Switch>;
 }
 
-function App() {
-  return (
-    <ErrorBoundary>
-      <ThemeProvider defaultTheme="light">
-        <TooltipProvider>
-          <Toaster />
-          <Router />
-        </TooltipProvider>
-      </ThemeProvider>
-    </ErrorBoundary>
-  );
+export default function App() {
+  return <ErrorBoundary><ThemeProvider defaultTheme="light"><TooltipProvider><Toaster /><Router /></TooltipProvider></ThemeProvider></ErrorBoundary>;
 }
-
-export default App;
-
