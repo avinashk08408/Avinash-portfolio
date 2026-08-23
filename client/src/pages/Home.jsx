@@ -6,32 +6,32 @@ import { useState } from "react";
 import { ArrowRight, ExternalLink, Github, Linkedin, Mail, Menu, Phone, Send, X } from "lucide-react";
 
 const navItems = [["Home", "home"], ["About", "about"], ["Skills", "skills"], ["Projects", "projects"], ["Experience", "experience"], ["Contact", "contact"]];
-const capabilityGroups: Array<[string, string[]]> = [
+const capabilityGroups = [
   ["Experience layer", ["HTML", "CSS", "JavaScript", "React"]],
   ["Programming", ["Python", "Go", "Java", "C", "C++"]],
   ["Data & tools", ["SQL", "Git", "GitHub"]],
   ["Networking", ["Networking", "TCP/IP", "HTTP"]],
 ];
-const projects: Array<[string, string, string[]]> = [
+const projects = [
   ["AuthShield", "Secure authentication system with role-based access control.", ["React", "Flask", "SQLite"]],
   ["Web Vulnerability Scanner", "Scans websites for common vulnerabilities.", ["Python", "Flask"]],
   ["Fake GitHub Repo Detector", "Detects fake GitHub repositories using AI.", ["React", "AI"]],
   ["Coming Soon", "More cybersecurity projects.", ["Cyber"]],
 ];
-const records: Array<[string, string, string]> = [
+const records = [
   ["B.E Cyber Security", "SRM Valliammai Engineering College", "2025 – Present · Pursuing"],
   ["Higher Secondary", "Don Bosco Matric Hr. Sec. School", "2025 · 85%"],
   ["Secondary School", "Don Bosco Matric Hr. Sec. School", "2023 · 90%"],
 ];
 
-function SectionLabel({ number, label }: { number: string; label: string }) {
+function SectionLabel({ number, label }) {
   return <p className="ct-label"><span>{number}</span>{label}</p>;
 }
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [messageReady, setMessageReady] = useState(false);
-  const submit = (event: React.FormEvent<HTMLFormElement>) => { event.preventDefault(); setMessageReady(true); };
+  const submit = (event) => { event.preventDefault(); setMessageReady(true); };
 
   return (
     <div className="quiet-scholar content-edition" id="home">

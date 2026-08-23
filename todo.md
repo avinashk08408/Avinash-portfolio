@@ -1,7 +1,6 @@
-# Quiet Scholar Content Transfer Checklist
+# React JavaScript Conversion Checklist
 
-- [x] Extract all project, education, skills, contact, and activity content from the linked portfolio.
-- [x] Map the linked site’s full structure into the existing Quiet Scholar navigation and sections.
-- [x] Preserve the current Ivory Paper, Ink, Sienna, and classic type treatment without introducing the old site’s visual style.
-- [x] Validate the completed content-led portfolio on desktop and mobile.
-- [ ] Save and deliver the revision.
+- [x] Identify all active TypeScript and TSX frontend entry points used by the portfolio.
+- [x] Convert the active React pages, application shell, and frontend configuration to JavaScript and JSX.
+- [x] Retain the existing deployment workflow and ensure GitHub Pages builds the JavaScript version.
+- [x] Validate the browser build and package the converted source for delivery.

@@ -204,8 +204,11 @@ function vitePluginStorageProxy(): Plugin {
 }
 
 const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(), vitePluginManusDebugCollector(), vitePluginStorageProxy()];
+const isGitHubPagesBuild = process.env.GITHUB_ACTIONS === "true";
 
 export default defineConfig({
+  // Quiet Scholar is hosted at the repository URL on GitHub Pages, but retains root paths in Manus hosting.
+  base: isGitHubPagesBuild ? "/sample2.github.io/" : "/",
   plugins,
   resolve: {
     alias: {
