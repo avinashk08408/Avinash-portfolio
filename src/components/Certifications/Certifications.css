@@ -1,0 +1,6 @@
+.certifications-component .ct-certificate-note { display:grid; grid-template-columns:110px 1fr; gap:18px; margin-top:34px; padding:18px 0; border-top:1px solid var(--ink); border-bottom:1px solid var(--border); }
+.certifications-component .ct-certificate-note > span { color:var(--sienna); font-size:9px; font-weight:800; letter-spacing:.1em; }
+.certifications-component .ct-certificate-note h3 { margin:0 0 6px; font-family:"Libre Baskerville",Georgia,serif; font-size:17px; font-weight:400; }
+.certifications-component .ct-certificate-note p { margin:0; color:#62645e; font-size:11px; line-height:1.65; }
+.certifications-component code { color:var(--sienna); font:inherit; }
+@media (max-width:640px) { .certifications-component .ct-certificate-note { grid-template-columns:1fr; gap:9px; } }

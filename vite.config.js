@@ -13,12 +13,12 @@ export default defineConfig({
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
-      "@": path.resolve(projectRoot, "client", "src"),
+      "@": path.resolve(projectRoot, "src"),
       "@shared": path.resolve(projectRoot, "shared"),
     },
   },
   envDir: projectRoot,
-  root: path.resolve(projectRoot, "client"),
+  root: projectRoot,
   build: {
     outDir: path.resolve(projectRoot, "dist/public"),
     emptyOutDir: true,
