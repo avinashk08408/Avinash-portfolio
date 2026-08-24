@@ -1,4 +1,4 @@
-/* About: approved Quiet Scholar biography and statistics. */
+/* About: existing Quiet Scholar theme preserved. */
 
 .about-component .ct-about-copy {
   max-width: 650px;
@@ -24,6 +24,61 @@
   color: var(--ink);
 }
 
+/* NEW: About photo */
+.about-component .about-photo-wrap {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.about-component .about-photo {
+  width: 100%;
+  max-width: 240px;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+}
+
+/* About layout: photo on left, content on right */
+.about-component .about-content {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 650px);
+  gap: 6vw;
+  align-items: start;
+}
+
+/* Statistics now appear between paragraph and quote */
+.about-component .ct-stats {
+  display: grid;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.about-component .ct-stats article {
+  padding: 13px 0;
+  border-top: 1px solid var(--border);
+}
+
+.about-component .ct-stats article:last-child {
+  border-bottom: 1px solid var(--border);
+}
+
+.about-component .ct-stats strong {
+  display: block;
+  color: var(--sienna);
+  font-family: "Libre Baskerville", Georgia, serif;
+  font-size: 28px;
+  font-weight: 400;
+}
+
+.about-component .ct-stats span {
+  color: #6b6d67;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+/* Quote remains after statistics */
 .about-component .ct-about-copy blockquote {
   margin: 28px 0 0;
   padding: 0 0 0 17px;
@@ -35,6 +90,48 @@
   line-height: 1.7;
 }
 
+.about-component .ct-about-copy cite {
+  display: block;
+  margin-top: 6px;
+  color: #7b7d76;
+  font-family: "Manrope", Arial, sans-serif;
+  font-size: 10px;
+  font-style: normal;
+}
+
+/* Tablet */
+@media (max-width: 850px) {
+  .about-component .about-content {
+    grid-template-columns: 200px minmax(0, 1fr);
+    gap: 5vw;
+  }
+
+  .about-component .about-photo {
+    max-width: 200px;
+    height: 270px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .about-component .about-content {
+    grid-template-columns: 1fr;
+    gap: 31px;
+  }
+
+  .about-component .about-photo-wrap {
+    justify-content: flex-start;
+  }
+
+  .about-component .about-photo {
+    width: 180px;
+    height: 230px;
+  }
+
+  .about-component .ct-stats {
+    margin-top: 25px;
+  }
+}
 .about-component .ct-about-copy cite {
   display: block;
   margin-top: 6px;
