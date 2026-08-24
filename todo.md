@@ -11,3 +11,10 @@
 - [x] Organize that unchanged design into the requested component folders and JSX files.
 - [x] Verify desktop and mobile views remain visually unchanged after organization.
 - [ ] Save and synchronize the architecture-only correction.
+
+## Readable source-code formatting
+
+- [x] Inspect the reference repository’s line-by-line JSX conventions.
+- [x] Reformat the editable portfolio components without changing their output.
+- [x] Build and visually verify the formatting-only update.
+- [ ] Save and synchronize the readable-code update.
