@@ -33,8 +33,8 @@
 
 .about-component .about-photo {
   width: 100%;
-  max-width: 240px;
-  height: 300px;
+  max-width: 200px;
+  height: 200px;
   object-fit: cover;
   display: block;
 }
@@ -42,7 +42,7 @@
 /* About layout: photo on left, content on right */
 .about-component .about-content {
   display: grid;
-  grid-template-columns: 240px minmax(0, 650px);
+  grid-template-columns: 200px minmax(0, 650px);
   gap: 6vw;
   align-items: start;
 }
