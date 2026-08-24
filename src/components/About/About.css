@@ -2,34 +2,61 @@
 
 .about-component .about-content {
   display: grid;
-  grid-template-columns: 220px minmax(0, 650px);
+
+  /* Photo = approximately 1/4
+     Content = approximately 3/4 */
+  grid-template-columns: 25% minmax(0, 1fr);
+
   gap: 6vw;
   align-items: start;
 }
 
-/* Professional photo */
+/* =========================
+   LEFT PHOTO
+   ========================= */
+
 .about-component .about-photo-wrap {
+  width: 100%;
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
 }
 
 .about-component .about-photo {
-  width: 220px;
-  height: 270px;
+  width: 100%;
+  max-width: 220px;
+  height: 275px;
   object-fit: cover;
   display: block;
 }
 
-/* Main text */
+/* =========================
+   RIGHT CONTENT
+   ========================= */
+
 .about-component .ct-about-copy {
   max-width: 650px;
+
+  /* Keeps the content visually centered
+     within the right side */
+  margin: 0 auto;
 }
+
+/* WHO I AM */
+
+.about-component .ct-about-copy h2 {
+  text-align: center;
+  margin-top: 0;
+}
+
+/* Subtitle */
 
 .about-component .ct-about-copy h3 {
   margin: 26px 0 18px;
   font-size: 14px;
 }
+
+/* Paragraphs */
 
 .about-component .ct-about-copy > p {
   margin: 0;
@@ -46,16 +73,20 @@
   color: var(--ink);
 }
 
-/* Statistics */
+/* =========================
+   STATISTICS
+   ========================= */
+
 .about-component .ct-stats {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 0;
+
   margin-top: 28px;
 }
 
 .about-component .ct-stats article {
   padding: 13px 18px 13px 0;
+
   border-top: 1px solid var(--border);
 }
 
@@ -70,26 +101,39 @@
 
 .about-component .ct-stats strong {
   display: block;
+
   color: var(--sienna);
+
   font-family: "Libre Baskerville", Georgia, serif;
+
   font-size: 28px;
   font-weight: 400;
 }
 
 .about-component .ct-stats span {
   color: #6b6d67;
+
   font-size: 9px;
   font-weight: 800;
+
   letter-spacing: 0.08em;
 }
 
-/* Quote */
+/* =========================
+   QUOTE
+   ========================= */
+
 .about-component .ct-about-copy blockquote {
   margin: 28px 0 0;
+
   padding: 0 0 0 17px;
+
   border-left: 2px solid var(--sienna);
+
   color: #545650;
+
   font-family: "Libre Baskerville", Georgia, serif;
+
   font-size: 14px;
   font-style: italic;
   line-height: 1.7;
@@ -97,53 +141,70 @@
 
 .about-component .ct-about-copy cite {
   display: block;
+
   margin-top: 6px;
+
   color: #7b7d76;
+
   font-family: "Manrope", Arial, sans-serif;
+
   font-size: 10px;
   font-style: normal;
 }
 
-/* Tablet */
+/* =========================
+   TABLET
+   ========================= */
+
 @media (max-width: 850px) {
+
   .about-component .about-content {
-    grid-template-columns: 190px minmax(0, 1fr);
+    grid-template-columns: 25% minmax(0, 1fr);
     gap: 5vw;
   }
 
   .about-component .about-photo {
-    width: 190px;
-    height: 245px;
+    max-width: 180px;
+    height: 240px;
   }
+
 }
 
-/* Mobile */
+/* =========================
+   MOBILE
+   ========================= */
+
 @media (max-width: 640px) {
+
   .about-component .about-content {
     grid-template-columns: 1fr;
     gap: 28px;
   }
 
   .about-component .about-photo-wrap {
-    justify-content: flex-start;
+    justify-content: center;
   }
 
   .about-component .about-photo {
-    width: 170px;
-    height: 220px;
+    width: 180px;
+    height: 225px;
+  }
+
+  .about-component .ct-about-copy {
+    max-width: 100%;
+  }
+
+  .about-component .ct-about-copy h2 {
+    text-align: center;
   }
 
   .about-component .ct-stats {
     grid-template-columns: 1fr;
-    gap: 0;
-  }
-
-  .about-component .ct-stats article {
-    padding: 13px 0;
   }
 
   .about-component .ct-stats article + article {
     padding-left: 0;
     border-left: none;
   }
-}
+
+  }
