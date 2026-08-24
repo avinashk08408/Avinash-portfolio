@@ -25,3 +25,27 @@
 - [x] Write readable existing rules into the matching component CSS files.
 - [x] Verify the approved design and production build remain unchanged.
 - [ ] Save and synchronize the component CSS update.
+
+## Branch white-page repair
+
+- [ ] Identify the user-edited branch and the file causing the white page.
+- [ ] Correct the branch-specific rendering or build error.
+- [ ] Verify the branch build and rendered page.
+
+## Main-branch white-page repair
+
+- [ ] Inspect the live deployment and the current main-branch error.
+- [ ] Correct the rendering failure without changing the approved design.
+- [ ] Verify the repaired GitHub Pages deployment.
+
+## Conflicting Pages publisher repair
+
+- [ ] Confirm the automatic branch-root Pages publisher that overrides the Vite artifact.
+- [ ] Disable or bypass that publisher while retaining the workflow deployment.
+- [ ] Verify the live site serves built Vite assets instead of `/src/main.jsx`.
+
+## Stale deployment refresh
+
+- [x] Confirm GitHub Pages is retaining the stale raw-source deployment for the current commit.
+- [ ] Create a non-visual commit that preserves the portfolio and produces a new deployment version.
+- [ ] Verify GitHub Pages serves bundled Vite assets from the new deployment.
