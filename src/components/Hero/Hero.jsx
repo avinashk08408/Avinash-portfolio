@@ -8,7 +8,7 @@ export default function Hero() {
         <p className="qs-kicker">HELLO, I’M</p>
 
         <h1>
-          Avinash <span>K.</span>
+          Avinash <span>K</span>
         </h1>
 
         <p className="ct-role">CYBER SECURITY STUDENT</p>
