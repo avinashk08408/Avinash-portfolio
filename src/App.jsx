@@ -1,6 +1,4 @@
 /** Quiet Scholar component composition entry. */
-import ErrorBoundary from "./components/ErrorBoundary";
-import { ThemeProvider } from "./contexts/ThemeContext";
 import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/Hero/Hero";
 import About from "./components/About/About";
@@ -14,6 +12,5 @@ import Contact from "./components/Contact/Contact";
 import Footer from "./components/Footer/Footer";
 
 export default function App() {
-  return <ErrorBoundary><ThemeProvider defaultTheme="light"><div className="quiet-scholar content-edition"><Navbar /><main><Hero /><About /><Stack /><Projects /><Journey /><Certifications /><Resume /><Activity /><Contact /></main><Footer /></div></ThemeProvider></ErrorBoundary>;
+  return <div className="quiet-scholar content-edition"><Navbar /><main><Hero /><About /><Stack /><Projects /><Journey /><Certifications /><Resume /><Activity /><Contact /></main><Footer /></div>;
 }
-

@@ -5,8 +5,9 @@
 - [x] Simplify App.jsx to compose the extracted components and retain global index.css tokens.
 - [x] Rename the GitHub Pages workflow to `deploy.yml`, validate the build, and push the organized project.
 
-## Theme restoration
+## Architecture-only correction
 
-- [x] Restore the approved Quiet Scholar visual treatment from the pre-change checkpoint.
-- [x] Verify the restored design at desktop and mobile widths.
-- [ ] Save and synchronize the corrected deployment.
+- [x] Use the approved Quiet Scholar design as the visual source of truth.
+- [x] Organize that unchanged design into the requested component folders and JSX files.
+- [x] Verify desktop and mobile views remain visually unchanged after organization.
+- [ ] Save and synchronize the architecture-only correction.
