@@ -16,7 +16,7 @@ export default function About() {
 
       <div className="ct-content about-content">
         <div className="ct-about-copy">
-          <h2>Who I am.</h2>
+          <h2>Who I am</h2>
 
           <h3>Cyber Security Student & Web Developer</h3>
 
