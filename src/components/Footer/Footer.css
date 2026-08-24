@@ -1,1 +1,90 @@
-/* Footer uses the shared Quiet Scholar document footer rules. */
+/* Footer: approved Quiet Scholar document footer. */
+
+.footer-component.ct-footer {
+  display: grid;
+  grid-template-columns: 1fr auto 24px;
+  gap: 24px;
+  align-items: center;
+  padding: 27px 5vw;
+  border-top: 1px solid var(--border);
+  color: #676963;
+}
+
+.footer-component strong {
+  display: block;
+  font-family: "Libre Baskerville", Georgia, serif;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.footer-component span {
+  display: block;
+  margin-top: 5px;
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.footer-component nav {
+  display: flex;
+  gap: 15px;
+}
+
+.footer-component nav a,
+.footer-component > a {
+  font-size: 9px;
+  font-weight: 800;
+}
+
+.footer-component > a {
+  display: grid;
+  width: 24px;
+  height: 24px;
+  place-items: center;
+  border: 1px solid var(--border);
+}
+
+.footer-component > p {
+  grid-column: 1 / -1;
+  margin: 0;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+@media (max-width: 850px) {
+  .footer-component.ct-footer {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .footer-component nav {
+    order: 3;
+  }
+
+  .footer-component > a {
+    position: absolute;
+    right: 5vw;
+  }
+
+  .footer-component > p {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .footer-component.ct-footer {
+    padding: 23px 5vw;
+  }
+
+  .footer-component nav {
+    flex-wrap: wrap;
+    gap: 11px;
+  }
+
+  .footer-component > a {
+    right: 5vw;
+  }
+}

@@ -1,1 +1,37 @@
-/* Navbar uses the shared Quiet Scholar navigation rules from content-edition.css. */
+/* Navbar: approved Quiet Scholar letterhead navigation. */
+
+.navbar-component .qs-brand {
+  gap: 9px;
+  font-family: "Libre Baskerville", Georgia, serif;
+  font-size: 9px;
+  font-weight: 400;
+  letter-spacing: 0.045em;
+}
+
+.navbar-component .qs-brand i {
+  color: var(--sienna);
+  font-style: normal;
+}
+
+.navbar-component .qs-seal {
+  display: grid;
+  width: 26px;
+  height: 26px;
+  place-items: center;
+  border: 1px solid var(--sienna);
+  border-radius: 50%;
+  color: var(--sienna);
+  font-family: "Libre Baskerville", Georgia, serif;
+  font-size: 8px;
+  letter-spacing: -0.08em;
+}
+
+.navbar-component .qs-nav-links {
+  gap: 21px;
+}
+
+@media (max-width: 640px) {
+  .navbar-component .qs-nav-links {
+    display: none;
+  }
+}

@@ -1,4 +1,41 @@
-.activity-component .activity-links { display:grid; grid-template-columns:1fr 1fr; gap:1px; margin-top:32px; background:var(--border); }
-.activity-component .activity-links a { display:grid; grid-template-columns:18px 1fr 15px; gap:12px; align-items:center; min-height:72px; padding:16px; background:var(--paper); color:var(--ink); }
-.activity-component .activity-links b,.activity-component .activity-links small { display:block; }.activity-component .activity-links b { font-size:11px; }.activity-component .activity-links small { margin-top:4px; color:#6b6d67; font-size:9px; }
-@media (max-width:640px) { .activity-component .activity-links { grid-template-columns:1fr; } }
+/* Activity: approved Quiet Scholar public profile links. */
+
+.activity-component .activity-links {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  margin-top: 32px;
+  background: var(--border);
+}
+
+.activity-component .activity-links a {
+  display: grid;
+  grid-template-columns: 18px 1fr 15px;
+  gap: 12px;
+  align-items: center;
+  min-height: 72px;
+  padding: 16px;
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.activity-component .activity-links b,
+.activity-component .activity-links small {
+  display: block;
+}
+
+.activity-component .activity-links b {
+  font-size: 11px;
+}
+
+.activity-component .activity-links small {
+  margin-top: 4px;
+  color: #6b6d67;
+  font-size: 9px;
+}
+
+@media (max-width: 640px) {
+  .activity-component .activity-links {
+    grid-template-columns: 1fr;
+  }
+}

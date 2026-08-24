@@ -1,1 +1,53 @@
-/* Journey uses the shared Quiet Scholar record list. */
+/* Journey: approved Quiet Scholar academic record list. */
+
+.journey-component .ct-records {
+  margin-top: 35px;
+  border-top: 1px solid var(--ink);
+}
+
+.journey-component .ct-records article {
+  display: grid;
+  grid-template-columns: 40px 1fr auto;
+  gap: 17px;
+  align-items: center;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.journey-component .ct-records article > span {
+  color: var(--sienna);
+  font-size: 9px;
+  font-weight: 800;
+}
+
+.journey-component .ct-records h3 {
+  margin: 0 0 5px;
+  font-family: "Libre Baskerville", Georgia, serif;
+  font-size: 17px;
+  font-weight: 400;
+}
+
+.journey-component .ct-records p {
+  margin: 0;
+  color: #62645e;
+  font-size: 11px;
+}
+
+.journey-component .ct-records b {
+  color: #8d5a44;
+  font-size: 9px;
+  font-weight: 800;
+  text-align: right;
+}
+
+@media (max-width: 640px) {
+  .journey-component .ct-records article {
+    grid-template-columns: 30px 1fr;
+    gap: 11px;
+  }
+
+  .journey-component .ct-records b {
+    grid-column: 2;
+    text-align: left;
+  }
+}

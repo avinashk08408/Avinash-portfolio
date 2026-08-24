@@ -1,1 +1,82 @@
-/* Project cards share the Quiet Scholar portfolio grid styling. */
+/* Projects: approved Quiet Scholar portfolio grid. */
+
+.projects-component .ct-project-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  margin-top: 37px;
+  background: var(--border);
+}
+
+.projects-component .ct-project-grid article {
+  position: relative;
+  min-height: 212px;
+  padding: 22px;
+  background: var(--paper);
+}
+
+.projects-component .ct-project-index {
+  margin-bottom: 22px;
+  color: var(--sienna);
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.projects-component .ct-project-grid h3 {
+  margin: 0 0 10px;
+  font-family: "Libre Baskerville", Georgia, serif;
+  font-size: 19px;
+  font-weight: 400;
+}
+
+.projects-component .ct-project-grid p {
+  max-width: 330px;
+  margin: 0;
+  color: #5a5c56;
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.projects-component .ct-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 15px;
+}
+
+.projects-component .ct-tags span {
+  color: #8d5a44;
+  font-size: 9px;
+  font-weight: 800;
+}
+
+.projects-component .ct-tags span:not(:last-child)::after {
+  padding-left: 6px;
+  content: "/";
+}
+
+.projects-component .ct-project-links {
+  display: flex;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.projects-component .ct-project-links a,
+.projects-component .ct-project-links span {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #4e504b;
+  font-size: 9px;
+  font-weight: 800;
+}
+
+.projects-component .ct-project-links a {
+  color: var(--sienna);
+}
+
+@media (max-width: 640px) {
+  .projects-component .ct-project-grid {
+    grid-template-columns: 1fr;
+  }
+}

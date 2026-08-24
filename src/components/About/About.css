@@ -1,1 +1,88 @@
-/* About section uses the shared document rhythm in content-edition.css. */
+/* About: approved Quiet Scholar biography and statistics. */
+
+.about-component .ct-about-copy {
+  max-width: 650px;
+}
+
+.about-component .ct-about-copy h3 {
+  margin: 26px 0 18px;
+  font-size: 14px;
+}
+
+.about-component .ct-about-copy > p {
+  margin: 0;
+  color: #555752;
+  font-size: 13px;
+  line-height: 1.82;
+}
+
+.about-component .ct-about-copy > p + p {
+  margin-top: 13px;
+}
+
+.about-component .ct-about-copy strong {
+  color: var(--ink);
+}
+
+.about-component .ct-about-copy blockquote {
+  margin: 28px 0 0;
+  padding: 0 0 0 17px;
+  border-left: 2px solid var(--sienna);
+  color: #545650;
+  font-family: "Libre Baskerville", Georgia, serif;
+  font-size: 14px;
+  font-style: italic;
+  line-height: 1.7;
+}
+
+.about-component .ct-about-copy cite {
+  display: block;
+  margin-top: 6px;
+  color: #7b7d76;
+  font-family: "Manrope", Arial, sans-serif;
+  font-size: 10px;
+  font-style: normal;
+}
+
+.about-component .about-content {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 150px;
+  gap: 6vw;
+  align-items: end;
+}
+
+.about-component .ct-stats {
+  display: grid;
+  gap: 12px;
+}
+
+.about-component .ct-stats article {
+  padding: 13px 0;
+  border-top: 1px solid var(--border);
+}
+
+.about-component .ct-stats article:last-child {
+  border-bottom: 1px solid var(--border);
+}
+
+.about-component .ct-stats strong {
+  display: block;
+  color: var(--sienna);
+  font-family: "Libre Baskerville", Georgia, serif;
+  font-size: 28px;
+  font-weight: 400;
+}
+
+.about-component .ct-stats span {
+  color: #6b6d67;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+@media (max-width: 640px) {
+  .about-component .about-content {
+    grid-template-columns: 1fr;
+    gap: 31px;
+  }
+}

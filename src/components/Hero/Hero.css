@@ -1,1 +1,106 @@
-/* Hero presentation is shared through Quiet Scholar global tokens. */
+/* Hero: approved Quiet Scholar introduction and profile card. */
+
+.hero-component.ct-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(270px, 0.52fr);
+  align-items: center;
+  gap: 9vw;
+  min-height: 575px;
+  padding: 94px 3vw 83px;
+  border-bottom: 1px solid var(--border);
+}
+
+.hero-component h1 {
+  margin: 0;
+  font-family: "Libre Baskerville", Georgia, serif;
+  font-size: clamp(46px, 5.6vw, 73px);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: -0.06em;
+}
+
+.hero-component h1 span {
+  color: var(--sienna);
+}
+
+.hero-component .ct-role {
+  margin: 14px 0 0;
+  color: var(--sienna);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+}
+
+.hero-component .ct-lead {
+  max-width: 520px;
+  margin: 24px 0 0;
+  color: #535550;
+  font-size: 14px;
+  line-height: 1.78;
+}
+
+.hero-component .ct-hero-profile {
+  display: grid;
+  grid-template-columns: 74px 1fr;
+  gap: 19px;
+  align-items: center;
+  padding: 22px 0;
+  border-top: 2px solid var(--ink);
+  border-bottom: 1px solid var(--border);
+}
+
+.hero-component .ct-initials {
+  display: grid;
+  width: 74px;
+  height: 74px;
+  place-items: center;
+  border: 1px solid var(--sienna);
+  border-radius: 50%;
+  color: var(--sienna);
+  font-family: "Libre Baskerville", Georgia, serif;
+  font-size: 21px;
+}
+
+.hero-component .ct-hero-profile p {
+  margin: 0 0 10px;
+  color: #777974;
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.hero-component .ct-hero-profile h2 {
+  margin: 0 0 10px;
+  font-family: "Libre Baskerville", Georgia, serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.38;
+}
+
+.hero-component .ct-hero-profile div > span {
+  color: #8d5a44;
+  font-size: 9px;
+  font-weight: 800;
+}
+
+@media (max-width: 850px) {
+  .hero-component.ct-hero {
+    grid-template-columns: 1fr;
+    gap: 43px;
+  }
+
+  .hero-component .ct-hero-profile {
+    max-width: 460px;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-component.ct-hero {
+    min-height: 0;
+    padding: 70px 0;
+  }
+
+  .hero-component h1 {
+    font-size: clamp(42px, 13vw, 61px);
+  }
+}

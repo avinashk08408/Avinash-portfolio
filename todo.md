@@ -18,3 +18,10 @@
 - [x] Reformat the editable portfolio components without changing their output.
 - [x] Build and visually verify the formatting-only update.
 - [ ] Save and synchronize the readable-code update.
+
+## Editable component CSS
+
+- [x] Map existing Quiet Scholar rules from shared stylesheets to each section CSS file.
+- [x] Write readable existing rules into the matching component CSS files.
+- [x] Verify the approved design and production build remain unchanged.
+- [ ] Save and synchronize the component CSS update.

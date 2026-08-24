@@ -1,1 +1,55 @@
-/* Stack layout is shared with the Quiet Scholar capabilities grid. */
+/* Stack: approved Quiet Scholar capabilities grid. */
+
+.stack-component .ct-capabilities {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  margin-top: 37px;
+  background: var(--border);
+}
+
+.stack-component .ct-capabilities article {
+  display: grid;
+  grid-template-columns: 30px 1fr;
+  gap: 12px;
+  min-height: 142px;
+  padding: 20px;
+  background: var(--paper);
+}
+
+.stack-component .ct-capabilities article > span {
+  color: var(--sienna);
+  font-size: 9px;
+  font-weight: 800;
+}
+
+.stack-component .ct-capabilities h3 {
+  grid-column: 2;
+  margin: 0;
+  font-family: "Libre Baskerville", Georgia, serif;
+  font-size: 17px;
+  font-weight: 400;
+}
+
+.stack-component .ct-capabilities ul {
+  grid-column: 2;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.stack-component .ct-capabilities li {
+  padding: 5px 7px;
+  border: 1px solid var(--border);
+  color: #5f615b;
+  font-size: 9px;
+}
+
+@media (max-width: 640px) {
+  .stack-component .ct-capabilities {
+    grid-template-columns: 1fr;
+  }
+}
