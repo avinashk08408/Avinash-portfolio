@@ -1,5 +1,12 @@
+/* Quiet Scholar: certification records read like a calm academic ledger—Ivory Paper, Ink, and Sienna emphasis. */
 import "./Certifications.css";
 
+const certifications = [
+  ["01", "Cybersecurity Foundations", "Foundational study in security principles, threats, and defensive practice.", "Learning record"],
+  ["02", "Web Security Practice", "Hands-on exploration of secure authentication, common vulnerabilities, and safer web development.", "Practice record"],
+  ["03", "Continuous Learning", "Currently expanding practical knowledge through projects, labs, and focused technical study.", "Ongoing"],
+];
+
 export default function Certifications() {
-  return <section id="certifications" className="ct-section qs-shell certifications-component"><p className="ct-label"><span>05</span>CERTIFICATIONS</p><div className="ct-content"><div className="ct-heading-row"><div><h2>Learning record.</h2><p>Certificates and completed learning milestones are maintained here.</p></div><span>CERTIFICATE ARCHIVE</span></div><div className="ct-certificate-note"><span>IN PROGRESS</span><div><h3>Cybersecurity learning archive</h3><p>Certificate scans can be added to <code>public/assets/certificates</code> when available.</p></div></div></div></section>;
+  return <section id="certification" className="qs-section qs-shell certifications-component"><div className="qs-section-intro"><span>06</span><p>CREDENTIALS</p></div><div className="qs-section-body"><h2>Learning with intent.</h2><div className="qs-supporting-copy"><p>Every credential is part of a larger practice: understanding systems deeply, documenting the work, and applying security thinking to real interfaces.</p></div><div>{certifications.map(([number, title, description, status]) => <article className="qs-cert-row" key={title}><span>{number}</span><div><h3>{title}</h3><p>{description}</p></div><em>{status}</em></article>)}</div></div></section>;
 }
