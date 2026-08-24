@@ -1,6 +1,6 @@
-# Completion checklist
+# Component Architecture Refactor
 
-- [ ] Verify the root-level React/JSX architecture and production build state.
-- [ ] Check the completed portfolio at desktop and mobile sizes.
-- [ ] Save a checkpoint that synchronizes the architecture with GitHub Pages deployment.
-- [ ] Report the final project status and live URL.
+- [x] Map the existing portfolio blocks to Navbar, Hero, About, Stack, Projects, Journey, Certifications, Resume, Activity, Contact, and Footer components.
+- [x] Create the requested component folders with JSX and scoped CSS files.
+- [x] Simplify App.jsx to compose the extracted components and retain global index.css tokens.
+- [x] Rename the GitHub Pages workflow to `deploy.yml`, validate the build, and push the organized project.
