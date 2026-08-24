@@ -16,17 +16,18 @@ export default function About() {
 
       <div className="ct-content about-content">
 
-        {/* Photo - left side */}
+        {/* LEFT: PHOTO */}
         <div className="about-photo-wrap">
           <img
-            className="about-photo"
             src="/sample2.github.io/assets/about-photo.jpg"
             alt="Avinash K"
+            className="about-photo"
           />
         </div>
 
-        {/* About content */}
+        {/* RIGHT: ABOUT CONTENT */}
         <div className="ct-about-copy">
+
           <h2>Who I am</h2>
 
           <h3>Cyber Security Student & Web Developer</h3>
@@ -34,22 +35,22 @@ export default function About() {
           <p>
             I’m <strong>Avinash</strong>, a Cyber Security student and web
             developer passionate about crafting{" "}
-            <strong>modern digital experiences</strong>
-            {" "}and exploring the security behind them. I enjoy transforming
-            ideas into intuitive, purposeful web applications while continuously
-            deepening my understanding of cybersecurity, networking, and
-            application security.
+            <strong>modern digital experiences</strong> and exploring the
+            security behind them. I enjoy transforming ideas into intuitive,
+            purposeful web applications while continuously deepening my
+            understanding of cybersecurity, networking, and application
+            security.
           </p>
 
           <p>
             I’m driven by curiosity and a hands-on mindset — building,
             experimenting, and refining with every project. For me, technology
             isn’t just about writing code; it’s about understanding systems,
-            solving meaningful problems, and creating solutions that are both
-            <strong> functional and secure.</strong>
+            solving meaningful problems, and creating solutions that are both{" "}
+            <strong>functional and secure.</strong>
           </p>
 
-          {/* Statistics moved between paragraphs and quote */}
+          {/* STATISTICS */}
           <div className="ct-stats">
             {statistics.map(([value, label]) => (
               <article key={label}>
@@ -59,12 +60,13 @@ export default function About() {
             ))}
           </div>
 
+          {/* QUOTE */}
           <blockquote>
             “The best way out is always through.”
             <cite>— Robert Frost</cite>
           </blockquote>
-        </div>
 
+        </div>
       </div>
     </section>
   );
