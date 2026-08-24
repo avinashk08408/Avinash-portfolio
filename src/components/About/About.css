@@ -24,8 +24,8 @@
 
 .about-component .about-photo {
   width: 100%;
-  max-width: 220px;
-  height: 275px;
+  max-width: 150px;
+  height: 175px;
   object-fit: cover;
   display: block;
 }
