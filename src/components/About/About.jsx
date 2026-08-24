@@ -15,6 +15,17 @@ export default function About() {
       </p>
 
       <div className="ct-content about-content">
+
+        {/* Photo - left side */}
+        <div className="about-photo-wrap">
+          <img
+            className="about-photo"
+            src="/sample2.github.io/assets/about-photo.jpg"
+            alt="Avinash K"
+          />
+        </div>
+
+        {/* About content */}
         <div className="ct-about-copy">
           <h2>Who I am</h2>
 
@@ -22,7 +33,8 @@ export default function About() {
 
           <p>
             I’m <strong>Avinash</strong>, a Cyber Security student and web
-            developer passionate about crafting <strong>modern digital experiences</strong>
+            developer passionate about crafting{" "}
+            <strong>modern digital experiences</strong>
             {" "}and exploring the security behind them. I enjoy transforming
             ideas into intuitive, purposeful web applications while continuously
             deepening my understanding of cybersecurity, networking, and
@@ -34,8 +46,18 @@ export default function About() {
             experimenting, and refining with every project. For me, technology
             isn’t just about writing code; it’s about understanding systems,
             solving meaningful problems, and creating solutions that are both
-            {" "}<strong>functional and secure.</strong>
+            <strong> functional and secure.</strong>
           </p>
+
+          {/* Statistics moved between paragraphs and quote */}
+          <div className="ct-stats">
+            {statistics.map(([value, label]) => (
+              <article key={label}>
+                <strong>{value}</strong>
+                <span>{label}</span>
+              </article>
+            ))}
+          </div>
 
           <blockquote>
             “The best way out is always through.”
@@ -43,14 +65,6 @@ export default function About() {
           </blockquote>
         </div>
 
-        <div className="ct-stats">
-          {statistics.map(([value, label]) => (
-            <article key={label}>
-              <strong>{value}</strong>
-              <span>{label}</span>
-            </article>
-          ))}
-        </div>
       </div>
     </section>
   );
