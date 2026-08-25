@@ -10,21 +10,22 @@ export default function About() {
   return (
     <section id="about" className="ct-section qs-shell about-component">
 
+      {/* SECTION LABEL */}
       <p className="ct-label">
         <span>01</span>
         PROFILE
       </p>
 
-      {/* Centered About heading */}
+      {/* CENTERED TITLE */}
       <div className="about-heading">
         <h2>Who I am</h2>
         <h3>Cyber Security Student & Web Developer</h3>
       </div>
 
-      {/* Photo + content */}
-      <div className="about-content">
+      {/* PHOTO + CONTENT */}
+      <div className="about-main">
 
-        {/* Photo */}
+        {/* PHOTO */}
         <div className="about-photo-wrap">
           <img
             src="/sample2.github.io/assets/profile.png"
@@ -33,7 +34,7 @@ export default function About() {
           />
         </div>
 
-        {/* Text + stats + quote */}
+        {/* CONTENT */}
         <div className="ct-about-copy">
 
           <p>
@@ -54,7 +55,7 @@ export default function About() {
             <strong>functional and secure.</strong>
           </p>
 
-          {/* Statistics now belong to the content */}
+          {/* HORIZONTAL STATISTICS */}
           <div className="ct-stats">
             {statistics.map(([value, label]) => (
               <article key={label}>
@@ -64,6 +65,7 @@ export default function About() {
             ))}
           </div>
 
+          {/* QUOTE */}
           <blockquote>
             “The best way out is always through.”
             <cite>— Robert Frost</cite>
@@ -71,6 +73,7 @@ export default function About() {
 
         </div>
       </div>
+
     </section>
   );
 }
