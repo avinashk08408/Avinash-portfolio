@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import "./Projects.css";
 
 const projects = [
@@ -44,81 +45,116 @@ const projects = [
 ];
 
 export default function Projects() {
+  const projectRailRef = useRef(null);
+
+  function scrollProjects(direction) {
+    const rail = projectRailRef.current;
+
+    if (!rail) {
+      return;
+    }
+
+    rail.scrollBy({
+      left: direction * rail.clientWidth * 0.82,
+      behavior: "smooth",
+    });
+  }
+
   return (
     <section
       id="projects"
-      className="ct-section qs-shell projects-component"
+      className="qs-shell projects-carousel-section"
     >
-      <p className="ct-label">
-        <span>03</span>
-        PORTFOLIO
-      </p>
+      <div className="projects-carousel-header">
+        <div>
+          <p className="ct-label">
+            <span>03</span>
+            PORTFOLIO
+          </p>
 
-      <div className="ct-content">
-        <div className="ct-heading-row">
           <h2>Featured projects.</h2>
 
-          <p>
+          <p className="projects-carousel-intro">
             Security-focused builds, web experiments, and continuous learning.
           </p>
         </div>
 
-        <div className="project-card-grid">
-          {projects.map((project) => (
-            <article
-              key={project.number}
-              className="project-card"
-            >
-              <div className="project-image-wrap">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                />
+        <div className="projects-carousel-controls">
+          <button
+            type="button"
+            onClick={() => scrollProjects(-1)}
+            aria-label="Show previous projects"
+          >
+            ←
+          </button>
 
-                <span className="project-number">
-                  {project.number}
-                </span>
+          <button
+            type="button"
+            onClick={() => scrollProjects(1)}
+            aria-label="Show next projects"
+          >
+            →
+          </button>
+        </div>
+      </div>
+
+      <div
+        ref={projectRailRef}
+        className="projects-scroll-rail"
+        aria-label="Featured projects"
+      >
+        {projects.map((project) => (
+          <article
+            key={project.number}
+            className="projects-scroll-card"
+          >
+            <div className="projects-card-image">
+              <img
+                src={project.image}
+                alt={project.title}
+              />
+
+              <span>{project.number}</span>
+            </div>
+
+            <div className="projects-card-copy">
+              <h3>{project.title}</h3>
+
+              <p>{project.description}</p>
+
+              <div className="projects-card-tags">
+                {project.stack.map((item) => (
+                  <span key={item}>{item}</span>
+                ))}
               </div>
 
-              <div className="project-card-content">
-                <h3>{project.title}</h3>
+              <div className="projects-card-links">
+                <a
+                  href={project.githubUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  GitHub ↗
+                </a>
 
-                <p>{project.description}</p>
-
-                <div className="project-tags">
-                  {project.stack.map((item) => (
-                    <span key={item}>{item}</span>
-                  ))}
-                </div>
-
-                <div className="project-links">
+                {project.liveUrl && (
                   <a
-                    href={project.githubUrl}
+                    href={project.liveUrl}
                     target="_blank"
                     rel="noreferrer"
                   >
-                    GitHub ↗
+                    Live Demo ↗
                   </a>
-
-                  {project.liveUrl && (
-                    <a
-                      href={project.liveUrl}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      Live Demo ↗
-                    </a>
-                  )}
-                </div>
+                )}
               </div>
-            </article>
-          ))}
-        </div>
-
-        <p className="projects-note">
-          More security experiments and open-source work in progress.
-        </p>
+            </div>
+          </article>
+        ))}
       </div>
+
+      <p className="projects-carousel-note">
+        Swipe through the archive or use the arrow buttons to explore more work.
+      </p>
     </section>
   );
 }
