@@ -181,14 +181,11 @@
     margin-left: 0;
   }
 }
-/* Move only the Projects description one tab left. */
+/* Keep the Projects description in one line on desktop. */
 
-.projects-carousel-intro {
-  transform: translateX(-50px);
-}
-
-@media (max-width: 640px) {
+@media (min-width: 641px) {
   .projects-carousel-intro {
-    transform: translateX(0);
+    max-width: none;
+    white-space: nowrap;
   }
 }
