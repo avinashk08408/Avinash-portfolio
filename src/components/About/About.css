@@ -1,5 +1,6 @@
-/* FINAL ABOUT ALIGNMENT FIX
-   This selector is stronger than the global .ct-section grid rule. */
+/* =========================================
+   ABOUT SECTION
+   ========================================= */
 
 .ct-section.about-component {
   display: block;
@@ -8,7 +9,11 @@
   padding: 115px 0;
 }
 
-/* “Who I am.” now uses the full page width and is truly centred. */
+
+/* =========================================
+   CENTERED HEADING
+   ========================================= */
+
 .ct-section.about-component .about-heading {
   width: 100%;
   margin: 0 0 62px;
@@ -19,18 +24,29 @@
   justify-content: center;
 }
 
-/*
-  Photo begins from the same left visual column as “Avinash K.”
-  Content begins closer to the centre, not on the far right.
-*/
+
+/* =========================================
+   PHOTO + CONTENT
+   ========================================= */
+
 .ct-section.about-component .about-layout {
   width: 100%;
+
   display: grid;
+
   grid-template-columns: 220px minmax(0, 480px);
+
   justify-content: start;
+
   column-gap: 55px;
+
   align-items: center;
 }
+
+
+/* =========================================
+   PHOTO
+   ========================================= */
 
 .ct-section.about-component .about-photo-column {
   justify-content: flex-start;
@@ -40,23 +56,142 @@
   width: 170px;
 }
 
+
+/* =========================================
+   CONTENT
+   ========================================= */
+
 .ct-section.about-component .ct-about-copy {
   max-width: 480px;
+
   justify-self: start;
 }
 
+
+/* =========================================
+   QUOTE
+   ========================================= */
+
+.ct-section.about-component .ct-about-copy blockquote {
+  margin-bottom: 0;
+}
+
+
+/* =========================================
+   STATISTICS
+   4+ | 1+ | 15+
+   ========================================= */
+
+.ct-section.about-component .ct-stats {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 0;
+
+  width: 100%;
+
+  margin-top: 30px;
+}
+
+
+/* Each statistic stays in series */
+
+.ct-section.about-component .ct-stats article {
+  min-width: 0;
+
+  padding: 14px 16px;
+
+  border-top: 1px solid var(--border);
+
+  border-bottom: 1px solid var(--border);
+
+  border-left: 1px solid var(--border);
+}
+
+
+/* Remove final unwanted extra border */
+
+.ct-section.about-component .ct-stats article:last-child {
+  border-right: 1px solid var(--border);
+}
+
+
+/* Number */
+
+.ct-section.about-component .ct-stats strong {
+  display: block;
+
+  color: var(--sienna);
+
+  font-family: "Libre Baskerville", Georgia, serif;
+
+  font-size: 27px;
+
+  font-weight: 400;
+
+  line-height: 1;
+}
+
+
+/* Label */
+
+.ct-section.about-component .ct-stats span {
+  display: block;
+
+  margin-top: 9px;
+
+  color: #6b6d67;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.08em;
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
 @media (max-width: 700px) {
+
   .ct-section.about-component {
     display: block;
+
     padding: 82px 0;
   }
 
   .ct-section.about-component .about-layout {
     grid-template-columns: 1fr;
+
     row-gap: 34px;
   }
 
   .ct-section.about-component .about-photo-column {
     justify-content: center;
+  }
+
+  .ct-section.about-component .ct-about-copy {
+    max-width: 100%;
+  }
+
+  .ct-section.about-component .ct-stats {
+    grid-template-columns: repeat(3, 1fr);
+
+    margin-top: 30px;
+  }
+
+  .ct-section.about-component .ct-stats article {
+    padding: 13px 8px;
+  }
+
+  .ct-section.about-component .ct-stats strong {
+    font-size: 23px;
+  }
+
+  .ct-section.about-component .ct-stats span {
+    font-size: 8px;
   }
 }
