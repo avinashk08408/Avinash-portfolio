@@ -10,23 +10,22 @@ export default function About() {
   return (
     <section id="about" className="ct-section qs-shell about-component">
 
-      {/* SECTION LABEL */}
-      <p className="ct-label about-label">
+      <p className="ct-label">
         <span>01</span>
         PROFILE
       </p>
 
-      {/* CENTERED TITLE */}
-      <div className="about-title">
+      {/* Centered About heading */}
+      <div className="about-heading">
         <h2>Who I am</h2>
         <h3>Cyber Security Student & Web Developer</h3>
       </div>
 
-      {/* ABOUT CONTENT */}
-      <div className="about-body">
+      {/* Photo + content */}
+      <div className="about-content">
 
-        {/* PHOTO */}
-        <div className="about-photo-area">
+        {/* Photo */}
+        <div className="about-photo-wrap">
           <img
             src="/sample2.github.io/assets/profile.png"
             alt="Avinash K"
@@ -34,8 +33,8 @@ export default function About() {
           />
         </div>
 
-        {/* TEXT */}
-        <div className="about-text">
+        {/* Text + stats + quote */}
+        <div className="ct-about-copy">
 
           <p>
             I’m <strong>Avinash</strong>, a Cyber Security student and web
@@ -55,17 +54,16 @@ export default function About() {
             <strong>functional and secure.</strong>
           </p>
 
-          {/* STATS */}
-          <div className="about-stats">
-            {statistics.map(([number, label]) => (
-              <div className="about-stat" key={label}>
-                <strong>{number}</strong>
+          {/* Statistics now belong to the content */}
+          <div className="ct-stats">
+            {statistics.map(([value, label]) => (
+              <article key={label}>
+                <strong>{value}</strong>
                 <span>{label}</span>
-              </div>
+              </article>
             ))}
           </div>
 
-          {/* QUOTE */}
           <blockquote>
             “The best way out is always through.”
             <cite>— Robert Frost</cite>
@@ -73,7 +71,6 @@ export default function About() {
 
         </div>
       </div>
-
     </section>
   );
 }
