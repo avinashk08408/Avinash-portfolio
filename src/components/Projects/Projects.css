@@ -164,3 +164,20 @@
     padding-right: 5vw;
   }
 }
+/* Align the Projects heading with the Engineering Stack heading. */
+
+.projects-carousel-header {
+  margin-left: calc(185px + 10vw);
+}
+
+@media (max-width: 850px) {
+  .projects-carousel-header {
+    margin-left: calc(135px + 7vw);
+  }
+}
+
+@media (max-width: 640px) {
+  .projects-carousel-header {
+    margin-left: 0;
+  }
+}
