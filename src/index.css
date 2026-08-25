@@ -14,3 +14,13 @@
 @media (prefers-reduced-motion:no-preference) { .qs-hero,.qs-section { animation:qs-enter .4s cubic-bezier(.23,1,.32,1) both; } } @keyframes qs-enter { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
 @media (max-width:850px) { .qs-nav-links { gap:15px; }.qs-hero { grid-template-columns:1fr; gap:45px; }.qs-profile-note { max-width:520px; width:100%; }.qs-section { grid-template-columns:135px 1fr; gap:4vw; }.qs-about { grid-template-columns:1fr; gap:36px; }.qs-contact { grid-template-columns:1fr; gap:55px; }.qs-skill-list,.qs-activity-list { gap:13px; }.qs-resume { display:grid; grid-template-columns:1fr; gap:26px; } }
 @media (max-width:640px) { .qs-nav { height:62px; }.qs-nav-links { display:none; }.qs-menu { display:block; }.qs-mobile-nav { top:62px; }.qs-shell { width:90vw; }.qs-hero { min-height:0; padding:70px 0; }.qs-hero h1 { font-size:clamp(54px,18vw,76px); }.qs-lead { font-size:14px; }.qs-section { grid-template-columns:1fr; gap:25px; padding:70px 0; }.qs-section h2 { font-size:clamp(30px,10vw,43px); }.qs-section-intro { padding:0; }.qs-about > div:first-child p { font-size:13px; }.qs-skill-list,.qs-activity-list { grid-template-columns:1fr; gap:22px; }.qs-project { grid-template-columns:30px 1fr; gap:13px; }.qs-project > a { grid-column:2; }.qs-timeline article { grid-template-columns:72px 1fr; gap:13px; }.qs-cert-row { grid-template-columns:1fr; gap:10px; }.qs-cert-row > span { margin-bottom:1px; }.qs-cert-row em { margin-top:4px; }.qs-contact { padding:70px 0; }.qs-footer { display:grid; grid-template-columns:1fr; gap:8px; padding:18px 5vw; } }
+
+/* Global readable content text across the portfolio. */
+.quiet-scholar p,
+.quiet-scholar li,
+.quiet-scholar blockquote,
+.quiet-scholar input,
+.quiet-scholar textarea {
+  font-size: 20px !important;
+  line-height: 1.62 !important;
+}
