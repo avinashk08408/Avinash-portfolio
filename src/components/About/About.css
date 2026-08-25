@@ -1,6 +1,6 @@
 /* =========================================
    ABOUT SECTION
-   Existing Quiet Scholar theme preserved
+   Existing theme preserved
    ========================================= */
 
 .about-component {
@@ -53,16 +53,11 @@
 
 /* =========================================
    MAIN ABOUT AREA
-   Photo + content
    ========================================= */
 
 .about-component .about-main {
   display: grid;
 
-  /*
-   NOT 25/75.
-   The content is centered as one group.
-  */
   grid-template-columns: 240px minmax(0, 590px);
 
   justify-content: center;
@@ -86,7 +81,6 @@
 
   padding-top: 8px;
 }
-
 
 .about-component .about-photo {
   width: 210px;
@@ -119,7 +113,7 @@
 
 
 /* =========================================
-   CONTENT
+   RIGHT CONTENT
    ========================================= */
 
 .about-component .ct-about-copy {
@@ -129,7 +123,7 @@
 }
 
 
-/* Paragraph */
+/* Paragraphs */
 
 .about-component .ct-about-copy > p {
   margin: 0;
@@ -141,11 +135,9 @@
   line-height: 1.82;
 }
 
-
 .about-component .ct-about-copy > p + p {
   margin-top: 15px;
 }
-
 
 .about-component .ct-about-copy strong {
   color: var(--ink);
@@ -166,7 +158,6 @@
   margin-top: 30px;
 }
 
-
 .about-component .ct-stats article {
   min-height: 82px;
 
@@ -183,7 +174,7 @@
 }
 
 
-/* Statistics hover */
+/* Statistics hover effect */
 
 .about-component .ct-stats article:hover {
   transform: translateY(-4px);
@@ -193,7 +184,6 @@
   box-shadow:
     0 8px 20px rgba(31, 33, 31, 0.08);
 }
-
 
 .about-component .ct-stats strong {
   display: block;
@@ -208,7 +198,6 @@
 
   line-height: 1;
 }
-
 
 .about-component .ct-stats span {
   display: block;
@@ -246,7 +235,6 @@
 
   line-height: 1.7;
 }
-
 
 .about-component .ct-about-copy cite {
   display: block;
