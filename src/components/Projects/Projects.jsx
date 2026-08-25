@@ -37,9 +37,10 @@ const projects = [
     title: "Coming Soon",
     description:
       "More cybersecurity experiments, tools, and practical learning projects are in progress.",
-    
+    stack: ["Cybersecurity"],
     image: `${import.meta.env.BASE_URL}assets/projects/coming-soon.png`,
-
+    githubUrl: "https://github.com/avinashk08408",
+    liveUrl: "",
   },
 ];
 
@@ -151,6 +152,9 @@ export default function Projects() {
         ))}
       </div>
 
+      <p className="projects-carousel-note">
+        Swipe through the archive or use the arrow buttons to explore more work.
+      </p>
     </section>
   );
 }
