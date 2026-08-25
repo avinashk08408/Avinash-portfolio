@@ -1,39 +1,138 @@
 import "./Certifications.css";
 
+const certificateBasePath =
+  `${import.meta.env.BASE_URL}assets/certificates/`;
+
+const credentials = [
+  {
+    number: "01",
+    type: "FEATURED CREDENTIAL",
+    title: "Certificate title",
+    issuer: "Issuing organisation",
+    date: "Date earned",
+    focus: "Course topic / learning outcome",
+    image: `${certificateBasePath}certificate-01.png`,
+  },
+  {
+    number: "02",
+    type: "SUPPORTING RECORD",
+    title: "Certificate title",
+    issuer: "Issuing organisation",
+    date: "Date earned",
+    image: `${certificateBasePath}certificate-02.png`,
+  },
+  {
+    number: "03",
+    type: "SUPPORTING RECORD",
+    title: "Certificate title",
+    issuer: "Issuing organisation",
+    date: "Date earned",
+    image: `${certificateBasePath}certificate-03.png`,
+  },
+];
+
 export default function Certifications() {
+  const featuredCredential = credentials[0];
+
+  const supportingCredentials = credentials.slice(1);
+
   return (
     <section
       id="certifications"
-      className="ct-section qs-shell certifications-component"
+      className="qs-shell certifications-component"
     >
-      <p className="ct-label">
-        <span>05</span>
-        CERTIFICATIONS
-      </p>
+      <div className="credentials-header">
+        <p className="credentials-label">
+          <span>05</span>
+          VERIFIED CREDENTIALS
+        </p>
 
-      <div className="ct-content">
-        <div className="ct-heading-row">
-          <div>
-            <h2>Learning record.</h2>
-            <p>
-              Certificates and completed learning milestones are maintained here.
-            </p>
+        <h2>Credentials.</h2>
+
+        <p className="credentials-intro">
+          A closer look at selected learning milestones
+          and supporting evidence.
+        </p>
+      </div>
+
+      <article className="credential-proof-sheet">
+        <a
+          className="credential-image-link"
+          href={featuredCredential.image}
+          target="_blank"
+          rel="noreferrer"
+          aria-label={`View ${featuredCredential.title}`}
+        >
+          <img
+            src={featuredCredential.image}
+            alt={featuredCredential.title}
+          />
+        </a>
+
+        <div className="credential-proof-copy">
+          <p className="credential-type">
+            {featuredCredential.type}
+          </p>
+
+          <h3>{featuredCredential.title}</h3>
+
+          <p className="credential-issuer">
+            {featuredCredential.issuer}
+          </p>
+
+          <div className="credential-facts">
+            <div>
+              <strong>DATE EARNED</strong>
+              <span>{featuredCredential.date}</span>
+            </div>
+
+            <div>
+              <strong>FOCUS</strong>
+              <span>{featuredCredential.focus}</span>
+            </div>
+
+            <div>
+              <strong>STATUS</strong>
+              <span>Certificate available</span>
+            </div>
           </div>
 
-          <span>CERTIFICATE ARCHIVE</span>
+          <a
+            className="credential-view-link"
+            href={featuredCredential.image}
+            target="_blank"
+            rel="noreferrer"
+          >
+            VIEW CREDENTIAL ↗
+          </a>
         </div>
+      </article>
 
-        <div className="ct-certificate-note">
-          <span>IN PROGRESS</span>
-
-          <div>
-            <h3>Cybersecurity learning archive</h3>
+      <div className="supporting-credentials">
+        {supportingCredentials.map((credential) => (
+          <article
+            key={credential.number}
+            className="supporting-credential"
+          >
             <p>
-              Certificate scans can be added to
-              {" "}<code>public/assets/certificates</code> when available.
+              {credential.number} / {credential.type}
             </p>
-          </div>
-        </div>
+
+            <h3>{credential.title}</h3>
+
+            <span>
+              {credential.issuer} · {credential.date}
+            </span>
+
+            <a
+              href={credential.image}
+              target="_blank"
+              rel="noreferrer"
+            >
+              VIEW ↗
+            </a>
+          </article>
+        ))}
       </div>
     </section>
   );
