@@ -16,7 +16,7 @@ export default function About() {
 
       <div className="ct-content about-content">
 
-        {/* LEFT: PHOTO */}
+        {/* PHOTO */}
         <div className="about-photo-wrap">
           <img
             src="/sample2.github.io/assets/about-photo.jpg"
@@ -25,7 +25,7 @@ export default function About() {
           />
         </div>
 
-        {/* RIGHT: ABOUT CONTENT */}
+        {/* ABOUT CONTENT */}
         <div className="ct-about-copy">
 
           <h2>Who I am</h2>
