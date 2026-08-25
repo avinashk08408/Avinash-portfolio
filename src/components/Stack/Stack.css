@@ -149,3 +149,20 @@
     font-size: 10px;
   }
 }
+/* Centre Technology stack. on the same line as Who I am. */
+
+.stack-header {
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+}
+
+.stack-label {
+  text-align: center;
+}
+
+.stack-intro {
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+}
