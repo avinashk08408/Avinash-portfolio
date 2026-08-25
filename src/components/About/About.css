@@ -1,6 +1,5 @@
 /* =========================================
    ABOUT SECTION
-   Existing theme preserved
    ========================================= */
 
 .about-component {
@@ -9,39 +8,40 @@
 
 
 /* =========================================
-   PROFILE LABEL
+   SECTION LABEL
    ========================================= */
 
 .about-component .about-label {
-  margin-bottom: 24px;
+  margin-bottom: 18px;
 }
 
 
 /* =========================================
-   CENTER HEADING
+   CENTERED TITLE
    ========================================= */
 
-.about-component .about-heading {
+.about-component .about-title {
+  width: 100%;
   text-align: center;
   margin-bottom: 55px;
 }
 
-.about-component .about-heading h2 {
+.about-component .about-title h2 {
   margin: 0;
 
   font-family: "Libre Baskerville", Georgia, serif;
 
-  font-size: clamp(34px, 4vw, 50px);
+  font-size: clamp(34px, 4vw, 48px);
 
   font-weight: 400;
 
   line-height: 1.15;
 
-  letter-spacing: -0.045em;
+  letter-spacing: -0.04em;
 }
 
-.about-component .about-heading h3 {
-  margin: 18px 0 0;
+.about-component .about-title h3 {
+  margin: 16px 0 0;
 
   color: #555752;
 
@@ -52,19 +52,19 @@
 
 
 /* =========================================
-   MAIN ABOUT AREA
+   MAIN BODY
+   IMPORTANT:
+   NO 25/75 GRID
    ========================================= */
 
-.about-component .about-main {
-  display: grid;
+.about-component .about-body {
+  position: relative;
 
-  grid-template-columns: 240px minmax(0, 590px);
+  width: min(900px, 100%);
 
-  justify-content: center;
+  margin: 0 auto;
 
-  align-items: start;
-
-  column-gap: 65px;
+  min-height: 420px;
 }
 
 
@@ -72,20 +72,26 @@
    PHOTO
    ========================================= */
 
-.about-component .about-photo-wrap {
+.about-component .about-photo-area {
+  position: absolute;
+
+  left: 5%;
+
+  top: 35px;
+
+  width: 220px;
+
   display: flex;
 
   justify-content: center;
 
   align-items: flex-start;
-
-  padding-top: 8px;
 }
 
 .about-component .about-photo {
-  width: 210px;
+  width: 190px;
 
-  height: 270px;
+  height: 245px;
 
   object-fit: cover;
 
@@ -94,38 +100,39 @@
   border: 1px solid var(--border);
 
   transition:
-    transform 0.35s cubic-bezier(.23, 1, .32, 1),
+    transform 0.35s ease,
     box-shadow 0.35s ease,
     border-color 0.35s ease;
 }
 
 
-/* Photo hover effect */
+/* PHOTO EFFECT */
 
 .about-component .about-photo:hover {
-  transform: translateY(-6px) scale(1.015);
+  transform: translateY(-5px);
 
   border-color: var(--sienna);
 
   box-shadow:
-    0 12px 30px rgba(31, 33, 31, 0.12);
+    0 12px 28px rgba(31, 33, 31, 0.12);
 }
 
 
 /* =========================================
-   RIGHT CONTENT
+   TEXT
    ========================================= */
 
-.about-component .ct-about-copy {
-  max-width: 590px;
+.about-component .about-text {
+  width: 570px;
 
-  margin: 0;
+  margin-left: auto;
+
+  margin-right: 4%;
+
+  padding-top: 0;
 }
 
-
-/* Paragraphs */
-
-.about-component .ct-about-copy > p {
+.about-component .about-text > p {
   margin: 0;
 
   color: #555752;
@@ -135,20 +142,20 @@
   line-height: 1.82;
 }
 
-.about-component .ct-about-copy > p + p {
-  margin-top: 15px;
+.about-component .about-text > p + p {
+  margin-top: 16px;
 }
 
-.about-component .ct-about-copy strong {
+.about-component .about-text strong {
   color: var(--ink);
 }
 
 
 /* =========================================
-   STATISTICS
+   STATS
    ========================================= */
 
-.about-component .ct-stats {
+.about-component .about-stats {
   display: grid;
 
   grid-template-columns: repeat(3, 1fr);
@@ -158,14 +165,14 @@
   margin-top: 30px;
 }
 
-.about-component .ct-stats article {
-  min-height: 82px;
+.about-component .about-stat {
+  min-height: 78px;
 
-  padding: 15px 16px;
+  padding: 15px;
 
   border: 1px solid var(--border);
 
-  background: rgba(250, 248, 242, 0.45);
+  background: rgba(250, 248, 242, 0.35);
 
   transition:
     transform 0.25s ease,
@@ -173,10 +180,7 @@
     box-shadow 0.25s ease;
 }
 
-
-/* Statistics hover effect */
-
-.about-component .ct-stats article:hover {
+.about-component .about-stat:hover {
   transform: translateY(-4px);
 
   border-color: var(--sienna);
@@ -185,7 +189,7 @@
     0 8px 20px rgba(31, 33, 31, 0.08);
 }
 
-.about-component .ct-stats strong {
+.about-component .about-stat strong {
   display: block;
 
   color: var(--sienna);
@@ -199,10 +203,10 @@
   line-height: 1;
 }
 
-.about-component .ct-stats span {
+.about-component .about-stat span {
   display: block;
 
-  margin-top: 10px;
+  margin-top: 9px;
 
   color: #6b6d67;
 
@@ -218,10 +222,10 @@
    QUOTE
    ========================================= */
 
-.about-component .ct-about-copy blockquote {
+.about-component .about-text blockquote {
   margin: 28px 0 0;
 
-  padding: 0 0 0 17px;
+  padding-left: 16px;
 
   border-left: 2px solid var(--sienna);
 
@@ -236,7 +240,7 @@
   line-height: 1.7;
 }
 
-.about-component .ct-about-copy cite {
+.about-component .about-text cite {
   display: block;
 
   margin-top: 6px;
@@ -257,22 +261,27 @@
 
 @media (max-width: 850px) {
 
-  .about-component .about-heading {
-    margin-bottom: 45px;
+  .about-component .about-body {
+    width: 100%;
   }
 
-  .about-component .about-main {
-    grid-template-columns: 190px minmax(0, 1fr);
+  .about-component .about-photo-area {
+    left: 1%;
 
-    column-gap: 40px;
+    width: 190px;
   }
 
   .about-component .about-photo {
-    width: 175px;
+    width: 165px;
 
-    height: 230px;
+    height: 215px;
   }
 
+  .about-component .about-text {
+    width: 500px;
+
+    margin-right: 1%;
+  }
 }
 
 
@@ -282,50 +291,61 @@
 
 @media (max-width: 640px) {
 
-  .about-component .about-heading {
+  .about-component .about-title {
     margin-bottom: 35px;
   }
 
-  .about-component .about-main {
-    grid-template-columns: 1fr;
+  .about-component .about-body {
+    min-height: 0;
 
-    gap: 30px;
+    display: flex;
 
-    justify-items: center;
+    flex-direction: column;
+
+    align-items: center;
   }
 
-  .about-component .about-photo-wrap {
-    padding-top: 0;
+  .about-component .about-photo-area {
+    position: relative;
+
+    left: auto;
+
+    top: auto;
+
+    width: auto;
+
+    margin-bottom: 30px;
   }
 
   .about-component .about-photo {
     width: 190px;
 
-    height: 245px;
+    height: 240px;
   }
 
-  .about-component .ct-about-copy {
+  .about-component .about-text {
     width: 100%;
 
-    max-width: 100%;
+    margin: 0;
+
+    padding: 0;
   }
 
-  .about-component .ct-stats {
+  .about-component .about-stats {
     grid-template-columns: repeat(3, 1fr);
 
     gap: 8px;
   }
 
-  .about-component .ct-stats article {
-    padding: 13px 10px;
+  .about-component .about-stat {
+    padding: 12px 8px;
   }
 
-  .about-component .ct-stats strong {
+  .about-component .about-stat strong {
     font-size: 22px;
   }
 
-  .about-component .ct-stats span {
+  .about-component .about-stat span {
     font-size: 8px;
   }
-
 }
