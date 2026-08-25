@@ -1,22 +1,75 @@
 /* =========================================
    ABOUT SECTION
-   Existing theme preserved
+   Existing Quiet Scholar theme preserved
    ========================================= */
 
-.about-component .about-content {
+.about-component {
+  position: relative;
+}
+
+
+/* =========================================
+   PROFILE LABEL
+   ========================================= */
+
+.about-component .about-label {
+  margin-bottom: 24px;
+}
+
+
+/* =========================================
+   CENTER HEADING
+   ========================================= */
+
+.about-component .about-heading {
+  text-align: center;
+  margin-bottom: 55px;
+}
+
+.about-component .about-heading h2 {
+  margin: 0;
+
+  font-family: "Libre Baskerville", Georgia, serif;
+
+  font-size: clamp(34px, 4vw, 50px);
+
+  font-weight: 400;
+
+  line-height: 1.15;
+
+  letter-spacing: -0.045em;
+}
+
+.about-component .about-heading h3 {
+  margin: 18px 0 0;
+
+  color: #555752;
+
+  font-size: 13px;
+
+  font-weight: 500;
+}
+
+
+/* =========================================
+   MAIN ABOUT AREA
+   Photo + content
+   ========================================= */
+
+.about-component .about-main {
   display: grid;
 
   /*
-   Photo and content are NOT divided 25/75.
-   The whole group stays centered.
+   NOT 25/75.
+   The content is centered as one group.
   */
-  grid-template-columns: 200px minmax(0, 650px);
+  grid-template-columns: 240px minmax(0, 590px);
 
   justify-content: center;
 
-  column-gap: 55px;
-
   align-items: start;
+
+  column-gap: 65px;
 }
 
 
@@ -25,74 +78,58 @@
    ========================================= */
 
 .about-component .about-photo-wrap {
-  width: 100%;
-
   display: flex;
+
+  justify-content: center;
 
   align-items: flex-start;
 
-  /*
-   Moves photo slightly toward the left,
-   but keeps it inside the section.
-  */
-  justify-content: flex-end;
-
-  transform: translateX(-12px);
+  padding-top: 8px;
 }
 
 
 .about-component .about-photo {
-  width: 200px;
+  width: 210px;
 
-  max-width: 200px;
-
-  height: 250px;
+  height: 270px;
 
   object-fit: cover;
 
   display: block;
+
+  border: 1px solid var(--border);
+
+  transition:
+    transform 0.35s cubic-bezier(.23, 1, .32, 1),
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+
+/* Photo hover effect */
+
+.about-component .about-photo:hover {
+  transform: translateY(-6px) scale(1.015);
+
+  border-color: var(--sienna);
+
+  box-shadow:
+    0 12px 30px rgba(31, 33, 31, 0.12);
 }
 
 
 /* =========================================
-   ABOUT CONTENT
+   CONTENT
    ========================================= */
 
 .about-component .ct-about-copy {
-  max-width: 650px;
+  max-width: 590px;
 
-  /*
-   Keeps content naturally centered
-   within the right side.
-  */
-  margin: 0 auto;
-
-  /*
-   Small movement toward the center.
-  */
-  transform: translateX(12px);
+  margin: 0;
 }
 
 
-/* WHO I AM */
-
-.about-component .ct-about-copy h2 {
-  text-align: center;
-
-  margin-top: 0;
-}
-
-
-/* SUBTITLE */
-
-.about-component .ct-about-copy h3 {
-  margin: 26px 0 18px;
-
-  font-size: 14px;
-}
-
-
-/* PARAGRAPHS */
+/* Paragraph */
 
 .about-component .ct-about-copy > p {
   margin: 0;
@@ -106,7 +143,7 @@
 
 
 .about-component .ct-about-copy > p + p {
-  margin-top: 13px;
+  margin-top: 15px;
 }
 
 
@@ -124,26 +161,37 @@
 
   grid-template-columns: repeat(3, 1fr);
 
-  margin-top: 28px;
+  gap: 12px;
+
+  margin-top: 30px;
 }
 
 
 .about-component .ct-stats article {
-  padding: 13px 18px 13px 0;
+  min-height: 82px;
 
-  border-top: 1px solid var(--border);
+  padding: 15px 16px;
+
+  border: 1px solid var(--border);
+
+  background: rgba(250, 248, 242, 0.45);
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 
-.about-component .ct-stats article + article {
-  padding-left: 18px;
+/* Statistics hover */
 
-  border-left: 1px solid var(--border);
-}
+.about-component .ct-stats article:hover {
+  transform: translateY(-4px);
 
+  border-color: var(--sienna);
 
-.about-component .ct-stats article:last-child {
-  border-bottom: 1px solid var(--border);
+  box-shadow:
+    0 8px 20px rgba(31, 33, 31, 0.08);
 }
 
 
@@ -154,13 +202,19 @@
 
   font-family: "Libre Baskerville", Georgia, serif;
 
-  font-size: 28px;
+  font-size: 27px;
 
   font-weight: 400;
+
+  line-height: 1;
 }
 
 
 .about-component .ct-stats span {
+  display: block;
+
+  margin-top: 10px;
+
   color: #6b6d67;
 
   font-size: 9px;
@@ -215,29 +269,20 @@
 
 @media (max-width: 850px) {
 
-  .about-component .about-content {
-    grid-template-columns: 180px minmax(0, 600px);
-
-    column-gap: 35px;
+  .about-component .about-heading {
+    margin-bottom: 45px;
   }
 
+  .about-component .about-main {
+    grid-template-columns: 190px minmax(0, 1fr);
+
+    column-gap: 40px;
+  }
 
   .about-component .about-photo {
-    width: 180px;
+    width: 175px;
 
-    max-width: 180px;
-
-    height: 235px;
-  }
-
-
-  .about-component .about-photo-wrap {
-    transform: translateX(-8px);
-  }
-
-
-  .about-component .ct-about-copy {
-    transform: translateX(8px);
+    height: 230px;
   }
 
 }
@@ -249,56 +294,50 @@
 
 @media (max-width: 640px) {
 
-  .about-component .about-content {
-    display: grid;
-
-    grid-template-columns: 1fr;
-
-    gap: 28px;
-
-    justify-content: center;
+  .about-component .about-heading {
+    margin-bottom: 35px;
   }
 
+  .about-component .about-main {
+    grid-template-columns: 1fr;
+
+    gap: 30px;
+
+    justify-items: center;
+  }
 
   .about-component .about-photo-wrap {
-    justify-content: center;
-
-    transform: none;
+    padding-top: 0;
   }
-
 
   .about-component .about-photo {
-    width: 180px;
+    width: 190px;
 
-    max-width: 180px;
-
-    height: 225px;
+    height: 245px;
   }
-
 
   .about-component .ct-about-copy {
+    width: 100%;
+
     max-width: 100%;
-
-    margin: 0;
-
-    transform: none;
   }
-
-
-  .about-component .ct-about-copy h2 {
-    text-align: center;
-  }
-
 
   .about-component .ct-stats {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 8px;
   }
 
+  .about-component .ct-stats article {
+    padding: 13px 10px;
+  }
 
-  .about-component .ct-stats article + article {
-    padding-left: 0;
+  .about-component .ct-stats strong {
+    font-size: 22px;
+  }
 
-    border-left: none;
+  .about-component .ct-stats span {
+    font-size: 8px;
   }
 
 }
