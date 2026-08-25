@@ -1,11 +1,14 @@
-/* Quiet Scholar About section: centred heading, photo left, content right. */
+/* Quiet Scholar About section: centred title, photo left, copy aligned right. */
 
 .about-component {
+  display: block;
   padding: 115px 0;
 }
 
+/* This makes “Who I am.” sit in the true centre, like Engineering stack. */
 .about-component .about-heading {
-  margin-bottom: 58px;
+  width: 100%;
+  margin: 0 0 62px;
   text-align: center;
 }
 
@@ -23,25 +26,31 @@
   line-height: 1.08;
 }
 
+/*
+  Photo starts at the same left edge as “Avinash K.” and “View projects”.
+  Content starts after the photo, closer to the centre instead of far right.
+*/
 .about-component .about-layout {
+  width: 100%;
   display: grid;
-  grid-template-columns: minmax(230px, 0.72fr) minmax(0, 1.28fr);
-  gap: clamp(42px, 7vw, 105px);
+  grid-template-columns: 150px minmax(0, 480px);
+  justify-content: start;
+  gap: 32px;
   align-items: center;
 }
 
 .about-component .about-photo-column {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .about-component .about-photo-frame {
-  width: min(100%, 310px);
+  width: 150px;
   aspect-ratio: 4 / 5;
   overflow: hidden;
   border: 1px solid var(--sienna);
   background: #eeeae0;
-  box-shadow: 12px 12px 0 rgba(141, 90, 68, 0.1);
+  box-shadow: 10px 10px 0 rgba(141, 90, 68, 0.1);
 }
 
 .about-component .about-photo-frame img {
@@ -53,7 +62,9 @@
 }
 
 .about-component .ct-about-copy {
-  max-width: 680px;
+  width: 100%;
+  max-width: 480px;
+  justify-self: start;
 }
 
 .about-component .ct-about-copy h3 {
@@ -108,7 +119,7 @@
 }
 
 .about-component .ct-stats article {
-  padding: 14px 12px;
+  padding: 14px 10px;
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
 }
@@ -140,6 +151,10 @@
   .about-component .about-layout {
     grid-template-columns: 1fr;
     gap: 34px;
+  }
+
+  .about-component .about-photo-column {
+    justify-content: center;
   }
 
   .about-component .about-photo-frame {
