@@ -10,29 +10,32 @@ export default function About() {
   return (
     <section id="about" className="ct-section qs-shell about-component">
 
+      {/* SECTION LABEL */}
       <p className="ct-label about-label">
         <span>01</span>
         PROFILE
       </p>
 
-      <div className="about-heading">
+      {/* CENTERED TITLE */}
+      <div className="about-title">
         <h2>Who I am</h2>
         <h3>Cyber Security Student & Web Developer</h3>
       </div>
 
-      <div className="about-main">
+      {/* ABOUT CONTENT */}
+      <div className="about-body">
 
-        {/* Photo */}
-        <div className="about-photo-wrap">
+        {/* PHOTO */}
+        <div className="about-photo-area">
           <img
-            src="/sample2.github.io/assets/about-photo.jpg"
+            src="/sample2.github.io/assets/profile.png"
             alt="Avinash K"
             className="about-photo"
           />
         </div>
 
-        {/* About content */}
-        <div className="ct-about-copy">
+        {/* TEXT */}
+        <div className="about-text">
 
           <p>
             I’m <strong>Avinash</strong>, a Cyber Security student and web
@@ -52,17 +55,17 @@ export default function About() {
             <strong>functional and secure.</strong>
           </p>
 
-          {/* Statistics */}
-          <div className="ct-stats">
-            {statistics.map(([value, label]) => (
-              <article key={label}>
-                <strong>{value}</strong>
+          {/* STATS */}
+          <div className="about-stats">
+            {statistics.map(([number, label]) => (
+              <div className="about-stat" key={label}>
+                <strong>{number}</strong>
                 <span>{label}</span>
-              </article>
+              </div>
             ))}
           </div>
 
-          {/* Quote */}
+          {/* QUOTE */}
           <blockquote>
             “The best way out is always through.”
             <cite>— Robert Frost</cite>
