@@ -47,7 +47,7 @@ export default function Certifications() {
           VERIFIED CREDENTIALS
         </p>
 
-        <h2>Credentials.</h2>
+        <h2>Credentials</h2>
 
         <p className="credentials-intro">
           A closer look at selected learning milestones
