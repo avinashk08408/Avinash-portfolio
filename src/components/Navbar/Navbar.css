@@ -3,7 +3,7 @@
 .navbar-component .qs-brand {
   gap: 9px;
   font-family: "Libre Baskerville", Georgia, serif;
-  font-size: 15px;
+  font-size: 9px;
   font-weight: 400;
   letter-spacing: 0.045em;
 }
@@ -22,7 +22,7 @@
   border-radius: 50%;
   color: var(--sienna);
   font-family: "Libre Baskerville", Georgia, serif;
-  font-size: 8px;
+  font-size: 13px;
   letter-spacing: -0.08em;
 }
 
