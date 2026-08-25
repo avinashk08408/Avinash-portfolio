@@ -1,88 +1,132 @@
-/* About: existing Quiet Scholar theme preserved. */
+/* =========================================
+   ABOUT SECTION
+   Existing theme preserved
+   ========================================= */
 
 .about-component .about-content {
   display: grid;
 
-  /* Photo = approximately 1/4
-     Content = approximately 3/4 */
-  grid-template-columns: 25% minmax(0, 1fr);
+  /*
+   Photo and content are NOT divided 25/75.
+   The whole group stays centered.
+  */
+  grid-template-columns: 200px minmax(0, 650px);
 
-  gap: 6vw;
+  justify-content: center;
+
+  column-gap: 55px;
+
   align-items: start;
 }
 
-/* =========================
-   LEFT PHOTO
-   ========================= */
+
+/* =========================================
+   PHOTO
+   ========================================= */
 
 .about-component .about-photo-wrap {
   width: 100%;
+
   display: flex;
+
   align-items: flex-start;
-  justify-content: flex-start;
+
+  /*
+   Moves photo slightly toward the left,
+   but keeps it inside the section.
+  */
+  justify-content: flex-end;
+
+  transform: translateX(-12px);
 }
 
+
 .about-component .about-photo {
-  width: 100%;
-  max-width: 150px;
-  height: 175px;
+  width: 200px;
+
+  max-width: 200px;
+
+  height: 250px;
+
   object-fit: cover;
+
   display: block;
 }
 
-/* =========================
-   RIGHT CONTENT
-   ========================= */
+
+/* =========================================
+   ABOUT CONTENT
+   ========================================= */
 
 .about-component .ct-about-copy {
   max-width: 650px;
 
-  /* Keeps the content visually centered
-     within the right side */
+  /*
+   Keeps content naturally centered
+   within the right side.
+  */
   margin: 0 auto;
+
+  /*
+   Small movement toward the center.
+  */
+  transform: translateX(12px);
 }
+
 
 /* WHO I AM */
 
 .about-component .ct-about-copy h2 {
   text-align: center;
+
   margin-top: 0;
 }
 
-/* Subtitle */
+
+/* SUBTITLE */
 
 .about-component .ct-about-copy h3 {
   margin: 26px 0 18px;
+
   font-size: 14px;
 }
 
-/* Paragraphs */
+
+/* PARAGRAPHS */
 
 .about-component .ct-about-copy > p {
   margin: 0;
+
   color: #555752;
+
   font-size: 13px;
+
   line-height: 1.82;
 }
+
 
 .about-component .ct-about-copy > p + p {
   margin-top: 13px;
 }
 
+
 .about-component .ct-about-copy strong {
   color: var(--ink);
 }
 
-/* =========================
+
+/* =========================================
    STATISTICS
-   ========================= */
+   ========================================= */
 
 .about-component .ct-stats {
   display: grid;
+
   grid-template-columns: repeat(3, 1fr);
 
   margin-top: 28px;
 }
+
 
 .about-component .ct-stats article {
   padding: 13px 18px 13px 0;
@@ -90,14 +134,18 @@
   border-top: 1px solid var(--border);
 }
 
+
 .about-component .ct-stats article + article {
   padding-left: 18px;
+
   border-left: 1px solid var(--border);
 }
+
 
 .about-component .ct-stats article:last-child {
   border-bottom: 1px solid var(--border);
 }
+
 
 .about-component .ct-stats strong {
   display: block;
@@ -107,21 +155,25 @@
   font-family: "Libre Baskerville", Georgia, serif;
 
   font-size: 28px;
+
   font-weight: 400;
 }
+
 
 .about-component .ct-stats span {
   color: #6b6d67;
 
   font-size: 9px;
+
   font-weight: 800;
 
   letter-spacing: 0.08em;
 }
 
-/* =========================
+
+/* =========================================
    QUOTE
-   ========================= */
+   ========================================= */
 
 .about-component .ct-about-copy blockquote {
   margin: 28px 0 0;
@@ -135,9 +187,12 @@
   font-family: "Libre Baskerville", Georgia, serif;
 
   font-size: 14px;
+
   font-style: italic;
+
   line-height: 1.7;
 }
+
 
 .about-component .ct-about-copy cite {
   display: block;
@@ -149,62 +204,101 @@
   font-family: "Manrope", Arial, sans-serif;
 
   font-size: 10px;
+
   font-style: normal;
 }
 
-/* =========================
+
+/* =========================================
    TABLET
-   ========================= */
+   ========================================= */
 
 @media (max-width: 850px) {
 
   .about-component .about-content {
-    grid-template-columns: 25% minmax(0, 1fr);
-    gap: 5vw;
+    grid-template-columns: 180px minmax(0, 600px);
+
+    column-gap: 35px;
   }
 
+
   .about-component .about-photo {
+    width: 180px;
+
     max-width: 180px;
-    height: 240px;
+
+    height: 235px;
+  }
+
+
+  .about-component .about-photo-wrap {
+    transform: translateX(-8px);
+  }
+
+
+  .about-component .ct-about-copy {
+    transform: translateX(8px);
   }
 
 }
 
-/* =========================
+
+/* =========================================
    MOBILE
-   ========================= */
+   ========================================= */
 
 @media (max-width: 640px) {
 
   .about-component .about-content {
-    grid-template-columns: 1fr;
-    gap: 28px;
-  }
+    display: grid;
 
-  .about-component .about-photo-wrap {
+    grid-template-columns: 1fr;
+
+    gap: 28px;
+
     justify-content: center;
   }
 
+
+  .about-component .about-photo-wrap {
+    justify-content: center;
+
+    transform: none;
+  }
+
+
   .about-component .about-photo {
     width: 180px;
+
+    max-width: 180px;
+
     height: 225px;
   }
 
+
   .about-component .ct-about-copy {
     max-width: 100%;
+
+    margin: 0;
+
+    transform: none;
   }
+
 
   .about-component .ct-about-copy h2 {
     text-align: center;
   }
 
+
   .about-component .ct-stats {
     grid-template-columns: 1fr;
   }
 
+
   .about-component .ct-stats article + article {
     padding-left: 0;
+
     border-left: none;
   }
 
-  }
+}
