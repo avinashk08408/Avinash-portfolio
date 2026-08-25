@@ -9,7 +9,7 @@ const projects = [
     stack: ["React", "Flask", "SQLite"],
     image: `${import.meta.env.BASE_URL}assets/projects/authshield.png`,
     githubUrl: "https://github.com/avinashk08408",
-    liveUrl: "",
+    liveUrl: "https://your-authshield-live-app-url.com",
   },
   {
     number: "02",
@@ -19,7 +19,7 @@ const projects = [
     stack: ["Python", "Flask"],
     image: `${import.meta.env.BASE_URL}assets/projects/scanner.png`,
     githubUrl: "https://github.com/avinashk08408",
-    liveUrl: "",
+    liveUrl: "https://your-vulnerability-scanner-live-app-url.com",
   },
   {
     number: "03",
@@ -29,7 +29,7 @@ const projects = [
     stack: ["React", "AI"],
     image: `${import.meta.env.BASE_URL}assets/projects/github-detector.png`,
     githubUrl: "https://github.com/avinashk08408",
-    liveUrl: "",
+    liveUrl: "https://your-fake-repo-detector-live-app-url.com",
   },
 ];
 
@@ -90,15 +90,13 @@ export default function Projects() {
                   GitHub ↗
                 </a>
 
-                {project.liveUrl && (
-                  <a
-                    href={project.liveUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    Live Demo ↗
-                  </a>
-                )}
+                <a
+                  href={project.liveUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Live Demo ↗
+                </a>
               </div>
             </div>
           </article>
