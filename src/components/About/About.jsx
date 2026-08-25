@@ -16,7 +16,7 @@ export default function About() {
           PROFILE
         </p>
 
-        <h2>Who I am.</h2>
+        <h2><strong>>Who I am</strong></h2>
       </div>
 
       <div className="about-layout">
