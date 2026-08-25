@@ -1,10 +1,22 @@
-/* Quiet Scholar image-led project cards. */
+/* Quiet Scholar full-width scrollable Projects rail. */
 
-.projects-component .ct-heading-row {
+.projects-carousel-section {
+  padding: 115px 0;
+}
+
+.projects-carousel-header {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 28px;
   margin-bottom: 34px;
 }
 
-.projects-component .ct-heading-row h2 {
+.projects-carousel-header .ct-label {
+  margin: 0 0 14px;
+}
+
+.projects-carousel-header h2 {
   margin: 0;
   color: var(--ink);
   font-family: "Libre Baskerville", Georgia, serif;
@@ -14,33 +26,78 @@
   line-height: 1.15;
 }
 
-.projects-component .ct-heading-row p {
+.projects-carousel-intro {
+  max-width: 600px;
   margin: 12px 0 0;
   color: #62645e;
   font-size: 14px;
   line-height: 1.62;
 }
 
-.projects-component .project-card-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 24px;
+.projects-carousel-controls {
+  display: flex;
+  flex: 0 0 auto;
+  gap: 8px;
 }
 
-.projects-component .project-card {
+.projects-carousel-controls button {
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--border);
+  color: var(--ink);
+  background: transparent;
+  font-size: 20px;
+  line-height: 1;
+  transition: background 160ms cubic-bezier(0.23, 1, 0.32, 1),
+    color 160ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.projects-carousel-controls button:hover {
+  color: var(--paper);
+  background: var(--ink);
+}
+
+.projects-carousel-controls button:active {
+  transform: scale(0.97);
+}
+
+.projects-scroll-rail {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 2px 1px 20px;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  scrollbar-color: var(--sienna) transparent;
+  scrollbar-width: thin;
+}
+
+.projects-scroll-rail::-webkit-scrollbar {
+  height: 8px;
+}
+
+.projects-scroll-rail::-webkit-scrollbar-thumb {
+  background: var(--sienna);
+}
+
+.projects-scroll-card {
+  display: flex;
+  flex: 0 0 min(390px, 82vw);
+  flex-direction: column;
   overflow: hidden;
   border: 1px solid var(--border);
   background: var(--paper);
+  scroll-snap-align: start;
   transition: transform 180ms cubic-bezier(0.23, 1, 0.32, 1),
     box-shadow 180ms cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-.projects-component .project-card:hover {
+.projects-scroll-card:hover {
   box-shadow: 8px 8px 0 rgba(141, 90, 68, 0.12);
   transform: translateY(-4px);
 }
 
-.projects-component .project-image-wrap {
+.projects-card-image {
   position: relative;
   aspect-ratio: 16 / 9;
   overflow: hidden;
@@ -48,7 +105,7 @@
   background: #e9e5da;
 }
 
-.projects-component .project-image-wrap img {
+.projects-card-image img {
   width: 100%;
   height: 100%;
   display: block;
@@ -56,11 +113,11 @@
   transition: transform 280ms cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-.projects-component .project-card:hover .project-image-wrap img {
+.projects-scroll-card:hover .projects-card-image img {
   transform: scale(1.035);
 }
 
-.projects-component .project-number {
+.projects-card-image span {
   position: absolute;
   top: 13px;
   left: 13px;
@@ -72,11 +129,15 @@
   letter-spacing: 0.08em;
 }
 
-.projects-component .project-card-content {
+.projects-card-copy {
+  display: flex;
+  min-height: 270px;
+  flex: 1;
+  flex-direction: column;
   padding: 21px;
 }
 
-.projects-component .project-card h3 {
+.projects-card-copy h3 {
   margin: 0;
   color: var(--ink);
   font-family: "Libre Baskerville", Georgia, serif;
@@ -85,46 +146,47 @@
   line-height: 1.25;
 }
 
-.projects-component .project-card-content > p {
+.projects-card-copy > p {
   margin: 12px 0 0;
   color: #5a5c56;
   font-size: 13px;
   line-height: 1.7;
 }
 
-.projects-component .project-tags {
+.projects-card-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 7px;
   margin-top: 17px;
 }
 
-.projects-component .project-tags span {
+.projects-card-tags span {
   color: var(--sienna);
   font-size: 9px;
   font-weight: 800;
 }
 
-.projects-component .project-tags span:not(:last-child)::after {
+.projects-card-tags span:not(:last-child)::after {
   padding-left: 7px;
   content: "/";
 }
 
-.projects-component .project-links {
+.projects-card-links {
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
-  margin-top: 20px;
+  margin-top: auto;
+  padding-top: 20px;
 }
 
-.projects-component .project-links a {
+.projects-card-links a {
   color: var(--sienna);
   font-size: 10px;
   font-weight: 800;
 }
 
-.projects-component .projects-note {
-  margin: 20px 0 0;
+.projects-carousel-note {
+  margin: 17px 0 0;
   color: #6b6d67;
   font-family: "Libre Baskerville", Georgia, serif;
   font-size: 13px;
@@ -132,7 +194,22 @@
 }
 
 @media (max-width: 700px) {
-  .projects-component .project-card-grid {
-    grid-template-columns: 1fr;
+  .projects-carousel-section {
+    padding: 82px 0;
   }
-}
+
+  .projects-carousel-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .projects-carousel-controls {
+    display: none;
+  }
+
+  .projects-scroll-rail {
+    margin-right: -5vw;
+    padding-right: 5vw;
+  }
+    }
