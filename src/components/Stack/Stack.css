@@ -1,55 +1,151 @@
-/* Stack: approved Quiet Scholar capabilities grid. */
+/* Quiet Scholar Engineering Stack: full width, academic record layout. */
 
-.stack-component .ct-capabilities {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1px;
-  margin-top: 37px;
-  background: var(--border);
+.stack-component {
+  padding: 108px 0 100px;
 }
 
-.stack-component .ct-capabilities article {
-  display: grid;
-  grid-template-columns: 30px 1fr;
-  gap: 12px;
-  min-height: 142px;
-  padding: 20px;
-  background: var(--paper);
+.stack-header {
+  max-width: 1060px;
 }
 
-.stack-component .ct-capabilities article > span {
-  color: var(--sienna);
-  font-size: 9px;
+.stack-label {
+  margin: 0 0 16px;
+  color: var(--sienna) !important;
+  font-size: 11px !important;
   font-weight: 800;
+  letter-spacing: 0.13em;
+  line-height: 1.2 !important;
 }
 
-.stack-component .ct-capabilities h3 {
-  grid-column: 2;
+.stack-label span {
+  margin-right: 9px;
+}
+
+.stack-header h2 {
   margin: 0;
+  color: var(--ink);
   font-family: "Libre Baskerville", Georgia, serif;
-  font-size: 17px;
+  font-size: clamp(38px, 4.6vw, 61px);
   font-weight: 400;
+  letter-spacing: -0.05em;
+  line-height: 1.08;
 }
 
-.stack-component .ct-capabilities ul {
-  grid-column: 2;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
+.stack-intro {
+  max-width: none;
+  margin: 20px 0 46px;
+  color: #565852 !important;
+  font-size: 20px !important;
+  line-height: 1.62 !important;
+  white-space: nowrap;
+}
+
+.stack-record-list {
+  max-width: 1060px;
+  border-top: 1px solid var(--ink);
+}
+
+.stack-record-row {
+  display: grid;
+  grid-template-columns: 78px minmax(0, 1fr) 270px;
+  gap: 26px;
+  align-items: start;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.stack-record-number {
+  padding-top: 6px;
+  color: var(--sienna);
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+}
+
+.stack-record-copy h3 {
   margin: 0;
-  padding: 0;
-  list-style: none;
+  color: var(--ink);
+  font-family: "Libre Baskerville", Georgia, serif;
+  font-size: 27px;
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  line-height: 1.25;
 }
 
-.stack-component .ct-capabilities li {
-  padding: 5px 7px;
-  border: 1px solid var(--border);
-  color: #5f615b;
-  font-size: 9px;
+.stack-record-copy p {
+  margin: 10px 0 0;
+  color: #575954 !important;
+  font-size: 20px !important;
+  line-height: 1.62 !important;
+}
+
+.stack-record-tools {
+  margin: 7px 0 0;
+  color: var(--sienna);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  line-height: 1.7;
+}
+
+.stack-record-tools span {
+  white-space: nowrap;
+}
+
+@media (max-width: 850px) {
+  .stack-record-row {
+    grid-template-columns: 54px minmax(0, 1fr);
+  }
+
+  .stack-record-tools {
+    grid-column: 2;
+    margin-top: 0;
+  }
+
+  .stack-intro {
+    white-space: normal;
+  }
 }
 
 @media (max-width: 640px) {
-  .stack-component .ct-capabilities {
-    grid-template-columns: 1fr;
+  .stack-component {
+    padding: 82px 0;
+  }
+
+  .stack-label {
+    font-size: 10px !important;
+  }
+
+  .stack-header h2 {
+    font-size: clamp(34px, 11vw, 47px);
+  }
+
+  .stack-intro {
+    margin: 16px 0 31px;
+    font-size: 16px !important;
+    line-height: 1.62 !important;
+  }
+
+  .stack-record-row {
+    grid-template-columns: 38px minmax(0, 1fr);
+    gap: 13px;
+    padding: 23px 0;
+  }
+
+  .stack-record-number {
+    font-size: 11px;
+  }
+
+  .stack-record-copy h3 {
+    font-size: 21px;
+  }
+
+  .stack-record-copy p {
+    font-size: 16px !important;
+    line-height: 1.62 !important;
+  }
+
+  .stack-record-tools {
+    font-size: 10px;
   }
 }
