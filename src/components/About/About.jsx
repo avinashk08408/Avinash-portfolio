@@ -19,7 +19,7 @@ export default function About() {
         {/* LEFT: PHOTO */}
         <div className="about-photo-wrap">
           <img
-            src="/sample2.github.io/IMG_20251205_202928.jpg"
+            src="/sample2.github.io/assets/about-photo.jpg"
             alt="Avinash K"
             className="about-photo"
           />
