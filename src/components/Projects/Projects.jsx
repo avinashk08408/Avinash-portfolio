@@ -1,23 +1,23 @@
-import { ExternalLink } from "lucide-react";
 import "./Projects.css";
 
-const leadProject = {
-  number: "01",
-  title: "AuthShield",
-  description:
-    "A secure authentication system with role-based access control, protected routes, and structured user permissions.",
-  stack: ["React", "Flask", "SQLite"],
-  githubUrl: "https://github.com/avinashk08408",
-  liveUrl: "",
-};
-
 const projects = [
+  {
+    number: "01",
+    title: "AuthShield",
+    description:
+      "Secure authentication system with role-based access control and protected user access.",
+    stack: ["React", "Flask", "SQLite"],
+    image: `${import.meta.env.BASE_URL}assets/projects/authshield.png`,
+    githubUrl: "https://github.com/avinashk08408",
+    liveUrl: "",
+  },
   {
     number: "02",
     title: "Web Vulnerability Scanner",
     description:
-      "A cybersecurity utility that scans websites for common web vulnerabilities and helps identify security risks.",
+      "A cybersecurity tool that scans websites for common vulnerabilities and security issues.",
     stack: ["Python", "Flask"],
+    image: `${import.meta.env.BASE_URL}assets/projects/scanner.png`,
     githubUrl: "https://github.com/avinashk08408",
     liveUrl: "",
   },
@@ -25,57 +25,23 @@ const projects = [
     number: "03",
     title: "Fake GitHub Repo Detector",
     description:
-      "An AI-assisted project that helps identify suspicious GitHub repositories through repository-level signals.",
+      "An AI-assisted project for identifying suspicious GitHub repositories through repository signals.",
     stack: ["React", "AI"],
+    image: `${import.meta.env.BASE_URL}assets/projects/github-detector.png`,
     githubUrl: "https://github.com/avinashk08408",
     liveUrl: "",
   },
   {
     number: "04",
-    title: "Security Research in Progress",
+    title: "Coming Soon",
     description:
-      "New cybersecurity experiments, tools, and learning-focused projects will be added here.",
+      "More cybersecurity experiments, tools, and practical learning projects are in progress.",
     stack: ["Cybersecurity"],
+    image: `${import.meta.env.BASE_URL}assets/projects/coming-soon.png`,
     githubUrl: "https://github.com/avinashk08408",
     liveUrl: "",
   },
 ];
-
-function ProjectLinks({ githubUrl, liveUrl }) {
-  return (
-    <div className="ct-project-links">
-      <a
-        href={githubUrl}
-        target="_blank"
-        rel="noreferrer"
-      >
-        GitHub
-        <ExternalLink size={13} />
-      </a>
-
-      {liveUrl && (
-        <a
-          href={liveUrl}
-          target="_blank"
-          rel="noreferrer"
-        >
-          Live demo
-          <ExternalLink size={13} />
-        </a>
-      )}
-    </div>
-  );
-}
-
-function ProjectTags({ stack }) {
-  return (
-    <div className="ct-tags">
-      {stack.map((item) => (
-        <span key={item}>{item}</span>
-      ))}
-    </div>
-  );
-}
 
 export default function Projects() {
   return (
@@ -85,67 +51,71 @@ export default function Projects() {
     >
       <p className="ct-label">
         <span>03</span>
-        SELECTED WORK
+        PORTFOLIO
       </p>
 
       <div className="ct-content">
         <div className="ct-heading-row">
-          <div>
-            <h2>Featured projects.</h2>
-            <p>
-              Security-focused builds, web experiments, and continuous learning.
-            </p>
-          </div>
+          <h2>Featured projects.</h2>
+
+          <p>
+            Security-focused builds, web experiments, and continuous learning.
+          </p>
         </div>
 
-        <article className="ct-lead-project">
-          <div className="ct-lead-project-number">
-            {leadProject.number}
-          </div>
-
-          <div className="ct-lead-project-content">
-            <p className="ct-project-eyebrow">FEATURED BUILD</p>
-
-            <h3>{leadProject.title}</h3>
-
-            <p>{leadProject.description}</p>
-
-            <ProjectTags stack={leadProject.stack} />
-
-            <ProjectLinks
-              githubUrl={leadProject.githubUrl}
-              liveUrl={leadProject.liveUrl}
-            />
-          </div>
-        </article>
-
-        <div className="ct-project-archive-heading">
-          <span>PROJECT ARCHIVE</span>
-          <p>Tools, experiments, and learning in public.</p>
-        </div>
-
-        <div className="ct-project-grid">
+        <div className="project-card-grid">
           {projects.map((project) => (
-            <article key={project.number}>
-              <div className="ct-project-index">
-                {project.number}
+            <article
+              key={project.number}
+              className="project-card"
+            >
+              <div className="project-image-wrap">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                />
+
+                <span className="project-number">
+                  {project.number}
+                </span>
               </div>
 
-              <h3>{project.title}</h3>
+              <div className="project-card-content">
+                <h3>{project.title}</h3>
 
-              <p>{project.description}</p>
+                <p>{project.description}</p>
 
-              <ProjectTags stack={project.stack} />
+                <div className="project-tags">
+                  {project.stack.map((item) => (
+                    <span key={item}>{item}</span>
+                  ))}
+                </div>
 
-              <ProjectLinks
-                githubUrl={project.githubUrl}
-                liveUrl={project.liveUrl}
-              />
+                <div className="project-links">
+                  <a
+                    href={project.githubUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    GitHub ↗
+                  </a>
+
+                  {project.liveUrl && (
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Live Demo ↗
+                    </a>
+                  )}
+                </div>
+              </div>
             </article>
           ))}
         </div>
 
-        <p className="ct-project-closing-note">
+        <p className="projects-note">
           More security experiments and open-source work in progress.
         </p>
       </div>
