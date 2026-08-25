@@ -197,3 +197,18 @@
     font-size: 8px;
   }
 }
+/* Put “Who I am.” on the same centre line as Engineering stack. */
+.ct-section.about-component {
+  display: block !important;
+  grid-template-columns: 1fr !important;
+}
+
+.ct-section.about-component .about-heading {
+  width: 100% !important;
+  margin: 0 0 62px !important;
+  text-align: center !important;
+}
+
+.ct-section.about-component .about-heading .ct-label {
+  justify-content: center !important;
+}
