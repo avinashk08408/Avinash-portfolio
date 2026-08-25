@@ -1,173 +1,62 @@
-/* Quiet Scholar About section: centred title, photo left, copy aligned right. */
+/* FINAL ABOUT ALIGNMENT FIX
+   This selector is stronger than the global .ct-section grid rule. */
 
-.about-component {
+.ct-section.about-component {
   display: block;
+  grid-template-columns: 1fr;
+  gap: 0;
   padding: 115px 0;
 }
 
-/* This makes “Who I am.” sit in the true centre, like Engineering stack. */
-.about-component .about-heading {
+/* “Who I am.” now uses the full page width and is truly centred. */
+.ct-section.about-component .about-heading {
   width: 100%;
   margin: 0 0 62px;
   text-align: center;
 }
 
-.about-component .about-heading .ct-label {
+.ct-section.about-component .about-heading .ct-label {
   justify-content: center;
-  margin-bottom: 16px;
-}
-
-.about-component .about-heading h2 {
-  margin: 0;
-  color: var(--ink);
-  font-family: "Libre Baskerville", Georgia, serif;
-  font-size: clamp(34px, 4vw, 52px);
-  font-weight: 400;
-  line-height: 1.08;
 }
 
 /*
-  Photo starts at the same left edge as “Avinash K.” and “View projects”.
-  Content starts after the photo, closer to the centre instead of far right.
+  Photo begins from the same left visual column as “Avinash K.”
+  Content begins closer to the centre, not on the far right.
 */
-.about-component .about-layout {
+.ct-section.about-component .about-layout {
   width: 100%;
   display: grid;
-  grid-template-columns: 150px minmax(0, 480px);
+  grid-template-columns: 220px minmax(0, 480px);
   justify-content: start;
-  gap: 32px;
+  column-gap: 55px;
   align-items: center;
 }
 
-.about-component .about-photo-column {
-  display: flex;
+.ct-section.about-component .about-photo-column {
   justify-content: flex-start;
 }
 
-.about-component .about-photo-frame {
-  width: 150px;
-  aspect-ratio: 4 / 5;
-  overflow: hidden;
-  border: 1px solid var(--sienna);
-  background: #eeeae0;
-  box-shadow: 10px 10px 0 rgba(141, 90, 68, 0.1);
+.ct-section.about-component .about-photo-frame {
+  width: 170px;
 }
 
-.about-component .about-photo-frame img {
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: cover;
-  object-position: center;
-}
-
-.about-component .ct-about-copy {
-  width: 100%;
+.ct-section.about-component .ct-about-copy {
   max-width: 480px;
   justify-self: start;
 }
 
-.about-component .ct-about-copy h3 {
-  margin: 0 0 18px;
-  color: var(--ink);
-  font-family: "Libre Baskerville", Georgia, serif;
-  font-size: clamp(20px, 2.25vw, 30px);
-  font-weight: 400;
-  line-height: 1.22;
-}
-
-.about-component .ct-about-copy > p {
-  margin: 0;
-  color: #555752;
-  font-size: 13px;
-  line-height: 1.86;
-}
-
-.about-component .ct-about-copy > p + p {
-  margin-top: 14px;
-}
-
-.about-component .ct-about-copy strong {
-  color: var(--ink);
-}
-
-.about-component .ct-about-copy blockquote {
-  margin: 28px 0 0;
-  padding-left: 17px;
-  border-left: 2px solid var(--sienna);
-  color: #545650;
-  font-family: "Libre Baskerville", Georgia, serif;
-  font-size: 14px;
-  font-style: italic;
-  line-height: 1.7;
-}
-
-.about-component .ct-about-copy cite {
-  display: block;
-  margin-top: 6px;
-  color: #7b7d76;
-  font-family: "Manrope", Arial, sans-serif;
-  font-size: 10px;
-  font-style: normal;
-}
-
-.about-component .ct-stats {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 12px;
-  margin-top: 34px;
-}
-
-.about-component .ct-stats article {
-  padding: 14px 10px;
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-}
-
-.about-component .ct-stats strong {
-  display: block;
-  color: var(--sienna);
-  font-family: "Libre Baskerville", Georgia, serif;
-  font-size: 27px;
-  font-weight: 400;
-}
-
-.about-component .ct-stats span {
-  color: #6b6d67;
-  font-size: 9px;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-}
-
 @media (max-width: 700px) {
-  .about-component {
+  .ct-section.about-component {
+    display: block;
     padding: 82px 0;
   }
 
-  .about-component .about-heading {
-    margin-bottom: 40px;
-  }
-
-  .about-component .about-layout {
+  .ct-section.about-component .about-layout {
     grid-template-columns: 1fr;
-    gap: 34px;
+    row-gap: 34px;
   }
 
-  .about-component .about-photo-column {
+  .ct-section.about-component .about-photo-column {
     justify-content: center;
-  }
-
-  .about-component .about-photo-frame {
-    width: min(100%, 280px);
-  }
-}
-
-@media (max-width: 440px) {
-  .about-component .ct-stats {
-    grid-template-columns: 1fr;
-  }
-
-  .about-component .ct-stats article {
-    padding: 12px 0;
   }
 }
