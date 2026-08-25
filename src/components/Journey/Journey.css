@@ -279,3 +279,8 @@
     font-size: 16px !important;
   }
 }
+/* Make only CURRENT DIRECTION bold. */
+
+.journey-direction strong {
+  font-weight: 800;
+}
