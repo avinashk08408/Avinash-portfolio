@@ -1,44 +1,76 @@
 import "./Stack.css";
 
 const capabilityGroups = [
-  ["Experience layer", ["HTML", "CSS", "JavaScript", "React"]],
-  ["Programming", ["Python", "Go", "Java", "C", "C++"]],
-  ["Data & tools", ["SQL", "Git", "GitHub"]],
-  ["Networking", ["Networking", "TCP/IP", "HTTP"]],
+  {
+    number: "01",
+    title: "Security foundations",
+    description:
+      "Learning to identify, understand, and reduce common web-security risks.",
+    tools: ["Linux", "Networking", "OWASP", "Burp Suite", "Nmap"],
+  },
+  {
+    number: "02",
+    title: "Web engineering",
+    description:
+      "Building clear, responsive interfaces and connected web applications.",
+    tools: ["HTML", "CSS", "JavaScript", "React", "Flask"],
+  },
+  {
+    number: "03",
+    title: "Development practice",
+    description:
+      "Organising code, working with data, and improving projects through iteration.",
+    tools: ["Git", "GitHub", "Python", "SQL", "SQLite"],
+  },
 ];
 
 export default function Stack() {
   return (
-    <section id="skills" className="ct-section qs-shell stack-component">
-      <p className="ct-label">
-        <span>02</span>
-        CAPABILITIES
-      </p>
+    <section
+      id="skills"
+      className="qs-shell stack-component"
+    >
+      <div className="stack-header">
+        <p className="stack-label">
+          <span>02</span>
+          CAPABILITIES
+        </p>
 
-      <div className="ct-content">
-        <div className="ct-heading-row">
-          <div>
-            <h2>Engineering stack.</h2>
-            <p>How I build, secure, and ship products.</p>
-          </div>
+        <h2>Engineering stack.</h2>
 
-          <span>SKILLS & TOOLS</span>
-        </div>
+        <p className="stack-intro">
+          A practical foundation across cybersecurity, web engineering,
+          and continuous technical learning.
+        </p>
+      </div>
 
-        <div className="ct-capabilities">
-          {capabilityGroups.map(([title, items], index) => (
-            <article key={title}>
-              <span>0{index + 1}</span>
-              <h3>{title}</h3>
+      <div className="stack-record-list">
+        {capabilityGroups.map((group) => (
+          <article
+            key={group.number}
+            className="stack-record-row"
+          >
+            <span className="stack-record-number">
+              {group.number}
+            </span>
 
-              <ul>
-                {items.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            </article>
-          ))}
-        </div>
+            <div className="stack-record-copy">
+              <h3>{group.title}</h3>
+
+              <p>{group.description}</p>
+            </div>
+
+            <div className="stack-record-tools">
+              {group.tools.map((tool, index) => (
+                <span key={tool}>
+                  {tool}
+
+                  {index < group.tools.length - 1 && " / "}
+                </span>
+              ))}
+            </div>
+          </article>
+        ))}
       </div>
     </section>
   );
