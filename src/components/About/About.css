@@ -1,52 +1,62 @@
-/* FINAL PHOTO + CONTENT SPACING
-   Photo: slightly right from the left border.
-   Content: starts after a small space from the Contact me position. */
+/* FINAL ABOUT ALIGNMENT FIX
+   This selector is stronger than the global .ct-section grid rule. */
 
+.ct-section.about-component {
+  display: block;
+  grid-template-columns: 1fr;
+  gap: 0;
+  padding: 115px 0;
+}
+
+/* “Who I am.” now uses the full page width and is truly centred. */
+.ct-section.about-component .about-heading {
+  width: 100%;
+  margin: 0 0 62px;
+  text-align: center;
+}
+
+.ct-section.about-component .about-heading .ct-label {
+  justify-content: center;
+}
+
+/*
+  Photo begins from the same left visual column as “Avinash K.”
+  Content begins closer to the centre, not on the far right.
+*/
 .ct-section.about-component .about-layout {
-  grid-template-columns: 175px minmax(0, 480px);
-  column-gap: 36px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 220px minmax(0, 480px);
   justify-content: start;
+  column-gap: 55px;
+  align-items: center;
 }
 
 .ct-section.about-component .about-photo-column {
-  padding-left: 28px;
   justify-content: flex-start;
 }
 
 .ct-section.about-component .about-photo-frame {
-  width: 150px;
+  width: 170px;
 }
 
-/* Make Projects, Hackathons, and Technologies appear one below another. */
-.ct-section.about-component .ct-stats {
-  grid-template-columns: 1fr;
-  gap: 0;
-  width: min(100%, 255px);
-  margin-top: 34px;
-}
-
-.ct-section.about-component .ct-stats article {
-  padding: 14px 0;
-  border-top: 1px solid var(--border);
-  border-bottom: 0;
-}
-
-.ct-section.about-component .ct-stats article:last-child {
-  border-bottom: 1px solid var(--border);
+.ct-section.about-component .ct-about-copy {
+  max-width: 480px;
+  justify-self: start;
 }
 
 @media (max-width: 700px) {
+  .ct-section.about-component {
+    display: block;
+    padding: 82px 0;
+  }
+
   .ct-section.about-component .about-layout {
     grid-template-columns: 1fr;
     row-gap: 34px;
   }
 
   .ct-section.about-component .about-photo-column {
-    padding-left: 0;
     justify-content: center;
-  }
-
-  .ct-section.about-component .ct-stats {
-    width: 100%;
   }
 }
