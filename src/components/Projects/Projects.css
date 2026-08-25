@@ -189,3 +189,14 @@
     white-space: nowrap;
   }
 }
+/* Move only the Projects description one tab left. */
+
+.projects-carousel-intro {
+  transform: translateX(-50px);
+}
+
+@media (max-width: 640px) {
+  .projects-carousel-intro {
+    transform: translateX(0);
+  }
+}
