@@ -36,7 +36,7 @@ export default function Stack() {
           CAPABILITIES
         </p>
 
-        <h2>Engineering stack.</h2>
+        <h2>Technology stack</h2>
 
         <p className="stack-intro">
           A practical foundation across cybersecurity, web engineering,
