@@ -212,3 +212,23 @@
 .ct-section.about-component .about-heading .ct-label {
   justify-content: center !important;
 }
+/* Readable About text + smaller gap after “Who I am.” */
+.ct-section.about-component .about-heading {
+  margin-bottom: 28px !important;
+}
+
+.ct-section.about-component .ct-about-copy > p {
+  font-size: 15px;
+  line-height: 1.78;
+}
+
+@media (max-width: 700px) {
+  .ct-section.about-component .about-heading {
+    margin-bottom: 24px !important;
+  }
+
+  .ct-section.about-component .ct-about-copy > p {
+    font-size: 15px;
+    line-height: 1.82;
+  }
+}
