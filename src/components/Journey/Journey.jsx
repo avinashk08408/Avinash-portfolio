@@ -27,7 +27,7 @@ export default function Journey() {
           ACADEMIC RECORD
         </p>
 
-        <h2>Learning journey.</h2>
+        <h2>Learning journey</h2>
 
         <p className="journey-intro">
           A record of the foundations and focused study shaping my work
