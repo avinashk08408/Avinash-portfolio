@@ -15,7 +15,7 @@ export default function Resume() {
           PROFESSIONAL FOLIO
         </p>
 
-        <h2>Resume.</h2>
+        <h2>Resume</h2>
 
         <p className="resume-intro">
           A complete professional record, prepared as a clear reference for
