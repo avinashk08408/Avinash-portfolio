@@ -284,3 +284,12 @@
 .journey-direction strong {
   font-weight: 800;
 }
+/* Increase Learning Journey years and small metadata to 15px. */
+
+.journey-current-date,
+.journey-status,
+.journey-school-year,
+.journey-school-score,
+.journey-direction strong {
+  font-size: 15px;
+}
