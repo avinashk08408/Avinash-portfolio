@@ -108,14 +108,11 @@ export default function Contact() {
           <input required type="email" placeholder="Your email" />
         </label>
 
-        <label>
-          SUBJECT
-          <input required placeholder="Subject" />
-        </label>
+        
 
         <label>
           MESSAGE
-          <textarea required placeholder="Tell me about your project..." />
+          <textarea required placeholder="write your message..." />
         </label>
 
         <button type="submit">
