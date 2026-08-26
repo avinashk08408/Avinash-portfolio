@@ -49,11 +49,14 @@ export default function Activity() {
 
   return (
     <section id="activity" className="open-record qs-shell">
-      <div className="open-record__intro">
-        <h2>
-          Open <em>record.</em>
-        </h2>
+  
+    <div className="open-record__intro">
+       <p className="open-record__label">07. BLOG</p>
 
+         <h2>
+            Open <em>record</em>
+        </h2>
+  
         <p>
           Stories from hackathons, project builds,
           <br />
