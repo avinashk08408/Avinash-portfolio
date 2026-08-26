@@ -68,8 +68,8 @@ export default function Contact() {
     <section id="contact" className="ct-contact qs-shell contact-component">
       <div className="ct-contact-copy">
         <p className="ct-label">
-          <span>08</span>
-          CONTACT & COLLABORATION
+          <span>08 CONTACT & COLLABORATION</span>
+          
         </p>
 
         <h2>
