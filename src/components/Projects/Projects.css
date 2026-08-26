@@ -212,3 +212,47 @@
 .projects-card-links a:hover {
   border-color: var(--sienna);
 }
+/* Projects: match the centred Stack and Journey heading treatment. */
+
+.projects-carousel-header {
+  max-width: 1060px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.projects-carousel-header .ct-label {
+  margin: 0 0 16px;
+  color: var(--sienna) !important;
+  font-size: 11px !important;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  line-height: 1.2 !important;
+}
+
+.projects-carousel-header h2 {
+  font-size: clamp(38px, 4.6vw, 61px);
+  letter-spacing: -0.05em;
+  line-height: 1.08;
+}
+
+.projects-carousel-intro {
+  max-width: none;
+  margin: 20px auto 46px;
+  color: #565852 !important;
+  font-size: 20px !important;
+  line-height: 1.62 !important;
+  text-align: center;
+  transform: none;
+}
+
+@media (max-width: 640px) {
+  .projects-carousel-header h2 {
+    font-size: clamp(34px, 11vw, 47px);
+  }
+
+  .projects-carousel-intro {
+    margin: 16px auto 31px;
+    font-size: 16px !important;
+    white-space: normal;
+  }
+}
