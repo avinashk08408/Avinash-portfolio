@@ -326,3 +326,22 @@
     transition: none;
   }
 }
+/* Exact match: 07 BLOG = 06 PROFESSIONAL FOLIO label. */
+
+.open-record__label {
+  display: block;
+  margin: 0 0 15px;
+  color: var(--sienna);
+  font-size: 10px !important;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  text-align: center;
+}
+
+.open-record__label span {
+  margin-right: 9px;
+  color: var(--sienna);
+  font-size: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+}
