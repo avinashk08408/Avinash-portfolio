@@ -1,41 +1,302 @@
-/* Activity: approved Quiet Scholar public profile links. */
+/* Open Record: interactive personal blog section. */
 
-.activity-component .activity-links {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1px;
-  margin-top: 32px;
-  background: var(--border);
+.open-record {
+  width: min(90vw, 1180px);
+  padding: 112px 0 96px;
 }
 
-.activity-component .activity-links a {
+.open-record__header {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--ink);
+}
+
+.open-record__header p {
+  margin: 0;
+  color: var(--sienna);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+.open-record__intro {
   display: grid;
-  grid-template-columns: 18px 1fr 15px;
-  gap: 12px;
+  grid-template-columns: minmax(0, 1fr) 270px;
+  gap: 48px;
+  align-items: end;
+  padding: 56px 0 48px;
+}
+
+.open-record__intro h2 {
+  max-width: 670px;
+  margin: 0;
+  font-family: "Libre Baskerville", Georgia, serif;
+  font-size: clamp(50px, 6.8vw, 82px);
+  font-weight: 400;
+  letter-spacing: -0.075em;
+  line-height: 0.87;
+}
+
+.open-record__intro h2 em {
+  color: var(--sienna);
+  font-style: normal;
+}
+
+.open-record__intro > p {
+  max-width: 270px;
+  margin: 0 0 5px;
+  color: #62635d;
+  font-size: 14px;
+  line-height: 1.68;
+}
+
+.open-record__viewer {
+  display: grid;
+  grid-template-columns: 112px minmax(0, 1fr);
+  min-height: 450px;
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+}
+
+.open-record__menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 21px;
+  padding: 28px 0;
+  border-right: 1px solid var(--border);
+}
+
+.open-record__menu-button {
+  display: flex;
   align-items: center;
-  min-height: 72px;
-  padding: 16px;
-  background: var(--paper);
-  color: var(--ink);
+  gap: 11px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #70716b;
+  font: 800 9px "Manrope", Arial, sans-serif;
+  letter-spacing: 0.1em;
+  text-align: left;
+  cursor: pointer;
+  transition: color 180ms ease-out;
 }
 
-.activity-component .activity-links b,
-.activity-component .activity-links small {
-  display: block;
+.open-record__menu-button::before {
+  width: 20px;
+  height: 1px;
+  background: var(--border);
+  content: "";
+  transition: width 180ms ease-out, background 180ms ease-out;
 }
 
-.activity-component .activity-links b {
-  font-size: 11px;
+.open-record__menu-button:hover,
+.open-record__menu-button.is-active {
+  color: var(--sienna);
 }
 
-.activity-component .activity-links small {
-  margin-top: 4px;
-  color: #6b6d67;
+.open-record__menu-button.is-active::before {
+  width: 36px;
+  background: var(--sienna);
+}
+
+.open-record__menu-button:focus-visible {
+  outline: 1px solid var(--sienna);
+  outline-offset: 5px;
+}
+
+.open-record__story {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 38px 46px 36px 54px;
+}
+
+.open-record__number {
+  position: absolute;
+  top: 13px;
+  right: 27px;
+  color: rgba(141, 90, 68, 0.2);
+  font-family: "Libre Baskerville", Georgia, serif;
+  font-size: 190px;
+  letter-spacing: -0.12em;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.open-record__category {
+  position: relative;
+  margin: 0;
+  color: var(--sienna);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+.open-record__story h3 {
+  position: relative;
+  max-width: 700px;
+  margin: 72px 0 0;
+  font-family: "Libre Baskerville", Georgia, serif;
+  font-size: clamp(37px, 4.6vw, 63px);
+  font-weight: 400;
+  letter-spacing: -0.075em;
+  line-height: 0.96;
+}
+
+.open-record__story h3 em {
+  color: var(--sienna);
+  font-style: normal;
+}
+
+.open-record__description {
+  position: relative;
+  max-width: 570px;
+  margin: 22px 0 auto;
+  color: #62635d;
+  font-size: 15px;
+  line-height: 1.72;
+}
+
+.open-record__story-footer {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 24px;
+  padding-top: 23px;
+  border-top: 1px solid var(--border);
+}
+
+.open-record__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px 12px;
+}
+
+.open-record__tags span,
+.open-record__empty-link {
+  color: #62635d;
   font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.09em;
 }
 
-@media (max-width: 640px) {
-  .activity-component .activity-links {
+.open-record__tags span + span::before {
+  margin-right: 12px;
+  color: var(--sienna);
+  content: "·";
+}
+
+.open-record__read-link,
+.open-record__empty-link {
+  padding-bottom: 5px;
+  border-bottom: 1px solid var(--sienna);
+  color: var(--sienna);
+  white-space: nowrap;
+}
+
+.open-record__read-link {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+
+.open-record__footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  padding-top: 24px;
+}
+
+.open-record__footer p {
+  max-width: 570px;
+  margin: 0;
+  color: #62635d;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.open-record__footer code,
+.open-record__footer span {
+  color: var(--sienna);
+  font: 800 9px "Manrope", Arial, sans-serif;
+  letter-spacing: 0.1em;
+}
+
+@media (max-width: 760px) {
+  .open-record {
+    width: 90vw;
+    padding: 76px 0;
+  }
+
+  .open-record__header p:last-child {
+    display: none;
+  }
+
+  .open-record__intro {
     grid-template-columns: 1fr;
+    gap: 21px;
+    padding: 44px 0;
+  }
+
+  .open-record__intro h2 {
+    font-size: clamp(50px, 15vw, 68px);
+  }
+
+  .open-record__intro > p {
+    max-width: 330px;
+  }
+
+  .open-record__viewer {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+
+  .open-record__menu {
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 22px;
+    padding: 18px 0;
+    border-right: 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .open-record__menu-button::before {
+    display: none;
+  }
+
+  .open-record__story {
+    min-height: 420px;
+    padding: 30px 0;
+  }
+
+  .open-record__number {
+    top: 14px;
+    right: 0;
+    font-size: 145px;
+  }
+
+  .open-record__story h3 {
+    margin-top: 66px;
+    font-size: clamp(37px, 10vw, 49px);
+  }
+
+  .open-record__description {
+    font-size: 14px;
+  }
+
+  .open-record__story-footer {
+    flex-direction: column;
+    align-items: start;
+    gap: 13px;
+  }
+
+  .open-record__footer {
+    flex-direction: column;
+    gap: 15px;
   }
 }
