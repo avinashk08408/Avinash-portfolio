@@ -12,8 +12,8 @@ export default function About() {
     <section id="about" className="ct-section qs-shell about-component">
       <div className="about-heading">
         <p className="ct-label">
-          <span>01</span>
-          PROFILE
+          <span>01 PROFILE</span>
+          
         </p>
 
         <h2>Who I am</h2>
