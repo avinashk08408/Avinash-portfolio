@@ -56,14 +56,11 @@ export default function Activity() {
 
       <div className="open-record__intro">
         <h2>
-          A closer look
-          <br />
-          at the <em>making.</em>
+          Open <em>records.</em>
         </h2>
 
         <p>
-          A reading space for stories that deserve more than a short update:
-          an event, a build, or an idea that changed the work.
+          Stories from hackathons, project builds, and cybersecurity learning.
         </p>
       </div>
 
@@ -124,12 +121,10 @@ export default function Activity() {
                 target="_blank"
                 rel="noreferrer"
               >
-                OPEN FULL RECORD ↗
+                OPEN ↗
               </a>
             ) : (
-              <span className="open-record__empty-link">
-                ADD STORY URL
-              </span>
+              <span className="open-record__empty-link">OPEN</span>
             )}
           </footer>
         </article>
@@ -137,7 +132,9 @@ export default function Activity() {
 
       <footer className="open-record__footer">
         <p>
-          Choose Event, Build, or Study to reveal one story at a time. 
+          Choose Event, Build, or Study to reveal one story at a time. Add
+          your real title, date, details, tags, and article URL in the
+          <code>records</code> list above.
         </p>
 
         <span>THE LIBRARY GROWS WITH THE WORK.</span>
