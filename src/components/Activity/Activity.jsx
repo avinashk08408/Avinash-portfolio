@@ -49,18 +49,15 @@ export default function Activity() {
 
   return (
     <section id="activity" className="open-record qs-shell">
-      <header className="open-record__header">
-        <p>08 / OPEN RECORD</p>
-        <p>SELECT A STORY TO READ</p>
-      </header>
-
       <div className="open-record__intro">
         <h2>
-          Open <em>records.</em>
+          Open <em>record.</em>
         </h2>
 
         <p>
-          Stories from hackathons, project builds, and cybersecurity learning.
+          Stories from hackathons, project builds,
+          <br />
+          and cybersecurity learning.
         </p>
       </div>
 
@@ -81,6 +78,7 @@ export default function Activity() {
               }
               role="tab"
               aria-selected={record.id === activeRecordId}
+              aria-controls="open-record-story"
               onClick={() => setActiveRecordId(record.id)}
             >
               {record.menuLabel}
@@ -88,7 +86,11 @@ export default function Activity() {
           ))}
         </div>
 
-        <article key={activeRecord.id} className="open-record__story">
+        <article
+          key={activeRecord.id}
+          id="open-record-story"
+          className="open-record__story"
+        >
           <span className="open-record__number">
             {String(records.indexOf(activeRecord) + 1).padStart(2, "0")}
           </span>
@@ -129,16 +131,6 @@ export default function Activity() {
           </footer>
         </article>
       </div>
-
-      <footer className="open-record__footer">
-        <p>
-          Choose Event, Build, or Study to reveal one story at a time. Add
-          your real title, date, details, tags, and article URL in the
-          <code>records</code> list above.
-        </p>
-
-        <span>THE LIBRARY GROWS WITH THE WORK.</span>
-      </footer>
     </section>
   );
 }
