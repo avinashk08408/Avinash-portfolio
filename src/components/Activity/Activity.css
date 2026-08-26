@@ -300,3 +300,64 @@
     gap: 15px;
   }
 }
+/* Open Record: typography balance with the other portfolio sections. */
+
+.open-record {
+  padding: 96px 0 84px;
+}
+
+.open-record__intro {
+  padding: 46px 0 40px;
+}
+
+.open-record__intro h2 {
+  font-size: clamp(42px, 4.8vw, 56px);
+  letter-spacing: -0.06em;
+}
+
+.open-record__viewer {
+  min-height: 410px;
+}
+
+.open-record__number {
+  color: rgba(141, 90, 68, 0.15);
+  font-size: 150px;
+}
+
+.open-record__story {
+  padding: 34px 42px 32px 46px;
+}
+
+.open-record__story h3 {
+  margin-top: 58px;
+  font-size: clamp(31px, 3.6vw, 46px);
+  letter-spacing: -0.06em;
+}
+
+@media (max-width: 760px) {
+  .open-record {
+    padding: 70px 0;
+  }
+
+  .open-record__intro {
+    padding: 38px 0;
+  }
+
+  .open-record__intro h2 {
+    font-size: clamp(43px, 12vw, 56px);
+  }
+
+  .open-record__story {
+    min-height: 380px;
+    padding: 26px 0;
+  }
+
+  .open-record__number {
+    font-size: 118px;
+  }
+
+  .open-record__story h3 {
+    margin-top: 54px;
+    font-size: clamp(30px, 8.7vw, 42px);
+  }
+}
