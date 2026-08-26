@@ -91,7 +91,7 @@ export default function Activity() {
           ))}
         </div>
 
-        <article className="open-record__story">
+        <article key={activeRecord.id} className="open-record__story">
           <span className="open-record__number">
             {String(records.indexOf(activeRecord) + 1).padStart(2, "0")}
           </span>
