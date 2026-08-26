@@ -128,11 +128,11 @@
 
 .footer-component.ct-footer > div:first-child > span {
   margin-top: 7px;
-  font-size: 12px !important;
+  font-size: 16px !important;
   letter-spacing: 0.06em;
 }
 
 .footer-component.ct-footer > p {
-  font-size: 8px !important;
+  font-size: 11px !important;
 }
 
