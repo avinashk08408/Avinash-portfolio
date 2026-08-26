@@ -1,54 +1,149 @@
-import { ArrowUpRight, Github, Linkedin } from "lucide-react";
+import { useState } from "react";
 import "./Activity.css";
 
-const activityLinks = [
+const records = [
   {
-    label: "GitHub",
-    description: "Projects and study practice",
-    href: "https://github.com/avinashk08408",
-    icon: Github,
+    id: "event",
+    menuLabel: "EVENT",
+    category: "HACKATHON RECORD",
+    date: "ADD ACTUAL DATE",
+    titleStart: "From a challenge brief to a",
+    titleAccent: "working response.",
+    description:
+      "Write your real hackathon story here: the prompt, your contribution, the idea your team tested, and the lesson you will carry forward.",
+    tags: ["EVENT", "PROJECT", "REFLECTION"],
+    readUrl: "",
   },
   {
-    label: "LinkedIn",
-    description: "Professional learning journey",
-    href: "https://www.linkedin.com/in/avinash-k-201b47384?utm_source=share_via&utm_content=profile&utm_medium=member_android",
-    icon: Linkedin,
+    id: "build",
+    menuLabel: "BUILD",
+    category: "PROJECT BUILD LOG",
+    date: "ADD ACTUAL DATE",
+    titleStart: "When the first version asks for a",
+    titleAccent: "better answer.",
+    description:
+      "Use this entry for a real project update: what you started with, which decision changed the work, what you tested, and what you will improve next.",
+    tags: ["BUILD", "PROTOTYPE", "TESTING"],
+    readUrl: "",
+  },
+  {
+    id: "study",
+    menuLabel: "STUDY",
+    category: "SECURITY STUDY",
+    date: "ADD ACTUAL DATE",
+    titleStart: "A security idea worth a",
+    titleAccent: "closer look.",
+    description:
+      "Use this entry after studying a cybersecurity concept. Explain what became clearer, why it matters, and which safe learning task you will explore next.",
+    tags: ["SECURITY", "LEARNING", "SYSTEMS"],
+    readUrl: "",
   },
 ];
 
 export default function Activity() {
+  const [activeRecordId, setActiveRecordId] = useState("event");
+
+  const activeRecord = records.find(
+    (record) => record.id === activeRecordId,
+  );
+
   return (
-    <section id="activity" className="ct-section qs-shell activity-component">
-      <p className="ct-label">
-        <span>07</span>
-        ACTIVITY
-      </p>
+    <section id="activity" className="open-record qs-shell">
+      <header className="open-record__header">
+        <p>08 / OPEN RECORD</p>
+        <p>SELECT A STORY TO READ</p>
+      </header>
 
-      <div className="ct-content">
-        <div className="ct-heading-row">
-          <div>
-            <h2>Learning in public.</h2>
-            <p>
-              Follow project work and the ongoing cybersecurity learning journey.
-            </p>
-          </div>
-        </div>
+      <div className="open-record__intro">
+        <h2>
+          A closer look
+          <br />
+          at the <em>making.</em>
+        </h2>
 
-        <div className="activity-links">
-          {activityLinks.map(({ label, description, href, icon: Icon }) => (
-            <a key={label} href={href} target="_blank" rel="noreferrer">
-              <Icon size={16} />
+        <p>
+          A reading space for stories that deserve more than a short update:
+          an event, a build, or an idea that changed the work.
+        </p>
+      </div>
 
-              <span>
-                <b>{label}</b>
-                <small>{description}</small>
-              </span>
-
-              <ArrowUpRight size={15} />
-            </a>
+      <div className="open-record__viewer">
+        <div
+          className="open-record__menu"
+          role="tablist"
+          aria-label="Story categories"
+        >
+          {records.map((record) => (
+            <button
+              key={record.id}
+              type="button"
+              className={
+                record.id === activeRecordId
+                  ? "open-record__menu-button is-active"
+                  : "open-record__menu-button"
+              }
+              role="tab"
+              aria-selected={record.id === activeRecordId}
+              onClick={() => setActiveRecordId(record.id)}
+            >
+              {record.menuLabel}
+            </button>
           ))}
         </div>
+
+        <article className="open-record__story">
+          <span className="open-record__number">
+            {String(records.indexOf(activeRecord) + 1).padStart(2, "0")}
+          </span>
+
+          <p className="open-record__category">
+            {activeRecord.category} · {activeRecord.date}
+          </p>
+
+          <h3>
+            {activeRecord.titleStart}
+            <br />
+            <em>{activeRecord.titleAccent}</em>
+          </h3>
+
+          <p className="open-record__description">
+            {activeRecord.description}
+          </p>
+
+          <footer className="open-record__story-footer">
+            <div className="open-record__tags">
+              {activeRecord.tags.map((tag) => (
+                <span key={tag}>{tag}</span>
+              ))}
+            </div>
+
+            {activeRecord.readUrl ? (
+              <a
+                className="open-record__read-link"
+                href={activeRecord.readUrl}
+                target="_blank"
+                rel="noreferrer"
+              >
+                OPEN FULL RECORD ↗
+              </a>
+            ) : (
+              <span className="open-record__empty-link">
+                ADD STORY URL
+              </span>
+            )}
+          </footer>
+        </article>
       </div>
+
+      <footer className="open-record__footer">
+        <p>
+          Choose Event, Build, or Study to reveal one story at a time. Add
+          your real title, date, details, tags, and article URL in the
+          <code>records</code> list above.
+        </p>
+
+        <span>THE LIBRARY GROWS WITH THE WORK.</span>
+      </footer>
     </section>
   );
 }
