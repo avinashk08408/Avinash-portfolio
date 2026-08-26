@@ -256,3 +256,25 @@
     white-space: normal;
   }
 }
+/* Exact match: 03 PORTFOLIO = 02 CAPABILITIES label. */
+
+.projects-carousel-header {
+  margin-right: auto !important;
+  margin-left: auto !important;
+  text-align: center;
+}
+
+.projects-carousel-header .ct-label {
+  display: block;
+  margin: 0 0 16px;
+  color: var(--sienna) !important;
+  font-size: 11px !important;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  line-height: 1.2 !important;
+  text-align: center;
+}
+
+.projects-carousel-header .ct-label span {
+  margin-right: 9px;
+}
