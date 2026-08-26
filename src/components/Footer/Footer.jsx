@@ -16,7 +16,7 @@ export default function Footer() {
         <span>Cyber Security Student · Frontend Developer</span>
       </div>
 
-      <nav font-size:14px>
+      <nav>
         {footerLinks.map(([label, id]) => (
           <a key={id} href={`#${id}`}>
             {label}
