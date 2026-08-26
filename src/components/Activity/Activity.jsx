@@ -51,8 +51,11 @@ export default function Activity() {
     <section id="activity" className="open-record qs-shell">
   
     <div className="open-record__intro">
-       <p className="open-record__label">07. BLOG</p>
-
+<p className="open-record__label">
+  <span>07</span>
+  BLOG
+</p>
+      
          <h2>
             Open <em>record</em>
         </h2>
