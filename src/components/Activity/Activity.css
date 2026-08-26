@@ -1,4 +1,4 @@
-/* Open Record: simplified section heading and story viewer. */
+/* Open Record: final Activity section stylesheet. */
 
 .open-record {
   width: min(90vw, 1100px);
@@ -12,6 +12,25 @@
   gap: 16px;
   padding: 0 0 42px;
   text-align: center;
+}
+
+.open-record__label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  margin: 0;
+  color: var(--sienna);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.open-record__label span {
+  color: var(--sienna);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0;
 }
 
 .open-record__intro h2 {
@@ -113,12 +132,12 @@
 
 .open-record__number {
   position: absolute;
-  top: 14px;
-  right: 26px;
-  color: rgba(141, 90, 68, 0.15);
+  top: 24px;
+  right: 28px;
+  color: rgba(141, 90, 68, 0.1);
   font-family: "Libre Baskerville", Georgia, serif;
-  font-size: 150px;
-  letter-spacing: -0.12em;
+  font-size: 76px;
+  letter-spacing: -0.1em;
   line-height: 1;
   pointer-events: none;
 }
@@ -279,9 +298,9 @@
   }
 
   .open-record__number {
-    top: 14px;
+    top: 20px;
     right: 0;
-    font-size: 118px;
+    font-size: 62px;
   }
 
   .open-record__story h3 {
@@ -305,29 +324,5 @@
   .open-record__menu-button::before,
   .open-record__read-link {
     transition: none;
-  }
-}
-/* Open Record: Blog label and quieter story numbers. */
-
-.open-record__label {
-  margin: 0;
-  color: var(--sienna);
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: 0.14em;
-}
-
-.open-record__number {
-  top: 20px;
-  right: 28px;
-  color: rgba(141, 90, 68, 0.12);
-  font-size: 110px;
-}
-
-@media (max-width: 760px) {
-  .open-record__number {
-    top: 18px;
-    right: 0;
-    font-size: 88px;
   }
 }
