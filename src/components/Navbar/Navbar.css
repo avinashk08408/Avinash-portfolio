@@ -1,9 +1,9 @@
-/* Navbar: approved Quiet Scholar letterhead navigation. */
+/* Navbar: Quiet Scholar navigation without the circular AK mark. */
 
 .navbar-component .qs-brand {
-  gap: 9px;
+  gap: 0;
   font-family: "Libre Baskerville", Georgia, serif;
-  font-size: 10px;
+  font-size: 14px;
   font-weight: 400;
   letter-spacing: 0.045em;
 }
@@ -13,29 +13,19 @@
   font-style: normal;
 }
 
-.navbar-component .qs-seal {
-  display: grid;
-  width: 26px;
-  height: 26px;
-  place-items: center;
-  border: 1px solid var(--sienna);
-  border-radius: 50%;
-  color: var(--sienna);
-  font-family: "Libre Baskerville", Georgia, serif;
-  font-size: 20px;
-  letter-spacing: -0.08em;
-}
-
 .navbar-component .qs-nav-links {
   gap: 21px;
 }
 
 .navbar-component .qs-nav-links a {
-  font-size: 15px;
+  font-size: 12px;
 }
 
-
 @media (max-width: 640px) {
+  .navbar-component .qs-brand {
+    font-size: 13px;
+  }
+
   .navbar-component .qs-nav-links {
     display: none;
   }
