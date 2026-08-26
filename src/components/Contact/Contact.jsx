@@ -9,10 +9,12 @@ import {
 } from "lucide-react";
 import "./Contact.css";
 
+const contactEmail = "avinashk08408@gmail.com";
+
 const socialLinks = [
   {
     label: "Email",
-    href: "mailto:avinashk08408@gmail.com",
+    href: `mailto:${contactEmail}`,
     icon: Mail,
   },
   {
@@ -37,7 +39,29 @@ export default function Contact() {
 
   function submit(event) {
     event.preventDefault();
+
+    const formData = new FormData(event.currentTarget);
+    const name = formData.get("name");
+    const email = formData.get("email");
+    const message = formData.get("message");
+
+    const subject = `Portfolio message from ${name}`;
+    const body = [
+      `Name: ${name}`,
+      `Email: ${email}`,
+      "",
+      "Message:",
+      message,
+    ].join("\n");
+
+    const mailtoLink = [
+      `mailto:${contactEmail}`,
+      `?subject=${encodeURIComponent(subject)}`,
+      `&body=${encodeURIComponent(body)}`,
+    ].join("");
+
     setMessageReady(true);
+    window.location.href = mailtoLink;
   }
 
   return (
@@ -75,7 +99,7 @@ export default function Contact() {
             Resume <ArrowRight size={16} />
           </a>
 
-          <a className="qs-text-link" href="mailto:avinashk08408@gmail.com">
+          <a className="qs-text-link" href={`mailto:${contactEmail}`}>
             Email me
           </a>
         </div>
@@ -100,35 +124,37 @@ export default function Contact() {
 
         <label>
           NAME
-          <input required placeholder="Your name" />
+          <input name="name" required placeholder="Your name" />
         </label>
 
         <label>
           EMAIL
-          <input required type="email" placeholder="Your email" />
+          <input
+            name="email"
+            required
+            type="email"
+            placeholder="Your email"
+          />
         </label>
-
-        
 
         <label>
           MESSAGE
-          <textarea required placeholder="write your message..." />
+          <textarea
+            name="message"
+            required
+            placeholder="Write your message..."
+          />
         </label>
 
         <button type="submit">
-          {messageReady ? (
-            "Message prepared"
-          ) : (
-            <>
-              <Send size={15} />
-              Send message
-            </>
-          )}
+          <Send size={15} />
+          Send message
         </button>
 
         {messageReady && (
           <small>
-            Your message is prepared for the portfolio contact route.
+            Your email app has been opened with this message addressed to
+            Avinash.
           </small>
         )}
       </form>
