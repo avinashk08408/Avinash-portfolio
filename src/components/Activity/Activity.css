@@ -361,3 +361,79 @@
     font-size: clamp(30px, 8.7vw, 42px);
   }
 }
+/* Open Record: restrained hover and story-transition polish. */
+
+.open-record__menu-button {
+  transition:
+    color 180ms cubic-bezier(0.23, 1, 0.32, 1),
+    transform 180ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.open-record__menu-button::before {
+  transition:
+    width 220ms cubic-bezier(0.23, 1, 0.32, 1),
+    background 180ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.open-record__menu-button:hover {
+  transform: translateX(4px);
+}
+
+.open-record__menu-button:active {
+  transform: translateX(2px) scale(0.97);
+}
+
+.open-record__menu-button.is-active {
+  transform: translateX(4px);
+}
+
+.open-record__read-link,
+.open-record__empty-link {
+  transition:
+    color 180ms cubic-bezier(0.23, 1, 0.32, 1),
+    border-color 180ms cubic-bezier(0.23, 1, 0.32, 1),
+    transform 180ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.open-record__read-link:hover {
+  border-color: var(--ink);
+  color: var(--ink);
+  transform: translateX(3px);
+}
+
+.open-record__read-link:active {
+  transform: translateX(1px) scale(0.97);
+}
+
+.open-record__story h3,
+.open-record__description,
+.open-record__story-footer {
+  will-change: transform, opacity;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .open-record__story {
+    animation: open-record-story-reveal 280ms cubic-bezier(0.23, 1, 0.32, 1) both;
+  }
+
+  @keyframes open-record-story-reveal {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .open-record__menu-button,
+  .open-record__menu-button::before,
+  .open-record__read-link,
+  .open-record__empty-link {
+    transition: none;
+  }
+}
