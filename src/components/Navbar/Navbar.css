@@ -30,6 +30,11 @@
   gap: 21px;
 }
 
+.navbar-component .qs-nav-links a {
+  font-size: 12px;
+}
+
+
 @media (max-width: 640px) {
   .navbar-component .qs-nav-links {
     display: none;
