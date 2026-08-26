@@ -117,6 +117,22 @@
 }
 
 .footer-component > p {
-  font-size: 15px;
+  font-size: 9px;
+}
+/* Footer: clearly larger identity block and quieter copyright line. */
+
+.footer-component.ct-footer > div:first-child > strong {
+  font-size: 20px !important;
+  line-height: 1.2;
+}
+
+.footer-component.ct-footer > div:first-child > span {
+  margin-top: 7px;
+  font-size: 12px !important;
+  letter-spacing: 0.06em;
+}
+
+.footer-component.ct-footer > p {
+  font-size: 8px !important;
 }
 
