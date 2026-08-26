@@ -136,3 +136,13 @@
   font-size: 11px !important;
 }
 
+/* Footer: clearly larger navigation links. */
+
+.footer-component.ct-footer nav {
+  gap: 18px;
+}
+
+.footer-component.ct-footer nav a {
+  font-size: 14px !important;
+  font-weight: 800;
+}
