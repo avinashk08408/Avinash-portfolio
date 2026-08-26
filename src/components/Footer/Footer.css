@@ -106,3 +106,17 @@
 .footer-component > p {
   font-size: 10px;
 }
+/* Footer: stronger identity line and quieter copyright line. */
+
+.footer-component strong {
+  font-size: 17px;
+}
+
+.footer-component span {
+  font-size: 11px;
+}
+
+.footer-component > p {
+  font-size: 9px;
+}
+
