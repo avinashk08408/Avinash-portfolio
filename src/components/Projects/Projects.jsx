@@ -41,11 +41,11 @@ export default function Projects() {
     >
       <div className="projects-carousel-header">
         <p className="ct-label">
-          <span>03</span>
-          PORTFOLIO
+          <span>03 PORTFOLIO</span>
+          
         </p>
 
-        <h2>Featured projects.</h2>
+        <h2>Featured projects</h2>
 
         <p className="projects-carousel-intro">
           Security-focused builds, web experiments, and continuous learning.
