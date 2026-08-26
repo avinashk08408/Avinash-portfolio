@@ -18,12 +18,8 @@ export default function Navbar() {
     <>
       <header className="qs-nav navbar-component">
         <a href="#home" className="qs-brand">
-          <span className="qs-seal" aria-hidden="true">
-            
-          </span>
-
           <span>
-           <i> AVINASH K </i> 
+            <i>AVINASH K</i>
           </span>
         </a>
 
@@ -47,7 +43,10 @@ export default function Navbar() {
       </header>
 
       {menuOpen && (
-        <nav className="qs-mobile-nav navbar-mobile" aria-label="Mobile navigation">
+        <nav
+          className="qs-mobile-nav navbar-mobile"
+          aria-label="Mobile navigation"
+        >
           {navigation.map(([label, id]) => (
             <a
               key={id}
@@ -62,4 +61,3 @@ export default function Navbar() {
       )}
     </>
   );
-}
