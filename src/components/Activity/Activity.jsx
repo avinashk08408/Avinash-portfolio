@@ -137,9 +137,7 @@ export default function Activity() {
 
       <footer className="open-record__footer">
         <p>
-          Choose Event, Build, or Study to reveal one story at a time. Add
-          your real title, date, details, tags, and article URL in the
-          <code>records</code> list above.
+          Choose Event, Build, or Study to reveal one story at a time. 
         </p>
 
         <span>THE LIBRARY GROWS WITH THE WORK.</span>
