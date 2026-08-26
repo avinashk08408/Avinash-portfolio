@@ -19,11 +19,11 @@ export default function Navbar() {
       <header className="qs-nav navbar-component">
         <a href="#home" className="qs-brand">
           <span className="qs-seal" aria-hidden="true">
-            AK
+            
           </span>
 
           <span>
-            AVINASH K. <i>/</i> PORTFOLIO
+           <i> AVINASH K </i> 
           </span>
         </a>
 
