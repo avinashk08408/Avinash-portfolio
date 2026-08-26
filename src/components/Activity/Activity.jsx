@@ -52,8 +52,7 @@ export default function Activity() {
   
     <div className="open-record__intro">
 <p className="open-record__label">
-  <span>07</span>
-  BLOG
+  <span>07 BLOG</span>
 </p>
       
          <h2>
