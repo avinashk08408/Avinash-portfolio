@@ -21,16 +21,7 @@ const projects = [
     githubUrl: "https://github.com/avinashk08408",
     liveUrl: "https://your-vulnerability-scanner-live-app-url.com",
   },
-  {
-    number: "03",
-    title: "Fake GitHub Repo Detector",
-    description:
-      "An AI-assisted project for identifying suspicious GitHub repositories through repository signals.",
-    stack: ["React", "AI"],
-    image: `${import.meta.env.BASE_URL}assets/projects/github-detector.png`,
-    githubUrl: "https://github.com/avinashk08408",
-    liveUrl: "https://your-fake-repo-detector-live-app-url.com",
-  },
+  
 ];
 
 export default function Projects() {
