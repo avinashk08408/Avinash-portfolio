@@ -33,20 +33,11 @@ export default function About() {
           <h3>Cyber Security Student & Web Developer</h3>
 
           <p>
-            I’m <strong>Avinash</strong>, a Cyber Security student and web
-            developer passionate about crafting <strong>modern digital experiences</strong>
-            and exploring the security behind them. I enjoy transforming ideas
-            into intuitive, purposeful web applications while continuously
-            deepening my understanding of cybersecurity, networking, and
-            application security.
+            I’m <strong>Avinash</strong>, a Cyber Security student and web developer passionate about crafting <strong>modern digital experiences</strong> and exploring the security behind them. I enjoy transforming ideas into intuitive, purposeful web applications while continuously deepening my understanding of cybersecurity, networking, and application security.
           </p>
 
           <p>
-            I’m driven by curiosity and a hands-on mindset — building,
-            experimenting, and refining with every project. For me, technology
-            isn’t just about writing code; it’s about understanding systems,
-            solving meaningful problems, and creating solutions that are both
-            <strong> functional and secure.</strong>
+            I’m driven by curiosity and a hands-on mindset — building,experimenting, and refining with every project. For me, technology isn’t just about writing code; it’s about understanding systems solving meaningful problems, and creating solutions that are both <strong> functional and secure.</strong>
           </p>
 
           <blockquote>
