@@ -1,6 +1,6 @@
 /** Quiet Scholar component composition entry. */
 
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Switch, Route } from "wouter";
 
 import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/Hero/Hero";
@@ -13,8 +13,6 @@ import Resume from "./components/Resume/Resume";
 import Activity from "./components/Activity/Activity";
 import Contact from "./components/Contact/Contact";
 import Footer from "./components/Footer/Footer";
-
-import ProjectsPage from "./pages/ProjectsPage";
 
 function HomePage() {
   return (
@@ -38,21 +36,25 @@ function HomePage() {
   );
 }
 
-function App() {
+function ProjectsPage() {
   return (
-    <BrowserRouter>
-      <Routes>
+    <div className="quiet-scholar content-edition">
+      <Navbar />
 
-        {/* Main Portfolio */}
-        <Route path="/" element={<HomePage />} />
+      <main>
+        <h1>All Projects</h1>
+      </main>
 
-        {/* All Projects Page */}
-        <Route path="/projects" element={<ProjectsPage />} />
-
-      </Routes>
-    </BrowserRouter>
+      <Footer />
+    </div>
   );
 }
 
-export default App;
-
+export default function App() {
+  return (
+    <Switch>
+      <Route path="/" component={HomePage} />
+      <Route path="/projects" component={ProjectsPage} />
+    </Switch>
+  );
+}
