@@ -1,5 +1,5 @@
+```jsx
 import React from "react";
-import { Link } from "wouter";
 import "./Projects.css";
 
 const projects = [
@@ -33,13 +33,13 @@ export default function Projects() {
           <h2>Featured Projects</h2>
         </div>
 
-        {/* EXACTLY 3 PROJECTS IN ONE ROW */}
         <div className="projects-grid">
           {projects.map((project) => (
             <article className="project-card" key={project.id}>
               <div className="project-card-content">
+
                 <span className="project-number">
-                  0{project.id}
+                  {String(project.id).padStart(2, "0")}
                 </span>
 
                 <h3>{project.title}</h3>
@@ -51,13 +51,14 @@ export default function Projects() {
                     <span key={tag}>{tag}</span>
                   ))}
                 </div>
+
               </div>
             </article>
           ))}
         </div>
 
-        {/* BOTTOM INFORMATION BOX */}
         <div className="projects-more-wrapper">
+
           <div className="projects-more-text">
             <p>
               Explore more of my work, experiments, and technical projects
@@ -65,13 +66,18 @@ export default function Projects() {
             </p>
           </div>
 
-          <Link to="/projects" className="projects-more-button">
+          <a
+            href="/projects.html"
+            className="projects-more-button"
+          >
             <span>More Projects</span>
             <span className="projects-arrow">↗</span>
-          </Link>
+          </a>
+
         </div>
 
       </div>
     </section>
   );
 }
+```
