@@ -1,26 +1,27 @@
 import "./Stack.css";
 
 const capabilityGroups = [
+  
   {
     number: "01",
-    title: "Security foundations",
-    description:
-      "Learning to identify, understand, and reduce common web-security risks.",
-    tools: ["Linux", "Networking", "OWASP", "Burp Suite", "Nmap"],
-  },
-  {
-    number: "02",
     title: "Web engineering",
     description:
       "Building clear, responsive interfaces and connected web applications.",
-    tools: ["HTML", "CSS", "JavaScript", "React", "Flask"],
+    tools: ["HTML", "CSS", "JavaScript", "React", "Next.js"],
   },
   {
-    number: "03",
+    number: "02",
     title: "Development practice",
     description:
       "Organising code, working with data, and improving projects through iteration.",
     tools: ["Git", "GitHub", "Python", "SQL", "SQLite"],
+  },
+  {
+    number: "03",
+    title: "Security foundations",
+    description:
+      "Learning to identify, understand, and reduce common web-security risks.",
+    tools: ["Linux", "Networking", "OWASP", "Burp Suite", "Nmap"],
   },
 ];
 
