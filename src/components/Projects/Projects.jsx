@@ -85,7 +85,7 @@ export default function Projects() {
         </div>
 
         <div className="projects-more">
-            <a href="#projects" className="projects-more-link">
+            <a href="src/pages/ProjectsPage.jsx" className="projects-more-link">
                   More projects <span>↗</span>
             </a>
         </div>
