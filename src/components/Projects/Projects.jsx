@@ -84,24 +84,12 @@ export default function Projects() {
           ))}
         </div>
 
-        {/* MORE PROJECTS BAR */}
         <div className="projects-more">
-
-          <div className="projects-more-message">
-            Explore more projects, experiments, and technical work across
-            development and cybersecurity.
-          </div>
-
-          <a
-            href={`${import.meta.env.BASE_URL}projects.html`}
-            className="projects-more-button"
-          >
-            More Projects
-            <span>↗</span>
-          </a>
-
+            <a href="#projects" className="projects-more-link">
+                  More projects <span>↗</span>
+            </a>
         </div>
-
+        
       </div>
     </section>
   );
