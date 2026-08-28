@@ -1,4 +1,5 @@
-/** Quiet Scholar component composition entry. */
+import { Route, Switch } from "wouter";
+
 import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/Hero/Hero";
 import About from "./components/About/About";
@@ -11,24 +12,40 @@ import Activity from "./components/Activity/Activity";
 import Contact from "./components/Contact/Contact";
 import Footer from "./components/Footer/Footer";
 
+import ProjectsPage from "./pages/ProjectsPage";
+
 export default function App() {
   return (
     <div className="quiet-scholar content-edition">
-      <Navbar />
 
-      <main>
-        <Hero />
-        <About />
-        <Stack />
-        <Projects />
-        <Journey />
-        <Certifications />
-        <Resume />
-        <Activity />
-        <Contact />
-      </main>
+      <Switch>
 
-      <Footer />
+        {/* ALL PROJECTS PAGE */}
+        <Route path="/projects">
+          <ProjectsPage />
+        </Route>
+
+        {/* MAIN PORTFOLIO */}
+        <Route>
+          <Navbar />
+
+          <main>
+            <Hero />
+            <About />
+            <Stack />
+            <Projects />
+            <Journey />
+            <Certifications />
+            <Resume />
+            <Activity />
+            <Contact />
+          </main>
+
+          <Footer />
+        </Route>
+
+      </Switch>
+
     </div>
   );
 }
