@@ -1,98 +1,79 @@
+```jsx
+import React from "react";
+import { Link } from "react-router-dom";
 import "./Projects.css";
 
 const projects = [
   {
-    number: "01",
-    title: "AuthShield",
-    description:
-      "Secure authentication system with role-based access control and protected user access.",
-    stack: ["React", "Flask", "SQLite"],
-    image: `${import.meta.env.BASE_URL}assets/projects/authshield.png`,
-    githubUrl: "https://github.com/avinashk08408",
-    liveUrl: "https://your-authshield-live-app-url.com",
+    id: 1,
+    title: "Project One",
+    description: "Your existing project description goes here.",
+    tags: ["React", "JavaScript"],
   },
   {
-    number: "02",
-    title: "Web Vulnerability Scanner",
-    description:
-      "A cybersecurity tool that scans websites for common vulnerabilities and security issues.",
-    stack: ["Python", "Flask"],
-    image: `${import.meta.env.BASE_URL}assets/projects/scanner.png`,
-    githubUrl: "https://github.com/avinashk08408",
-    liveUrl: "https://your-vulnerability-scanner-live-app-url.com",
+    id: 2,
+    title: "Project Two",
+    description: "Your existing project description goes here.",
+    tags: ["Python", "Security"],
   },
-  
+  {
+    id: 3,
+    title: "Project Three",
+    description: "Your existing project description goes here.",
+    tags: ["Flask", "SQLite"],
+  },
 ];
 
 export default function Projects() {
   return (
-    <section
-      id="projects"
-      className="qs-shell projects-carousel-section"
-    >
-      <div className="projects-carousel-header">
-        <p className="ct-label">
-          <span>03 PORTFOLIO</span>
-          
-        </p>
+    <section className="projects-section" id="projects">
+      <div className="projects-container">
 
-        <h2>Featured projects</h2>
+        <div className="projects-heading">
+          <span className="projects-label">SELECTED WORK</span>
+          <h2>Featured Projects</h2>
+        </div>
 
-        <p className="projects-carousel-intro">
-          Security-focused builds, web experiments, and continuous learning.
-        </p>
-      </div>
+        {/* EXACTLY 3 PROJECTS IN ONE ROW */}
+        <div className="projects-grid">
+          {projects.map((project) => (
+            <article className="project-card" key={project.id}>
+              <div className="project-card-content">
+                <span className="project-number">
+                  0{project.id}
+                </span>
 
-      <div
-        className="projects-scroll-rail"
-        aria-label="Featured projects"
-      >
-        {projects.map((project) => (
-          <article
-            key={project.number}
-            className="projects-scroll-card"
-          >
-            <div className="projects-card-image">
-              <img
-                src={project.image}
-                alt={project.title}
-              />
+                <h3>{project.title}</h3>
 
-              <span>{project.number}</span>
-            </div>
+                <p>{project.description}</p>
 
-            <div className="projects-card-copy">
-              <h3>{project.title}</h3>
-
-              <p>{project.description}</p>
-
-              <div className="projects-card-tags">
-                {project.stack.map((item) => (
-                  <span key={item}>{item}</span>
-                ))}
+                <div className="project-tags">
+                  {project.tags.map((tag) => (
+                    <span key={tag}>{tag}</span>
+                  ))}
+                </div>
               </div>
+            </article>
+          ))}
+        </div>
 
-              <div className="projects-card-links">
-                <a
-                  href={project.githubUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  GitHub ↗
-                </a>
+        {/* BOTTOM INFORMATION BOX */}
+        <div className="projects-more-wrapper">
+          <div className="projects-more-text">
+            <p>
+              Explore more of my work, experiments, and technical projects
+              built across development and cybersecurity.
+            </p>
+          </div>
 
-                <a
-                  href={project.liveUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Live Demo ↗
-                </a>
-              </div>
-            </div>
-          </article>
-        ))}
+          <Link to="/projects" className="projects-more-button">
+            <span>More Projects</span>
+            <span className="projects-arrow">↗</span>
+          </Link>
+        </div>
+
       </div>
     </section>
   );
 }
+```
