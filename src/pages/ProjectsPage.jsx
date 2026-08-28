@@ -1,103 +1,130 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import "./ProjectsPage.css";
 
-const allProjects = [
+const projects = [
   {
-    id: 1,
-    title: "Project One",
-    description: "Project description.",
-    tags: ["React", "JavaScript"],
+    id: "01",
+    title: "AuthShield",
+    description:
+      "Secure authentication system with role-based access control and protected user access.",
+    tags: ["React", "Flask", "SQLite"],
   },
   {
-    id: 2,
-    title: "Project Two",
-    description: "Project description.",
-    tags: ["Python", "Security"],
+    id: "02",
+    title: "Web Vulnerability Scanner",
+    description:
+      "A cybersecurity tool designed to identify common web security vulnerabilities.",
+    tags: ["Python", "Flask"],
   },
   {
-    id: 3,
-    title: "Project Three",
-    description: "Project description.",
-    tags: ["Flask", "SQLite"],
-  },
-  {
-    id: 4,
-    title: "Project Four",
-    description: "Project description.",
+    id: "03",
+    title: "Weather Forecast App",
+    description:
+      "A weather application that retrieves forecast information through an external API.",
     tags: ["Python", "API"],
   },
   {
-    id: 5,
-    title: "Project Five",
-    description: "Project description.",
-    tags: ["React", "Node"],
+    id: "04",
+    title: "Encrypted File Sharing",
+    description:
+      "A secure file-sharing project focused on encrypted transfers and controlled access.",
+    tags: ["Python", "Security"],
   },
   {
-    id: 6,
-    title: "Project Six",
-    description: "Project description.",
-    tags: ["Cybersecurity", "Web"],
+    id: "05",
+    title: "Browser History Analyzer",
+    description:
+      "A utility for analyzing browser history data and presenting useful activity insights.",
+    tags: ["Python", "Data"],
   },
   {
-    id: 7,
-    title: "Project Seven",
-    description: "Project description.",
-    tags: ["Linux", "Security"],
+    id: "06",
+    title: "Fake Account Detector",
+    description:
+      "An experimental cybersecurity project focused on detecting suspicious account behaviour.",
+    tags: ["Python", "Security"],
   },
   {
-    id: 8,
-    title: "Project Eight",
-    description: "Project description.",
-    tags: ["Python", "Automation"],
+    id: "07",
+    title: "Location Tracker",
+    description:
+      "A learning project exploring location-based application architecture and data handling.",
+    tags: ["Python", "Web"],
   },
   {
-    id: 9,
-    title: "Project Nine",
-    description: "Project description.",
-    tags: ["Full Stack", "Web"],
+    id: "08",
+    title: "Security Dashboard",
+    description:
+      "A dashboard concept for presenting security metrics and system insights.",
+    tags: ["React", "Security"],
+  },
+  {
+    id: "09",
+    title: "Cybersecurity Toolkit",
+    description:
+      "A collection of security utilities created while learning practical cybersecurity.",
+    tags: ["Python", "Linux"],
   },
 ];
 
 export default function ProjectsPage() {
   return (
-    <main className="all-projects-page">
-      <div className="all-projects-container">
+    <main className="projects-page">
+      <div className="projects-page-container">
 
-        <div className="all-projects-header">
-          <Link to="/" className="back-button">
-            ← Back
-          </Link>
+        <a href="/" className="projects-back">
+          ← Back to portfolio
+        </a>
 
-          <span>PROJECT ARCHIVE</span>
+        <header className="projects-page-header">
+          <span>03 PORTFOLIO</span>
 
           <h1>All Projects</h1>
 
           <p>
-            A collection of selected projects, experiments and technical work.
+            A collection of security-focused builds, web experiments,
+            and technical work.
           </p>
-        </div>
+        </header>
 
-        <div className="all-projects-grid">
-          {allProjects.map((project) => (
-            <article className="project-card" key={project.id}>
-              <div className="project-card-content">
+        <div className="projects-page-grid">
+          {projects.map((project) => (
+            <article className="projects-page-card" key={project.id}>
 
-                <span className="project-number">
-                  {String(project.id).padStart(2, "0")}
-                </span>
+              <div className="projects-page-image">
+                <span>{project.id}</span>
+              </div>
 
-                <h3>{project.title}</h3>
+              <div className="projects-page-content">
+
+                <h2>{project.title}</h2>
 
                 <p>{project.description}</p>
 
-                <div className="project-tags">
+                <div className="projects-page-tags">
                   {project.tags.map((tag) => (
                     <span key={tag}>{tag}</span>
                   ))}
                 </div>
 
+                <div className="projects-page-links">
+                  <a
+                    href="#"
+                    onClick={(e) => e.preventDefault()}
+                  >
+                    GitHub ↗
+                  </a>
+
+                  <a
+                    href="#"
+                    onClick={(e) => e.preventDefault()}
+                  >
+                    Live Demo ↗
+                  </a>
+                </div>
+
               </div>
+
             </article>
           ))}
         </div>
