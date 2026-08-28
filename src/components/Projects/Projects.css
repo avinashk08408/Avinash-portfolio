@@ -1,6 +1,6 @@
 /* =========================================================
    FEATURED PROJECTS
-   Warm editorial / premium portfolio theme
+   Warm Editorial / Premium Portfolio Theme
 ========================================================= */
 
 .projects-section {
@@ -59,7 +59,7 @@
 }
 
 /* =========================================================
-   PROJECT GRID
+   THREE PROJECTS IN ONE ROW
 ========================================================= */
 
 .projects-grid {
@@ -100,7 +100,7 @@
 }
 
 /* =========================================================
-   PROJECT IMAGE
+   PROJECT IMAGE AREA
 ========================================================= */
 
 .project-image {
@@ -115,12 +115,6 @@
 
   overflow: hidden;
 }
-
-/*
-   Soft editorial texture.
-   This keeps the image area visually consistent even
-   before real project screenshots are added.
-*/
 
 .project-image::after {
   content: "";
@@ -183,9 +177,12 @@
   color: #292722;
 
   font-family: Georgia, "Times New Roman", serif;
+
   font-size: 29px;
   font-weight: 400;
+
   line-height: 1.15;
+
   letter-spacing: -0.02em;
 }
 
@@ -195,11 +192,12 @@
   color: #74736d;
 
   font-size: 16px;
+
   line-height: 1.7;
 }
 
 /* =========================================================
-   TAGS
+   TECHNOLOGY TAGS
 ========================================================= */
 
 .project-tags {
@@ -215,7 +213,9 @@
   color: #8b6c5a;
 
   font-size: 11px;
+
   font-weight: 600;
+
   letter-spacing: 0.04em;
 }
 
@@ -228,14 +228,16 @@
 }
 
 /* =========================================================
-   LINKS
+   PROJECT LINKS
 ========================================================= */
 
 .project-links {
   display: flex;
+
   gap: 25px;
 
   margin-top: auto;
+
   padding-top: 30px;
 }
 
@@ -243,6 +245,7 @@
   color: #8b6755;
 
   font-size: 15px;
+
   font-weight: 600;
 
   text-decoration: none;
@@ -259,82 +262,51 @@
 }
 
 /* =========================================================
-   MORE PROJECTS BAR
+   MORE PROJECTS
+   Simple text link — NO BOX
 ========================================================= */
 
 .projects-more {
-  display: grid;
+  display: flex;
 
-  grid-template-columns: minmax(0, 1fr) 190px;
+  justify-content: center;
 
-  gap: 18px;
-
-  margin-top: 24px;
+  margin-top: 32px;
 }
 
-/* Sentence */
+.projects-more-link {
+  display: inline-flex;
 
-.projects-more-message {
-  min-height: 82px;
-
-  display: flex;
   align-items: center;
 
-  padding: 20px 26px;
+  gap: 8px;
 
-  background: #fbfaf6;
+  color: #8b6755;
 
-  border: 1px solid #ddd9cf;
+  font-size: 15px;
 
-  color: #74736d;
-
-  font-size: 14px;
-  line-height: 1.6;
-}
-
-/* Button */
-
-.projects-more-button {
-  min-height: 82px;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  padding: 20px 23px;
-
-  background: #fbfaf6;
-
-  border: 1px solid #cfc7ba;
-
-  color: #795b4c;
-
-  font-size: 14px;
   font-weight: 600;
 
   text-decoration: none;
 
   transition:
-    background 0.3s ease,
-    border-color 0.3s ease,
-    transform 0.3s ease;
+    color 0.25s ease,
+    transform 0.25s ease;
 }
 
-.projects-more-button:hover {
-  background: #f1eee6;
-
-  border-color: #aa9889;
+.projects-more-link:hover {
+  color: #503b31;
 
   transform: translateY(-2px);
 }
 
-.projects-more-button span {
-  font-size: 19px;
+.projects-more-link span {
+  font-size: 17px;
 
-  transition: transform 0.3s ease;
+  transition: transform 0.25s ease;
 }
 
-.projects-more-button:hover span {
+.projects-more-link:hover span {
   transform: translate(3px, -3px);
 }
 
@@ -349,10 +321,6 @@
 
   .projects-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .projects-more {
-    grid-template-columns: 1fr;
   }
 }
 
@@ -396,8 +364,6 @@
   }
 
   .projects-more {
-    grid-template-columns: 1fr;
-
-    gap: 12px;
+    margin-top: 28px;
   }
 }
