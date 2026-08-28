@@ -1,4 +1,3 @@
-```jsx
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Projects.css";
@@ -76,4 +75,3 @@ export default function Projects() {
     </section>
   );
 }
-```
