@@ -24,3 +24,28 @@
   font-size: 20px !important;
   line-height: 1.62 !important;
 }
+/* =========================================
+   SCROLL REVEAL ANIMATION
+========================================= */
+
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(35px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+
+.scroll-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .scroll-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
