@@ -5,28 +5,61 @@ import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
 
 const projectRoot = path.dirname(fileURLToPath(import.meta.url));
-const isGitHubPagesBuild = process.env.GITHUB_ACTIONS === "true";
+
+const isGitHubPagesBuild =
+  process.env.GITHUB_ACTIONS === "true";
 
 export default defineConfig({
-  // Quiet Scholar uses the repository path on GitHub Pages and root paths in Manus hosting.
-  base: isGitHubPagesBuild ? "/sample2.github.io/" : "/",
-  plugins: [react(), tailwindcss()],
+  base: isGitHubPagesBuild
+    ? "/sample2.github.io/"
+    : "/",
+
+  plugins: [
+    react(),
+    tailwindcss(),
+  ],
+
   resolve: {
     alias: {
       "@": path.resolve(projectRoot, "src"),
       "@shared": path.resolve(projectRoot, "shared"),
     },
   },
+
   envDir: projectRoot,
+
   root: projectRoot,
+
   build: {
-    outDir: path.resolve(projectRoot, "dist/public"),
+    outDir: path.resolve(
+      projectRoot,
+      "dist/public"
+    ),
+
     emptyOutDir: true,
+
+    rollupOptions: {
+      input: {
+        main: path.resolve(
+          projectRoot,
+          "index.html"
+        ),
+
+        projects: path.resolve(
+          projectRoot,
+          "projects.html"
+        ),
+      },
+    },
   },
+
   server: {
     port: 3000,
+
     strictPort: false,
+
     host: true,
+
     allowedHosts: [
       ".manuspre.computer",
       ".manus.computer",
