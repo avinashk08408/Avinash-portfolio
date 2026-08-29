@@ -36,7 +36,7 @@ export default function Projects() {
 
         <div className="projects-heading">
           <span className="projects-label">
-            SELECTED WORK
+           03 SELECTED WORK
           </span>
 
           <h2>Featured Projects</h2>
