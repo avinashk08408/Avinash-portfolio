@@ -30,19 +30,7 @@ export default function Hero() {
         </div>
       </div>
 
-      <aside className="ct-hero-profile">
-        <span className="ct-initials">AK</span>
 
-        <div>
-          <p>PROFILE</p>
-          <h2>
-            Cyber Security Student
-            <br />
-            & Web Developer
-          </h2>
-          <span>Security · Web · Systems</span>
-        </div>
-      </aside>
     </section>
   );
 }
