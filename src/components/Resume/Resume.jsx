@@ -26,16 +26,15 @@ export default function Resume() {
       <div className="resume-folio">
         <aside className="resume-paper-wrap">
           <span className="resume-file-tab">
-            RESUME FILE / 06
+            RESUME FILE 
           </span>
 
           <div className="resume-paper">
             <div className="resume-paper-top">
-              <strong>AVINASH K.</strong>
-              <span>CURRICULUM VITAE</span>
+              <strong>AVINASH K</strong>
             </div>
 
-            <h3>Avinash K.</h3>
+            <h3>Avinash K</h3>
 
             <p className="resume-paper-role">
               CYBER SECURITY STUDENT
