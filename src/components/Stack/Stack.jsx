@@ -10,18 +10,25 @@ const capabilityGroups = [
     tools: ["HTML", "CSS", "JavaScript", "React", "Next.js"],
   },
   {
-    number: "02",
+  number: "02",
+  title: "Backend",
+  description:
+    "Building application logic and backend systems while strengthening programming and problem-solving skills.",
+  tools: ["Python", "C", "C++", "Java"],
+  },
+  {
+    number: "03",
     title: "Development practice",
     description:
       "Organising code, working with data, and improving projects through iteration.",
     tools: ["Git", "GitHub", "Python", "SQL", "SQLite"],
   },
   {
-    number: "03",
+    number: "04",
     title: "Security foundations",
     description:
       "Learning to identify, understand, and reduce common web-security risks.",
-    tools: ["Linux", "Networking", "OWASP", "Burp Suite", "Nmap"],
+    tools: ["Linux", "Networking", "OWASP"],
   },
 ];
 
