@@ -49,3 +49,57 @@
     transition: none;
   }
 }
+/* =========================================================
+   LAZY SCROLL / SCROLL REVEAL
+========================================================= */
+
+.reveal-section {
+  opacity: 0;
+  transform: translateY(60px);
+  transition:
+    opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-section.reveal-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Slight stagger for project cards */
+
+.reveal-card {
+  opacity: 0;
+  transform: translateY(35px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+
+.reveal-active .reveal-card:nth-child(1) {
+  transition-delay: 0.05s;
+}
+
+.reveal-active .reveal-card:nth-child(2) {
+  transition-delay: 0.15s;
+}
+
+.reveal-active .reveal-card:nth-child(3) {
+  transition-delay: 0.25s;
+}
+
+.reveal-active .reveal-card {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-section,
+  .reveal-card {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
