@@ -103,3 +103,32 @@
     transition: none;
   }
 }
+/* =========================================================
+   LAZY SCROLL REVEAL
+========================================================= */
+
+.lazy-section {
+  opacity: 0;
+  transform: translateY(70px);
+
+  transition:
+    opacity 0.9s ease-out,
+    transform 0.9s ease-out;
+
+  will-change: opacity, transform;
+}
+
+.lazy-section.lazy-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Reduced motion accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+  .lazy-section {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
