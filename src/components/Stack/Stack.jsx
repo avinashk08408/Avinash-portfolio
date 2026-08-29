@@ -11,14 +11,14 @@ const capabilityGroups = [
   },
   {
   number: "02",
-  title: "Backend",
+  title: "Core Development",
   description:
     "Building application logic and backend systems while strengthening programming and problem-solving skills.",
   tools: ["Python", "C", "C++", "Java"],
   },
   {
     number: "03",
-    title: "Development practice",
+    title: "Data & Versioning",
     description:
       "Organising code, working with data, and improving projects through iteration.",
     tools: ["Git", "GitHub", "SQL", "SQLite"],
