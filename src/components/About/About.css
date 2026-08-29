@@ -1,118 +1,153 @@
 /* =========================================
    ABOUT SECTION
-   ========================================= */
+========================================= */
 
 .ct-section.about-component {
   display: block;
-  grid-template-columns: 1fr;
-  gap: 0;
+  width: 100%;
   padding: 115px 0;
 }
 
 
 /* =========================================
-   CENTERED HEADING
-   ========================================= */
+   HEADING
+========================================= */
 
-.ct-section.about-component .about-heading h2 {
-  font-family: "Libre Baskerville", Georgia, serif;
-  font-size: clamp(30px, 3.3vw, 42px);
-  font-weight: 400;
-  line-height: 1.15;
-  letter-spacing: -0.04em;
+.ct-section.about-component .about-heading {
+  width: 100%;
+  margin: 0 0 55px;
+  text-align: center;
 }
 
 .ct-section.about-component .about-heading .ct-label {
   justify-content: center;
 }
 
+.ct-section.about-component .about-heading h2 {
+  margin: 0;
+  font-family: "Libre Baskerville", Georgia, serif;
+  font-size: clamp(32px, 3.5vw, 46px);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.04em;
+}
+
 
 /* =========================================
-   PHOTO + CONTENT
-   ========================================= */
+   MAIN ABOUT LAYOUT
+========================================= */
 
 .ct-section.about-component .about-layout {
   width: 100%;
 
   display: grid;
 
-  grid-template-columns: 220px minmax(0, 480px);
+  /*
+    PHOTO + LARGE CONTENT AREA
+  */
+  grid-template-columns: 250px minmax(0, 1fr);
 
-  justify-content: start;
+  column-gap: 70px;
 
-  column-gap: 55px;
-
-  align-items: center;
+  align-items: start;
 }
 
 
 /* =========================================
    PHOTO
-   ========================================= */
+========================================= */
 
 .ct-section.about-component .about-photo-column {
+  width: 100%;
+  display: flex;
   justify-content: flex-start;
 }
 
 .ct-section.about-component .about-photo-frame {
-  width: 170px;
+  width: 190px;
+  max-width: 100%;
+}
+
+.ct-section.about-component .about-photo-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 }
 
 
 /* =========================================
    CONTENT
-   ========================================= */
+========================================= */
 
 .ct-section.about-component .ct-about-copy {
-  max-width: 480px;
+  width: 100%;
+  max-width: none;
+}
 
-  justify-self: start;
+.ct-section.about-component .ct-about-copy h3 {
+  margin-top: 0;
+  margin-bottom: 22px;
+
+  font-size: clamp(22px, 2vw, 30px);
+  line-height: 1.25;
+}
+
+
+/* =========================================
+   PARAGRAPHS
+========================================= */
+
+.ct-section.about-component .ct-about-copy > p {
+  width: 100%;
+  max-width: 900px;
+
+  margin-bottom: 18px;
+
+  font-size: 16px;
+  line-height: 1.75;
 }
 
 
 /* =========================================
    QUOTE
-   ========================================= */
+========================================= */
 
 .ct-section.about-component .ct-about-copy blockquote {
+  max-width: 850px;
+
+  margin-top: 30px;
   margin-bottom: 0;
 }
 
 
 /* =========================================
    STATISTICS
-   4+ | 1+ | 15+
-   ========================================= */
+========================================= */
 
 .ct-section.about-component .ct-stats {
-  display: grid;
+  width: 100%;
 
-  grid-template-columns: repeat(3, 1fr);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 
   gap: 0;
 
-  width: 100%;
-
-  margin-top: 30px;
+  margin-top: 38px;
 }
 
 
-/* Each statistic stays in series */
+/* Statistic boxes */
 
 .ct-section.about-component .ct-stats article {
   min-width: 0;
 
-  padding: 14px 16px;
+  padding: 18px 22px;
 
   border-top: 1px solid var(--border);
-
   border-bottom: 1px solid var(--border);
-
   border-left: 1px solid var(--border);
 }
-
-
-/* Remove final unwanted extra border */
 
 .ct-section.about-component .ct-stats article:last-child {
   border-right: 1px solid var(--border);
@@ -128,8 +163,7 @@
 
   font-family: "Libre Baskerville", Georgia, serif;
 
-  font-size: 27px;
-
+  font-size: 30px;
   font-weight: 400;
 
   line-height: 1;
@@ -145,48 +179,114 @@
 
   color: #6b6d67;
 
-  font-size: 9px;
-
+  font-size: 10px;
   font-weight: 800;
 
   letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+
+/* =========================================
+   LARGE DESKTOP
+========================================= */
+
+@media (min-width: 1100px) {
+
+  .ct-section.about-component .about-layout {
+    grid-template-columns: 250px minmax(0, 1fr);
+    column-gap: 80px;
+  }
+
+  .ct-section.about-component .about-photo-frame {
+    width: 200px;
+  }
+
+  .ct-section.about-component .ct-about-copy > p {
+    max-width: 1000px;
+  }
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+  .ct-section.about-component {
+    padding: 95px 0;
+  }
+
+  .ct-section.about-component .about-layout {
+    grid-template-columns: 190px minmax(0, 1fr);
+    column-gap: 45px;
+  }
+
+  .ct-section.about-component .about-photo-frame {
+    width: 160px;
+  }
+
+  .ct-section.about-component .ct-about-copy > p {
+    font-size: 15px;
+    line-height: 1.75;
+  }
 }
 
 
 /* =========================================
    MOBILE
-   ========================================= */
+========================================= */
 
 @media (max-width: 700px) {
 
   .ct-section.about-component {
-    display: block;
+    padding: 75px 0;
+  }
 
-    padding: 82px 0;
+  .ct-section.about-component .about-heading {
+    margin-bottom: 38px;
   }
 
   .ct-section.about-component .about-layout {
     grid-template-columns: 1fr;
-
-    row-gap: 34px;
+    row-gap: 32px;
   }
 
   .ct-section.about-component .about-photo-column {
     justify-content: center;
   }
 
+  .ct-section.about-component .about-photo-frame {
+    width: 175px;
+  }
+
   .ct-section.about-component .ct-about-copy {
+    width: 100%;
+  }
+
+  .ct-section.about-component .ct-about-copy h3 {
+    font-size: 22px;
+    margin-bottom: 18px;
+  }
+
+  .ct-section.about-component .ct-about-copy > p {
     max-width: 100%;
+    font-size: 15px;
+    line-height: 1.82;
+  }
+
+  .ct-section.about-component .ct-about-copy blockquote {
+    margin-top: 25px;
   }
 
   .ct-section.about-component .ct-stats {
-    grid-template-columns: repeat(3, 1fr);
-
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     margin-top: 30px;
   }
 
   .ct-section.about-component .ct-stats article {
-    padding: 13px 8px;
+    padding: 14px 8px;
   }
 
   .ct-section.about-component .ct-stats strong {
@@ -197,45 +297,24 @@
     font-size: 8px;
   }
 }
-/* Put “Who I am.” on the same centre line as Engineering stack. */
-.ct-section.about-component {
-  display: block !important;
-  grid-template-columns: 1fr !important;
-}
 
-.ct-section.about-component .about-heading {
-  width: 100% !important;
-  margin: 0 0 62px !important;
-  text-align: center !important;
-}
 
-.ct-section.about-component .about-heading .ct-label {
-  justify-content: center !important;
-}
-/* Readable About text + smaller gap after “Who I am.” */
-.ct-section.about-component .about-heading {
-  margin-bottom: 28px !important;
-}
+/* =========================================
+   SMALL MOBILE
+========================================= */
 
-.ct-section.about-component .ct-about-copy > p {
-  font-size: 15px;
-  line-height: 1.78;
-}
+@media (max-width: 420px) {
 
-@media (max-width: 700px) {
-  .ct-section.about-component .about-heading {
-    margin-bottom: 24px !important;
+  .ct-section.about-component .about-photo-frame {
+    width: 150px;
   }
 
-  .ct-section.about-component .ct-about-copy > p {
-    font-size: 15px;
-    line-height: 1.82;
-  }
-}
-/* Desktop only: larger readable About paragraph text. */
-@media (min-width: 701px) {
-  .ct-section.about-component .ct-about-copy > p {
+  .ct-section.about-component .ct-stats strong {
     font-size: 20px;
-    line-height: 1.62;
+  }
+
+  .ct-section.about-component .ct-stats span {
+    font-size: 7px;
+    letter-spacing: 0.04em;
   }
 }
