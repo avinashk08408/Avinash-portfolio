@@ -21,7 +21,7 @@ const capabilityGroups = [
     title: "Development practice",
     description:
       "Organising code, working with data, and improving projects through iteration.",
-    tools: ["Git", "GitHub", "Python", "SQL", "SQLite"],
+    tools: ["Git", "GitHub", "SQL", "SQLite"],
   },
   {
     number: "04",
