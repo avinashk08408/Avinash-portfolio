@@ -3,31 +3,25 @@ import "./Projects.css";
 
 const projects = [
   {
-    id: "01",
+    id: 1,
     title: "AuthShield",
     description:
-      "Secure authentication system with role-based access control and protected user access.",
+      "A secure authentication system with role-based access control and protected user access.",
     tags: ["React", "Flask", "SQLite"],
-    github: "#",
-    demo: "#",
   },
   {
-    id: "02",
+    id: 2,
     title: "Web Vulnerability Scanner",
     description:
-      "A cybersecurity tool that scans websites for common vulnerabilities and security issues.",
-    tags: ["Python", "Flask"],
-    github: "#",
-    demo: "#",
+      "A cybersecurity tool designed to identify common web security vulnerabilities.",
+    tags: ["Python", "Flask", "Security"],
   },
   {
-    id: "03",
+    id: 3,
     title: "Weather Forecast App",
     description:
-      "A clean weather application that retrieves real-time forecast information through an external API.",
+      "A weather application that retrieves forecast information through an external API.",
     tags: ["Python", "API"],
-    github: "#",
-    demo: "#",
   },
 ];
 
@@ -36,31 +30,44 @@ export default function Projects() {
     <section className="projects-section" id="projects">
       <div className="projects-container">
 
-        {/* SECTION HEADER */}
-        <header className="projects-header">
-          <span className="projects-eyebrow">03 PORTFOLIO</span>
+        {/* =========================
+            SECTION HEADER
+        ========================= */}
 
-          <h2>Featured projects</h2>
+        <div className="projects-heading">
+          <span className="projects-label">
+            SELECTED WORK
+          </span>
+
+          <h2>Featured Projects</h2>
 
           <p>
-            Security-focused builds, web experiments, and continuous learning.
+            Security-focused builds, web experiments,
+            and continuous learning.
           </p>
-        </header>
+        </div>
 
-        {/* THREE PROJECT CARDS */}
+        {/* =========================
+            THREE PROJECT CARDS
+        ========================= */}
+
         <div className="projects-grid">
           {projects.map((project) => (
-            <article className="project-card" key={project.id}>
+            <article
+              className="project-card"
+              key={project.id}
+            >
+              {/* Project Visual Area */}
 
-              {/* IMAGE / VISUAL AREA */}
               <div className="project-image">
-                <span className="project-image-number">
-                  {project.id}
+                <span className="project-number">
+                  0{project.id}
                 </span>
               </div>
 
-              {/* INFORMATION AREA */}
-              <div className="project-info">
+              {/* Project Content */}
+
+              <div className="project-card-content">
 
                 <h3>{project.title}</h3>
 
@@ -68,15 +75,36 @@ export default function Projects() {
                   {project.description}
                 </p>
 
+                {/* Technologies */}
+
                 <div className="project-tags">
                   {project.tags.map((tag) => (
-                    <span key={tag}>{tag}</span>
+                    <span key={tag}>
+                      {tag}
+                    </span>
                   ))}
                 </div>
 
+                {/* Project Links */}
+
                 <div className="project-links">
-                  <a href={project.github}>GitHub ↗</a>
-                  <a href={project.demo}>Live Demo ↗</a>
+                  <a
+                    href="#"
+                    onClick={(event) =>
+                      event.preventDefault()
+                    }
+                  >
+                    GitHub ↗
+                  </a>
+
+                  <a
+                    href="#"
+                    onClick={(event) =>
+                      event.preventDefault()
+                    }
+                  >
+                    Live Demo ↗
+                  </a>
                 </div>
 
               </div>
@@ -84,12 +112,20 @@ export default function Projects() {
           ))}
         </div>
 
+        {/* =========================
+            MORE PROJECTS
+        ========================= */}
+
         <div className="projects-more">
-            <a href="src/pages/ProjectsPage.jsx" className="projects-more-link">
-                  More projects <span>↗</span>
-            </a>
+          <a
+            href={`${import.meta.env.BASE_URL}projects.html`}
+            className="projects-more-link"
+          >
+            More projects
+            <span>↗</span>
+          </a>
         </div>
-        
+
       </div>
     </section>
   );
