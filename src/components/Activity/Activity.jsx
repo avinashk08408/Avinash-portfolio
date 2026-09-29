@@ -1,74 +1,136 @@
-import { ArrowUpRight } from "lucide-react";
-import { recordCategories, getRecords } from "../../data/records";
+import { useState } from "react";
 import "./Activity.css";
 
-const categoryCards = [
+const baseUrl = import.meta.env.BASE_URL;
+
+const records = [
   {
-    id: "events",
-    number: "01",
-    label: "EVENTS",
-    title: "Where I showed up",
-    description: "Hackathons, meetups, competitions, and the lessons I took from them.",
+    id: "event",
+    menuLabel: "EVENT",
+    category: "HACKATHON RECORD",
+    date: "ADD ACTUAL DATE",
+    titleStart: "From a challenge brief to a",
+    titleAccent: "working response.",
+    description:
+      "Write your real hackathon story here: the prompt, your contribution, the idea your team tested, and the lesson you will carry forward.",
+    tags: ["EVENT", "PROJECT", "REFLECTION"],
+    readUrl: `${baseUrl}records.html?category=events`,
   },
   {
     id: "build",
-    number: "02",
-    label: "BUILD",
-    title: "What I made",
-    description: "Project logs about ideas, experiments, decisions, and better next versions.",
+    menuLabel: "BUILD",
+    category: "PROJECT BUILD LOG",
+    date: "ADD ACTUAL DATE",
+    titleStart: "When the first version asks for a",
+    titleAccent: "better answer.",
+    description:
+      "Use this entry for a real project update: what you started with, which decision changed the work, what you tested, and what you will improve next.",
+    tags: ["BUILD", "PROTOTYPE", "TESTING"],
+    readUrl: `${baseUrl}records.html?category=build`,
   },
   {
     id: "study",
-    number: "03",
-    label: "STUDY",
-    title: "What I learned",
-    description: "Notes from studying cybersecurity, development, and the systems behind them.",
+    menuLabel: "STUDY",
+    category: "SECURITY STUDY",
+    date: "ADD ACTUAL DATE",
+    titleStart: "A security idea worth a",
+    titleAccent: "closer look.",
+    description:
+      "Use this entry after studying a cybersecurity concept. Explain what became clearer, why it matters, and which safe learning task you will explore next.",
+    tags: ["SECURITY", "LEARNING", "SYSTEMS"],
+    readUrl: `${baseUrl}records.html?category=study`,
   },
 ];
 
 export default function Activity() {
-  const baseUrl = import.meta.env.BASE_URL;
+  const [activeRecordId, setActiveRecordId] = useState("event");
+
+  const activeRecord = records.find(
+    (record) => record.id === activeRecordId,
+  );
 
   return (
     <section id="activity" className="open-record qs-shell">
-      <div className="open-record__intro">
-        <p className="open-record__label">07 OPEN RECORD</p>
-        <h2>
-          Open <em>record</em>
+  
+    <div className="open-record__intro">
+<p className="open-record__label">
+  <span>07 BLOG</span>
+</p>
+      
+         <h2>
+            Open <em>record</em>
         </h2>
+  
         <p>
-          A growing collection of event stories, build logs,
+          Stories from hackathons, project builds,
           <br />
-          and study notes.
+          and cybersecurity learning.
         </p>
       </div>
 
-      <div className="open-record__cards">
-        {categoryCards.map((card) => {
-          const category = recordCategories[card.id];
-          const count = getRecords(card.id).length;
+      <div className="open-record__viewer">
+        <div
+          className="open-record__menu"
+          role="tablist"
+          aria-label="Story categories"
+        >
+          {records.map((record) => (
+            <button
+              key={record.id}
+              type="button"
+              className={
+                record.id === activeRecordId
+                  ? "open-record__menu-button is-active"
+                  : "open-record__menu-button"
+              }
+              role="tab"
+              aria-selected={record.id === activeRecordId}
+              aria-controls="open-record-story"
+              onClick={() => setActiveRecordId(record.id)}
+            >
+              {record.menuLabel}
+            </button>
+          ))}
+        </div>
 
-          return (
-            <article className="open-record__card" key={card.id}>
-              <div className="open-record__card-top">
-                <span>{card.number}</span>
-                <span>{card.label}</span>
-              </div>
-              <h3>{card.title}</h3>
-              <p>{card.description}</p>
-              <div className="open-record__card-footer">
-                <span>{count} {count === 1 ? "entry" : "entries"}</span>
-                <a
-                  className="open-record__read-link"
-                  href={`${baseUrl}records.html?category=${category.id}`}
-                  aria-label={`Open ${category.label.toLowerCase()} records`}
-                >
-                  OPEN <ArrowUpRight size={14} strokeWidth={1.6} />
-                </a>
-              </div>
-            </article>
-          );
-        })}
+        <article
+          key={activeRecord.id}
+          id="open-record-story"
+          className="open-record__story"
+        >
+          <span className="open-record__number">
+            {String(records.indexOf(activeRecord) + 1).padStart(2, "0")}
+          </span>
+
+          <p className="open-record__category">
+            {activeRecord.category} · {activeRecord.date}
+          </p>
+
+          <h3>
+            {activeRecord.titleStart}
+            <br />
+            <em>{activeRecord.titleAccent}</em>
+          </h3>
+
+          <p className="open-record__description">
+            {activeRecord.description}
+          </p>
+
+          <footer className="open-record__story-footer">
+            <div className="open-record__tags">
+              {activeRecord.tags.map((tag) => (
+                <span key={tag}>{tag}</span>
+              ))}
+            </div>
+
+            <a
+              className="open-record__read-link"
+              href={activeRecord.readUrl}
+            >
+              OPEN ↗
+            </a>
+          </footer>
+        </article>
       </div>
     </section>
   );
