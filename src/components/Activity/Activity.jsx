@@ -7,12 +7,12 @@ const records = [
   {
     id: "event",
     menuLabel: "EVENT",
-    category: "HACKATHON RECORD",
+    category: "EVENT RECORD",
     date: "ADD ACTUAL DATE",
-    titleStart: "From a challenge brief to a",
-    titleAccent: "working response.",
+    titleStart: "From showing up to a",
+    titleAccent: "lasting lesson.",
     description:
-      "Write your real hackathon story here: the prompt, your contribution, the idea your team tested, and the lesson you will carry forward.",
+      "Write about an event you participated in: what happened, what you contributed, what you experienced, and the lesson you will carry forward.",
     tags: ["EVENT", "PROJECT", "REFLECTION"],
     readUrl: `${baseUrl}records.html?category=events`,
   },
