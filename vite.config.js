@@ -49,6 +49,16 @@ export default defineConfig({
           projectRoot,
           "projects.html"
         ),
+
+        records: path.resolve(
+          projectRoot,
+          "records.html"
+        ),
+
+        record: path.resolve(
+          projectRoot,
+          "record.html"
+        ),
       },
     },
   },
