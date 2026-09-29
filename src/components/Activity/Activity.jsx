@@ -12,7 +12,7 @@ const records = [
     titleStart: "From showing up to a",
     titleAccent: "lasting lesson.",
     description:
-      "Write about an event you participated in: what happened, what you contributed, what you experienced, and the lesson you will carry forward.",
+      "A space for the events, people, and experiences that shaped the way I learn and work.",
     tags: ["EVENT", "PROJECT", "REFLECTION"],
     readUrl: `${baseUrl}records.html?category=events`,
   },
@@ -24,7 +24,7 @@ const records = [
     titleStart: "When the first version asks for a",
     titleAccent: "better answer.",
     description:
-      "Use this entry for a real project update: what you started with, which decision changed the work, what you tested, and what you will improve next.",
+      "A running record of ideas turned into working projects, with the decisions and lessons behind each build.",
     tags: ["BUILD", "PROTOTYPE", "TESTING"],
     readUrl: `${baseUrl}records.html?category=build`,
   },
@@ -36,7 +36,7 @@ const records = [
     titleStart: "A security idea worth a",
     titleAccent: "closer look.",
     description:
-      "Use this entry after studying a cybersecurity concept. Explain what became clearer, why it matters, and which safe learning task you will explore next.",
+      "Notes on cybersecurity concepts, practical experiments, and the questions I am exploring next.",
     tags: ["SECURITY", "LEARNING", "SYSTEMS"],
     readUrl: `${baseUrl}records.html?category=study`,
   },
@@ -62,7 +62,7 @@ export default function Activity() {
         </h2>
   
         <p>
-          Stories from hackathons, project builds,
+          Stories from events, project builds,
           <br />
           and cybersecurity learning.
         </p>
@@ -103,7 +103,7 @@ export default function Activity() {
           </span>
 
           <p className="open-record__category">
-            {activeRecord.category} · {activeRecord.date}
+            {activeRecord.category}
           </p>
 
           <h3>
