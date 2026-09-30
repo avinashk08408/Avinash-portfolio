@@ -1,5 +1,5 @@
 import "./About.css";
-const profileImage = `${import.meta.env.BASE_URL}assets/profile.png`;
+const profileImage = `${import.meta.env.BASE_URL}assets/avinash-about.webp`;
 
 const statistics = [
   ["4+", "Projects"],
@@ -24,7 +24,11 @@ export default function About() {
           <div className="about-photo-frame">
             <img
               src={profileImage}
-              alt="Avinash K."
+              alt="Avinash K. outdoors on campus"
+              width="1312"
+              height="816"
+              loading="lazy"
+              decoding="async"
             />
           </div>
         </div>
