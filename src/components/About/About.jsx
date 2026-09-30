@@ -45,8 +45,7 @@ export default function About() {
           </p>
 
           <blockquote>
-            “The best way out is always through.”
-            <cite>— Robert Frost</cite>
+            Simplicity is the ultimate sophistication.
           </blockquote>
 
           <div className="ct-stats">
