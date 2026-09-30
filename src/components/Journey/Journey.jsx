@@ -5,13 +5,13 @@ const academicFoundations = [
     year: "2025",
     title: "Higher Secondary",
     institution: "Don Bosco Matric Hr. Sec. School",
-    score: "85%",
+    score: "87%",
   },
   {
     year: "2023",
     title: "Secondary School",
     institution: "Don Bosco Matric Hr. Sec. School",
-    score: "90%",
+    score: "85%",
   },
 ];
 

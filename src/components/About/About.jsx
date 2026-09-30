@@ -46,6 +46,7 @@ export default function About() {
 
           <blockquote>
             Simplicity is the ultimate sophistication.
+            <cite>— Leonardo da Vinci</cite>
           </blockquote>
 
           <div className="ct-stats">
