@@ -11,7 +11,7 @@ const academicFoundations = [
     year: "2023",
     title: "Secondary School",
     institution: "Sri Ramakrishana Vidyalaya Jain Matric Hr. Sec. School",
-    score: 85"%",
+    score: "85%",
   },
 ];
 
