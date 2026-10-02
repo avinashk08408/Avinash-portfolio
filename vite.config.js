@@ -8,11 +8,18 @@ const projectRoot = path.dirname(fileURLToPath(import.meta.url));
 
 const isGitHubPagesBuild =
   process.env.GITHUB_ACTIONS === "true";
+const [githubOwner = "", githubRepositoryName = ""] = (
+  process.env.GITHUB_REPOSITORY ?? ""
+).split("/");
+const isUserPagesRepository =
+  githubRepositoryName.toLowerCase() ===
+  `${githubOwner.toLowerCase()}.github.io`;
 
 export default defineConfig({
-  base: isGitHubPagesBuild
-    ? "/sample2.github.io/"
-    : "/",
+  base:
+    isGitHubPagesBuild && githubRepositoryName && !isUserPagesRepository
+      ? `/${githubRepositoryName}/`
+      : "/",
 
   plugins: [
     react(),
