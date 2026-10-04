@@ -14,12 +14,14 @@ const [githubOwner = "", githubRepositoryName = ""] = (
 const isUserPagesRepository =
   githubRepositoryName.toLowerCase() ===
   `${githubOwner.toLowerCase()}.github.io`;
+const githubPagesBasePath =
+  process.env.VITE_BASE_PATH ??
+  (githubRepositoryName && !isUserPagesRepository
+    ? `/${githubRepositoryName}/`
+    : "/");
 
 export default defineConfig({
-  base:
-    isGitHubPagesBuild && githubRepositoryName && !isUserPagesRepository
-      ? `/${githubRepositoryName}/`
-      : "/",
+  base: isGitHubPagesBuild ? githubPagesBasePath : "/",
 
   plugins: [
     react(),
