@@ -45,7 +45,7 @@ export default function About() {
           </p>
 
           <blockquote>
-            Simplicity is the ultimate sophistication.
+            "Simplicity is the ultimate sophistication."
             <cite>— Leonardo da Vinci</cite>
           </blockquote>
 
