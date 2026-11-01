@@ -58,13 +58,7 @@ export default function Projects() {
               className="project-card"
               key={project.id}
             >
-              {/* Project Visual Area */}
 
-              <div className="project-image">
-                <span className="project-number">
-                  0{project.id}
-                </span>
-              </div>
 
               {/* Project Content */}
 
