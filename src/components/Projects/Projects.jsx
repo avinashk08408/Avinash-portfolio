@@ -2,19 +2,20 @@ import React from "react";
 import "./Projects.css";
 
 const projects = [
-  {
+{
     id: 1,
+    title: "Upgrade Impact Analyzer",
+    description:
+      "A VS Code extension and developer tool that scans your active project dependencies across multiple ecosystems to evaluate upgrade impact.",
+    tags: ["React", "TypeScript", "VS Code Extension"],
+    github: "https://github.com/avinashk08408/Upgrade-Impact-Analyzer",
+  },
+  {
+    id: 2,
     title: "AuthShield",
     description:
       "A secure authentication system with role-based access control and protected user access.",
     tags: ["React", "Flask", "SQLite"],
-  },
-  {
-    id: 2,
-    title: "Web Vulnerability Scanner",
-    description:
-      "A cybersecurity tool designed to identify common web security vulnerabilities.",
-    tags: ["Python", "Flask", "Security"],
   },
   {
     id: 3,
