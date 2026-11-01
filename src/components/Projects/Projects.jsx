@@ -80,14 +80,18 @@ export default function Projects() {
                   ))}
                 </div>
 
-                {/* Project Links */}
+{/* Project Links */}
 
                 <div className="project-links">
                   <a
-                    href="#"
-                    onClick={(event) =>
-                      event.preventDefault()
-                    }
+                    href={project.github || "#"}
+                    target={project.github ? "_blank" : undefined}
+                    rel={project.github ? "noopener noreferrer" : undefined}
+                    onClick={(event) => {
+                      if (!project.github) {
+                        event.preventDefault();
+                      }
+                    }}
                   >
                     GitHub ↗
                   </a>
