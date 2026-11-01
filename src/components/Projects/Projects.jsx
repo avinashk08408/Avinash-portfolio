@@ -111,7 +111,7 @@ export default function Projects() {
             MORE PROJECTS
         ========================= */}
 
-       /* <div className="projects-more">
+          {/* <div className="projects-more">
           <a
             href={`${import.meta.env.BASE_URL}projects.html`}
             className="projects-more-link"
@@ -120,7 +120,7 @@ export default function Projects() {
             <span>↗</span>
           </a>
         </div>
-*/
+*/}
       </div>
     </section>
   );
